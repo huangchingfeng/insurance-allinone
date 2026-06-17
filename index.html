@@ -1778,11 +1778,12 @@
           }
           function renderGrid(){
             const list = visible();
-            if(!list.length){ $('#txtGrid').innerHTML='<div class="cz-empty">找不到符合的模板,換個分類或關鍵字。</div>'; return; }
-            $('#txtGrid').innerHTML = list.map(t=>{
+            const intro = microMode ? '<div style="grid-column:1/-1;width:100%;margin:0 0 6px;padding:13px 15px;background:#ECFEFF;border:1px solid #A5F3FC;border-radius:12px;font-size:.86rem;line-height:1.7;color:#155E63">🔧 <b>保險微系統｜三步驟自己做工具</b><br>① 挑一個你工作會用到的 ② 按綠色鍵看老師做好的範例 ③ 把填空提示詞填上你的情境,複製貼進 Manus,幾分鐘生出你自己的版本</div>' : '';
+            if(!list.length){ $('#txtGrid').innerHTML = intro + '<div class="cz-empty">找不到符合的模板,換個分類或關鍵字。</div>'; return; }
+            $('#txtGrid').innerHTML = intro + list.map(t=>{
               const desc = String(t.template||'').replace(/<<<\{[^}]+\}>>>/g,'⋯').split(/[\n。!?]/)[0].slice(0,52);
               const cat = microMode ? ((t.icon||'🔧')+' '+(t.persona||'微系統')) : (icon(t.category)+' '+t.category);
-              const badge = (microMode && t.demo) ? '<span class="cz-cardcase" style="color:#0D9488;font-weight:700">🔗 附 Manus 做好的範例</span>' : '';
+              const badge = microMode ? (t.demo ? '<span class="cz-cardcase" style="color:#0D9488;font-weight:700">🔗 附 Manus 做好的範例</span>' : '<span class="cz-cardcase" style="color:#94A3B8;font-weight:700">🔧 範例建置中</span>') : '';
               return `<button class="cz-card" data-id="${esc(t.id)}">
                 <div class="cz-cardbody">
                   <span class="cz-cardcat">${esc(cat)}</span>
@@ -1819,7 +1820,14 @@
                 ta.addEventListener('input', ()=>{ autoGrow(ta); build(); });
               });
             }
-            if(microMode && t.demo){ fw.insertAdjacentHTML('afterbegin', `<a href="${esc(t.demo)}" target="_blank" rel="noopener" style="display:block;margin:0 0 14px;padding:12px 14px;background:#0D9488;color:#fff;border-radius:10px;font-weight:800;text-decoration:none;text-align:center">🔗 看 Manus 做好的實際範例（可直接操作）→</a>`); }
+            if(microMode){
+              if(t.demo){
+                fw.insertAdjacentHTML('afterbegin', `<a href="${esc(t.demo)}" target="_blank" rel="noopener" style="display:block;margin:0 0 14px;padding:12px 14px;background:#0D9488;color:#fff;border-radius:10px;font-weight:800;text-decoration:none;text-align:center">🔗 看 Manus 做好的實際範例（可直接操作）→</a>`);
+              }else{
+                fw.insertAdjacentHTML('afterbegin', `<div style="margin:0 0 14px;padding:12px 14px;background:#F1F5F9;color:#64748B;border:1px dashed #CBD5E1;border-radius:10px;font-weight:700;text-align:center">🔧 範例工具建置中,你可以先用下面的提示詞自己做一個</div>`);
+              }
+              fw.insertAdjacentHTML('afterbegin', `<div style="margin:0 0 14px;padding:10px 13px;background:#FFF7ED;color:#9A3412;border:1px solid #FED7AA;border-radius:10px;font-size:.82rem;line-height:1.6">⚠️ <b>教學示範用途</b>｜請用化名與假數字練習,不要輸入真實客戶的姓名、電話、病史、保單號碼或信用卡資訊。這些是公開的線上示範工具,正式給客戶使用前請先確認資料儲存與個資保護方式。</div>`);
+            }
             build();
             overlay.classList.add('open'); document.body.style.overflow='hidden';
             setTimeout(()=>$('#txtClose').focus(),50);

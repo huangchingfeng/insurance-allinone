@@ -1,0 +1,4 @@
+# 建置產物，不進公開 GitHub Pages repo
+.manus_progress.json
+.manus_concise/
+sync_demos.py
