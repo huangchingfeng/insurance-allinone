@@ -1102,6 +1102,7 @@
                         <button class="cz-mode active" type="button" data-mode="text" aria-pressed="true">📝 保險文案<span class="cz-mode-sub">業務/服務話術 · 貼 ChatGPT/Claude/Gemini</span></button>
                         <button class="cz-mode" type="button" data-mode="image" aria-pressed="false">🎨 保險出圖<span class="cz-mode-sub">60 資訊圖表 + 280 行銷做圖</span></button>
                         <button class="cz-mode" type="button" data-mode="research" aria-pressed="false">🔍 保險研究<span class="cz-mode-sub">客戶/競品/法規查證 · Perplexity/Gemini DR</span></button>
+                        <button class="cz-mode" type="button" data-mode="microsystem" aria-pressed="false">🔧 保險微系統<span class="cz-mode-sub">14 個小工具 · 貼 Manus 一鍵生成</span></button>
                     </div>
                 </div>
             </div>
@@ -1321,10 +1322,12 @@
           $$('.cz-mode').forEach(b=> b.addEventListener('click', ()=>{
             const m = b.dataset.mode;
             $$('.cz-mode').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',x===b);});
-            const sec = {text:'#txt', image:'#chutu', research:'#research'};
-            Object.keys(sec).forEach(k=>{ const el=$(sec[k]); if(el) el.style.display=(k===m)?'':'none'; });
+            const showTxt = (m==='text' || m==='microsystem');
+            const vis = {'#txt':showTxt, '#chutu':m==='image', '#research':m==='research'};
+            Object.keys(vis).forEach(s=>{ const el=$(s); if(el) el.style.display=vis[s]?'':'none'; });
             if(m==='image' && !inited){ inited=true; renderTabs(); renderGrid(); }
             if(m==='research' && window.__rsInit){ window.__rsInit(); }
+            if(showTxt && window.__txtSetMode){ window.__txtSetMode(m==='microsystem'); }
             window.scrollTo({top:(($('.cz-mode-band')||{}).offsetTop||0)-8, behavior:'smooth'});
           }));
 
@@ -1745,8 +1748,12 @@
           const ICON={'保險':'💼','業務':'📞','客服':'🎧','人資':'👥','行銷':'📣','會計財務':'💰','市場分析':'📊','企劃':'📋','培訓':'🎓','行政':'🗂️','經營管理':'🧭','法務':'⚖️','採購':'🛒','通用':'🔧','資訊':'💻','客戶關係':'🤝','活動':'🎪','營運':'⚙️','政府':'🏛️'};
           const icon = c => ICON[c] || '📝';
           let TXT=[], activeCat='全部', kw='', cur=null, lastFocus=null, inited=false;
+          const MICRO_CAT='保險微系統'; let microMode=false;
+          const inMode = t => microMode ? t.category===MICRO_CAT : t.category!==MICRO_CAT;
+          const keyOf = t => microMode ? (t.persona||'其他') : t.category;
 
           window.__txtInit = function(){ if(inited) return; inited=true; load(); };
+          window.__txtSetMode = function(micro){ microMode=!!micro; activeCat='全部'; kw=''; const sb=$('#txtSearch'); if(sb) sb.value=''; if(!inited){ window.__txtInit(); } else { renderTabs(); renderGrid(); } };
           async function load(){
             try{
               const r = await fetch('prompt-templates.json', {cache:'no-store'});
@@ -1756,15 +1763,16 @@
             }catch(e){ $('#txtGrid').innerHTML='<div class="cz-empty">模板載入失敗,請重新整理。</div>'; }
           }
           const visible = ()=>{
-            let list = TXT;
-            if(activeCat!=='全部') list = list.filter(t=>t.category===activeCat);
+            let list = TXT.filter(inMode);
+            if(activeCat!=='全部') list = list.filter(t=>keyOf(t)===activeCat);
             if(kw){ const k=kw.toLowerCase(); list = list.filter(t=>(t.name+' '+t.category+' '+(t.template||'')).toLowerCase().includes(k)); }
             return list;
           };
           function renderTabs(){
-            const cats = ['全部', ...new Set(TXT.map(t=>t.category))];
+            const base = TXT.filter(inMode);
+            const cats = ['全部', ...new Set(base.map(keyOf))];
             $('#txtTabs').innerHTML = cats.map(c=>
-              `<button class="cz-tab${c===activeCat?' active':''}" data-cat="${esc(c)}">${esc(c)}<span style="opacity:.6;margin-left:5px">${c==='全部'?TXT.length:TXT.filter(t=>t.category===c).length}</span></button>`
+              `<button class="cz-tab${c===activeCat?' active':''}" data-cat="${esc(c)}">${esc(c)}<span style="opacity:.6;margin-left:5px">${c==='全部'?base.length:base.filter(t=>keyOf(t)===c).length}</span></button>`
             ).join('');
             $$('.cz-tab', $('#txtTabs')).forEach(b=> b.addEventListener('click', ()=>{ activeCat=b.dataset.cat; renderTabs(); renderGrid(); }));
           }
@@ -1773,11 +1781,14 @@
             if(!list.length){ $('#txtGrid').innerHTML='<div class="cz-empty">找不到符合的模板,換個分類或關鍵字。</div>'; return; }
             $('#txtGrid').innerHTML = list.map(t=>{
               const desc = String(t.template||'').replace(/<<<\{[^}]+\}>>>/g,'⋯').split(/[\n。!?]/)[0].slice(0,52);
+              const cat = microMode ? ((t.icon||'🔧')+' '+(t.persona||'微系統')) : (icon(t.category)+' '+t.category);
+              const badge = (microMode && t.demo) ? '<span class="cz-cardcase" style="color:#0D9488;font-weight:700">🔗 附 Manus 做好的範例</span>' : '';
               return `<button class="cz-card" data-id="${esc(t.id)}">
                 <div class="cz-cardbody">
-                  <span class="cz-cardcat">${icon(t.category)} ${esc(t.category)}</span>
+                  <span class="cz-cardcat">${esc(cat)}</span>
                   <span class="cz-cardtitle">${esc(t.name)}</span>
                   <span class="cz-cardcase">${esc(desc)}…</span>
+                  ${badge}
                 </div></button>`;
             }).join('');
             $$('.cz-card', $('#txtGrid')).forEach(el=> el.addEventListener('click', ()=> openModal(el.dataset.id)));
@@ -1788,7 +1799,7 @@
           function openModal(id){
             const t = TXT.find(x=>x.id===id); if(!t) return;
             cur=t; lastFocus=document.activeElement;
-            $('#txtCat').textContent = icon(t.category)+' '+t.category;
+            $('#txtCat').textContent = microMode ? ((t.icon||'🔧')+' '+(t.persona||'保險微系統')) : (icon(t.category)+' '+t.category);
             $('#txtTitle').textContent = t.name;
             const fields = Array.isArray(t.structure)? t.structure : [];
             const fw = $('#txtFields');
@@ -1808,6 +1819,7 @@
                 ta.addEventListener('input', ()=>{ autoGrow(ta); build(); });
               });
             }
+            if(microMode && t.demo){ fw.insertAdjacentHTML('afterbegin', `<a href="${esc(t.demo)}" target="_blank" rel="noopener" style="display:block;margin:0 0 14px;padding:12px 14px;background:#0D9488;color:#fff;border-radius:10px;font-weight:800;text-decoration:none;text-align:center">🔗 看 Manus 做好的實際範例（可直接操作）→</a>`); }
             build();
             overlay.classList.add('open'); document.body.style.overflow='hidden';
             setTimeout(()=>$('#txtClose').focus(),50);
