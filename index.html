@@ -1756,7 +1756,7 @@
           window.__txtSetMode = function(micro){ microMode=!!micro; activeCat='全部'; kw=''; const sb=$('#txtSearch'); if(sb) sb.value=''; if(!inited){ window.__txtInit(); } else { renderTabs(); renderGrid(); } };
           async function load(){
             try{
-              const r = await fetch('prompt-templates.json', {cache:'no-store'});
+              const r = await fetch('prompt-templates.json?v='+Date.now(), {cache:'no-store'});
               TXT = await r.json();
               TXT.forEach((t,i)=>{ if(!t.id) t.id='tpl-'+i; });
               renderTabs(); renderGrid();
