@@ -3,3 +3,4 @@
 .manus_concise/
 sync_demos.py
 build_compliance_card.py
+build_client_radar_card.py
