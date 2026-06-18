@@ -4,3 +4,4 @@
 sync_demos.py
 build_compliance_card.py
 build_client_radar_card.py
+build_p1_cards.py
