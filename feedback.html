@@ -130,6 +130,13 @@
       <p>你寫的每一個情境，阿峰都會看，<br>有機會就把它做進工具箱、變成你能用的工具。<br><br>會用、懂用、好用、每天用 —— 我們一起把工具磨到貼著你的工作。<br>— 阿峰</p>
       <div class="donecontact">想請老師到單位上課、想要專屬範例，或有任何問題，歡迎直接聯絡：<br><b>阿峰老師（黃敬峰）</b>　企業 AI 實戰培訓<br>📱 LINE／電話：0976-715-102<br>✉️ Email：ai@autolab.cloud<br>🌐 網站：autolab.cloud</div>
     </div>
+
+    <div class="done" id="closed">
+      <div class="big">🙏</div>
+      <h2>這份問卷已經截止囉</h2>
+      <p>謝謝大家的許願！<br>你們提的每一個情境，阿峰都會看，<br>會陸續做進工具箱裡。<br><br>有想法、想要專屬範例或想邀課，隨時可以直接找我。</p>
+      <div class="donecontact">想請老師到單位上課、想要專屬範例，或有任何問題，歡迎直接聯絡：<br><b>阿峰老師（黃敬峰）</b>　企業 AI 實戰培訓<br>📱 LINE／電話：0976-715-102<br>✉️ Email：ai@autolab.cloud<br>🌐 網站：autolab.cloud</div>
+    </div>
   </div>
   <div class="foot">保險業 AI 實戰課 · Autolab</div>
 </div>
@@ -139,6 +146,10 @@
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyDTc86bIX3_JtDQV95AGrTu4XAVeqUJw8O42BlCqq4MuhfRPvVXQxYlJHYmEwktEnK/exec';
   var $ = function(s,r){ return (r||document).querySelector(s); };
   var $$ = function(s,r){ return [].slice.call((r||document).querySelectorAll(s)); };
+
+  // 問卷截止：6/24 晚上（含 6/24 整天可填）。要改天數改這一行。
+  var DEADLINE = new Date('2026-06-25T00:00:00+08:00');
+  if(new Date() >= DEADLINE){ $('#f').style.display='none'; $('#closed').style.display='block'; return; }
 
   $$('.opts').forEach(function(box){
     var type = box.dataset.type;
