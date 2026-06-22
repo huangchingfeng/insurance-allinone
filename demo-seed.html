@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>保險 AI 工具箱・課前示範資料準備包</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+      background: #f0f9f4;
+      color: #1a2e1a;
+      min-height: 100vh;
+    }
+    header {
+      background: #0F9F6E;
+      color: white;
+      padding: 24px 32px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.6rem; margin-bottom: 6px; }
+    header p { opacity: 0.9; font-size: 0.95rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 8px;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px 20px; }
+
+    .how-to {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      border-left: 4px solid #0F9F6E;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .how-to h2 { color: #0F9F6E; margin-bottom: 12px; font-size: 1rem; }
+    .how-to ol { padding-left: 20px; line-height: 2; }
+    .how-to code {
+      background: #f0faf6;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+      color: #0a7a54;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5a8a72;
+      margin: 24px 0 12px;
+      padding: 0 4px;
+    }
+
+    .tool-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .tool-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .tool-name { font-weight: 700; font-size: 1rem; color: #0a5e3f; }
+    .tool-url {
+      font-size: 0.78rem;
+      color: #6b9e87;
+      margin-top: 3px;
+    }
+    .tag {
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag-green { background: #d1fae5; color: #065f46; }
+    .tag-orange { background: #fef3c7; color: #92400e; }
+    .tag-gray { background: #f3f4f6; color: #6b7280; }
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+
+    .script-box {
+      position: relative;
+      background: #0a1628;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.78rem;
+      color: #a8d5c0;
+      line-height: 1.5;
+      max-height: 200px;
+      overflow: auto;
+      margin-top: 12px;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #0F9F6E;
+      color: white;
+      border: none;
+      padding: 5px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover { background: #0a7a54; }
+    .copy-btn.copied { background: #059669; }
+
+    .info-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .info-item {
+      font-size: 0.82rem;
+      color: #4b7a65;
+    }
+    .info-item strong { color: #065f46; }
+
+    .note {
+      font-size: 0.82rem;
+      color: #6b7280;
+      background: #f9fafb;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .status-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .status-left .name { font-weight: 600; font-size: 0.95rem; }
+    .status-left .url { font-size: 0.78rem; color: #6b9e87; margin-top: 2px; }
+    .status-right { font-size: 0.8rem; color: #6b7280; text-align: right; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #9ca3af;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📦 保險 AI 工具箱・課前示範資料準備包</h1>
+  <p>上課前 3 分鐘完成所有工具的示範資料填充</p>
+  <span class="badge">阿峰老師專用</span>
+</header>
+
+<div class="container">
+
+  <div class="how-to">
+    <h2>🚀 使用方式（每個工具 30 秒）</h2>
+    <ol>
+      <li>點下方的工具連結，在新分頁打開該工具</li>
+      <li>按 <code>F12</code> 開啟開發人員工具 → 點 <code>Console</code> 頁籤</li>
+      <li>回到本頁，點「📋 複製腳本」</li>
+      <li>回到工具分頁的 Console，<code>Ctrl+V</code> 貼上 → 按 <code>Enter</code></li>
+      <li>按 <code>F5</code> 刷新頁面 → 示範資料出現！</li>
+    </ol>
+  </div>
+
+  <!-- ===== SECTION 1: localStorage tools ===== -->
+  <div class="section-title">✅ 需要執行腳本的工具（6 個）</div>
+
+  <!-- 保戶雷達 -->
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div>
+        <div class="tool-name">📊 保戶雷達（保戶經營管理工具）</div>
+        <div class="tool-url"><a href="https://insurancemgr-ev24a7nv.manus.space/insurance-tool.html" target="_blank">insurancemgr-ev24a7nv.manus.space/insurance-tool.html</a></div>
+      </div>
+      <span class="tag tag-green">localStorage</span>
+    </div>
+    <div class="info-row">
+      <span class="info-item">注入 <strong>8 位保戶</strong>：A級 3 / B級 3 / C級 2</span>
+    </div>
+    <div style="position:relative">
+      <div class="script-box" id="script-radar">
+(function(){
+  var d=[
+    {id:"demo_c001",age:45,familyStructure:"已婚，2子",insuranceProducts:["壽險","醫療險"],annualPremium:12000,grade:"A",lastContact:"2026-05-15",nextContact:"2026-07-15",policyExpiry:"2026-08-20",knownGaps:["實支實付","失能險"],childrenAges:[8,12],referralPotential:"高",notes:"高價值客戶，轉介意願強，子女即將就讀高中"},
+    {id:"demo_c002",age:38,familyStructure:"已婚，1子",insuranceProducts:["壽險"],annualPremium:8500,grade:"A",lastContact:"2026-06-01",nextContact:"2026-07-01",policyExpiry:"2026-09-10",knownGaps:["醫療險","子女教育金"],childrenAges:[5],referralPotential:"中",notes:"最近換工作，團保有斷層需補"},
+    {id:"demo_c003",age:52,familyStructure:"已婚，子女成年",insuranceProducts:["壽險","意外險"],annualPremium:15000,grade:"A",lastContact:"2026-05-28",nextContact:"2026-06-28",policyExpiry:"2027-01-15",knownGaps:["長照險","年金險"],childrenAges:[22,25],referralPotential:"高",notes:"即將屆退，主動詢問年金規劃"},
+    {id:"demo_c004",age:33,familyStructure:"未婚",insuranceProducts:["醫療險","意外險"],annualPremium:7200,grade:"B",lastContact:"2026-04-20",nextContact:"2026-07-20",policyExpiry:"2026-10-05",knownGaps:["壽險","失能險"],childrenAges:[],referralPotential:"中",notes:"IT工程師，對數位工具接受度高"},
+    {id:"demo_c005",age:41,familyStructure:"已婚，2女",insuranceProducts:["壽險","醫療險","意外險"],annualPremium:9800,grade:"B",lastContact:"2026-03-15",nextContact:"2026-09-15",policyExpiry:"2027-03-20",knownGaps:["子女教育金","癌症險"],childrenAges:[7,10],referralPotential:"高",notes:"中小企業主，認識多位商業夥伴"},
+    {id:"demo_c006",age:29,familyStructure:"已婚",insuranceProducts:["壽險"],annualPremium:6000,grade:"B",lastContact:"2026-05-10",nextContact:"2026-08-10",policyExpiry:"2026-12-31",knownGaps:["醫療險","意外險"],childrenAges:[],referralPotential:"低",notes:"新婚，預計明年生育"},
+    {id:"demo_c007",age:58,familyStructure:"已婚",insuranceProducts:["意外險"],annualPremium:3000,grade:"C",lastContact:"2025-12-20",nextContact:"2026-12-20",policyExpiry:"2026-07-30",knownGaps:["壽險","醫療險","長照險"],childrenAges:[],referralPotential:"低",notes:"保費低，保障缺口大"},
+    {id:"demo_c008",age:47,familyStructure:"離婚，1子",insuranceProducts:["醫療險"],annualPremium:4500,grade:"C",lastContact:"2025-11-05",nextContact:"2026-11-05",policyExpiry:"2026-11-15",knownGaps:["壽險","失能險"],childrenAges:[15],referralPotential:"低",notes:"互動較少，需重新建立關係"}
+  ];
+  localStorage.setItem('insurance_customers',JSON.stringify(d));
+  alert('✅ 保戶雷達示範資料已載入！即將刷新頁面...');
+  location.reload();
+})();</div>
+      <button class="copy-btn" onclick="copyScript('script-radar',this)">📋 複製腳本</button>
+    </div>
+  </div>
+
+  <!-- 保單追蹤 -->
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div>
+        <div class="tool-name">🔔 保單追蹤（保單到期續保提醒）</div>
+        <div class="tool-url"><a href="https://policetrak-3a59ugzy.manus.space" target="_blank">policetrak-3a59ugzy.manus.space</a></div>
+      </div>
+      <span class="tag tag-green">localStorage</span>
+    </div>
+    <div class="info-row">
+      <span class="info-item">注入 <strong>8 筆保單</strong>：含即將到期、繳費到期、正常等各種狀態</span>
+    </div>
+    <div style="position:relative">
+      <div class="script-box" id="script-policy">
+(function(){
+  var d=[
+    {id:"p001",customerName:"C001",policyNumber:"L2021001",insuranceType:"壽險",paymentFrequency:"annual",nextPaymentDate:"2026-07-15",expiryDate:"2036-07-15",coverageAmount:2000000,status:"active",createdAt:"2021-07-15T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"p002",customerName:"C002",policyNumber:"H2020003",insuranceType:"醫療險",paymentFrequency:"annual",nextPaymentDate:"2026-07-25",expiryDate:"2040-07-25",coverageAmount:500000,status:"active",createdAt:"2020-07-25T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"p003",customerName:"C003",policyNumber:"A2022007",insuranceType:"意外險",paymentFrequency:"semi-annual",nextPaymentDate:"2026-07-30",expiryDate:"2027-01-30",coverageAmount:3000000,status:"active",createdAt:"2022-01-30T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"p004",customerName:"C004",policyNumber:"M2019012",insuranceType:"醫療實支實付",paymentFrequency:"annual",nextPaymentDate:"2026-08-10",expiryDate:"2026-08-10",coverageAmount:800000,status:"active",createdAt:"2019-08-10T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"p005",customerName:"C005",policyNumber:"L2023002",insuranceType:"壽險",paymentFrequency:"monthly",nextPaymentDate:"2026-07-05",expiryDate:"2043-05-05",coverageAmount:5000000,status:"active",createdAt:"2023-05-05T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"p006",customerName:"C006",policyNumber:"C2021009",insuranceType:"癌症險",paymentFrequency:"annual",nextPaymentDate:"2026-09-20",expiryDate:"2041-09-20",coverageAmount:1000000,status:"active",createdAt:"2021-09-20T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"p007",customerName:"C001",policyNumber:"D2018015",insuranceType:"失能險",paymentFrequency:"annual",nextPaymentDate:"2026-08-05",expiryDate:"2038-08-05",coverageAmount:2400000,status:"active",createdAt:"2018-08-05T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"p008",customerName:"C007",policyNumber:"H2020008",insuranceType:"醫療險",paymentFrequency:"quarterly",nextPaymentDate:"2026-07-18",expiryDate:"2030-04-18",coverageAmount:600000,status:"active",createdAt:"2020-04-18T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"}
+  ];
+  localStorage.setItem('insurance_policies',JSON.stringify(d));
+  alert('✅ 保單追蹤示範資料已載入！即將刷新頁面...');
+  location.reload();
+})();</div>
+      <button class="copy-btn" onclick="copyScript('script-policy',this)">📋 複製腳本</button>
+    </div>
+  </div>
+
+  <!-- 轉介追蹤 -->
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div>
+        <div class="tool-name">🤝 轉介追蹤（保戶轉介關係管理）</div>
+        <div class="tool-url"><a href="https://insurancert-zmart4fk.manus.space" target="_blank">insurancert-zmart4fk.manus.space</a></div>
+      </div>
+      <span class="tag tag-green">localStorage</span>
+    </div>
+    <div class="info-row">
+      <span class="info-item">注入 <strong>6 位轉介媒介</strong>：含轉介次數、最近轉介日期</span>
+    </div>
+    <div style="position:relative">
+      <div class="script-box" id="script-referral">
+(function(){
+  var d=[
+    {id:"cust_r001",name:"C001（王先生）",referralCount:5,lastReferralDate:"2026-05-20",phone:"0912-345-001",notes:"高轉介意願，認識多位企業主",createdAt:"2024-01-10T00:00:00Z",updatedAt:"2026-05-20T00:00:00Z"},
+    {id:"cust_r002",name:"C005（林太太）",referralCount:3,lastReferralDate:"2026-04-15",phone:"0928-456-002",notes:"社群媒體活躍，口碑傳播效果佳",createdAt:"2024-02-15T00:00:00Z",updatedAt:"2026-04-15T00:00:00Z"},
+    {id:"cust_r003",name:"C010（張醫師）",referralCount:4,lastReferralDate:"2026-06-01",phone:"0935-567-003",notes:"醫療背景，轉介對象多為高資產族群",createdAt:"2024-03-01T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"cust_r004",name:"C015（陳董事長）",referralCount:7,lastReferralDate:"2026-03-28",phone:"0966-678-004",notes:"企業主，已轉介 7 位員工及商業夥伴",createdAt:"2023-11-01T00:00:00Z",updatedAt:"2026-03-28T00:00:00Z"},
+    {id:"cust_r005",name:"C022（黃老師）",referralCount:2,lastReferralDate:"2026-05-10",phone:"0922-789-005",notes:"教師族群，轉介對象多為同事",createdAt:"2024-05-10T00:00:00Z",updatedAt:"2026-05-10T00:00:00Z"},
+    {id:"cust_r006",name:"C031（李店長）",referralCount:1,lastReferralDate:"2026-02-20",phone:"0911-890-006",notes:"餐飲業，剛開始建立轉介關係",createdAt:"2025-01-20T00:00:00Z",updatedAt:"2026-02-20T00:00:00Z"}
+  ];
+  localStorage.setItem('insurance_referral_customers',JSON.stringify(d));
+  alert('✅ 轉介追蹤示範資料已載入！即將刷新頁面...');
+  location.reload();
+})();</div>
+      <button class="copy-btn" onclick="copyScript('script-referral',this)">📋 複製腳本</button>
+    </div>
+  </div>
+
+  <!-- 增員進度 -->
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div>
+        <div class="tool-name">📋 增員招募進度追蹤板</div>
+        <div class="tool-url"><a href="https://recruittrack-lkyndqnf.manus.space" target="_blank">recruittrack-lkyndqnf.manus.space</a></div>
+      </div>
+      <span class="tag tag-green">localStorage</span>
+    </div>
+    <div class="info-row">
+      <span class="info-item">注入 <strong>8 位候選人</strong>：分布在 6 個招募階段</span>
+    </div>
+    <div style="position:relative">
+      <div class="script-box" id="script-recruit">
+(function(){
+  var now=new Date().toISOString();
+  var d=[
+    {id:"candidate_001_a1b",name:"A小姐",phone:"0912-111-001",referralSource:"客戶轉介",currentStage:"initial_contact",lastContactDate:"2026-06-18",nextAction:"安排約訪面談",priority:"高",notes:"現為銀行理專，對業務工作有興趣",createdAt:"2026-06-10T00:00:00Z",updatedAt:"2026-06-18T00:00:00Z"},
+    {id:"candidate_002_b2c",name:"B先生",phone:"0928-222-002",referralSource:"緣故",currentStage:"initial_contact",lastContactDate:"2026-06-15",nextAction:"傳送公司介紹資料",priority:"中",notes:"表弟，目前在科技公司任職，有換跑道意願",createdAt:"2026-06-12T00:00:00Z",updatedAt:"2026-06-15T00:00:00Z"},
+    {id:"candidate_003_c3d",name:"C先生",phone:"0935-333-003",referralSource:"社團",currentStage:"meeting",lastContactDate:"2026-06-17",nextAction:"確認面談時間",priority:"高",notes:"商業社團認識，對高收入有明確需求",createdAt:"2026-06-01T00:00:00Z",updatedAt:"2026-06-17T00:00:00Z"},
+    {id:"candidate_004_d4e",name:"D小姐",phone:"0966-444-004",referralSource:"客戶轉介",currentStage:"meeting",lastContactDate:"2026-06-16",nextAction:"第二次面談確認意願",priority:"高",notes:"曾做過直銷，有業務底子",createdAt:"2026-05-20T00:00:00Z",updatedAt:"2026-06-16T00:00:00Z"},
+    {id:"candidate_005_e5f",name:"E先生",phone:"0922-555-005",referralSource:"緣故",currentStage:"presentation",lastContactDate:"2026-06-19",nextAction:"已到場聽說明會，等候決定",priority:"高",notes:"已參加創說會，反應正面",createdAt:"2026-05-15T00:00:00Z",updatedAt:"2026-06-19T00:00:00Z"},
+    {id:"candidate_006_f6g",name:"F小姐",phone:"0911-666-006",referralSource:"社團",currentStage:"second_meeting",lastContactDate:"2026-06-14",nextAction:"安排與主管三方面談",priority:"中",notes:"二次面談後有疑慮，需主管協助說明",createdAt:"2026-05-01T00:00:00Z",updatedAt:"2026-06-14T00:00:00Z"},
+    {id:"candidate_007_g7h",name:"G先生",phone:"0933-777-007",referralSource:"客戶轉介",currentStage:"data_submission",lastContactDate:"2026-06-20",nextAction:"等候填寫申請表",priority:"高",notes:"意願確認，正在辦理離職",createdAt:"2026-04-20T00:00:00Z",updatedAt:"2026-06-20T00:00:00Z"},
+    {id:"candidate_008_h8i",name:"H小姐",phone:"0956-888-008",referralSource:"緣故",currentStage:"onboarding",lastContactDate:"2026-06-21",nextAction:"已報到，安排新人培訓",priority:"高",notes:"本月報到，進入培訓",createdAt:"2026-04-01T00:00:00Z",updatedAt:"2026-06-21T00:00:00Z"}
+  ];
+  localStorage.setItem('recruitment_tracker_candidates',JSON.stringify(d));
+  alert('✅ 增員進度示範資料已載入！即將刷新頁面...');
+  location.reload();
+})();</div>
+      <button class="copy-btn" onclick="copyScript('script-recruit',this)">📋 複製腳本</button>
+    </div>
+  </div>
+
+  <!-- 關懷排程 -->
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div>
+        <div class="tool-name">💌 客戶關懷排程（週期關懷行事曆）</div>
+        <div class="tool-url"><a href="https://custcare-sched-ic2ydz6b.manus.space" target="_blank">custcare-sched-ic2ydz6b.manus.space</a></div>
+      </div>
+      <span class="tag tag-green">localStorage（2 個 key）</span>
+    </div>
+    <div class="info-row">
+      <span class="info-item">注入 <strong>5 位客戶</strong> + <strong>8 個關懷事件</strong></span>
+    </div>
+    <div style="position:relative">
+      <div class="script-box" id="script-care">
+(function(){
+  var customers=[
+    {id:"cc001",name:"王小明",phone:"0912-001-001",birthDate:"1980-03-15",gender:"male",policyAnniversary:"2026-08-20",notes:"保單週年日快到，主動關心",createdAt:"2024-01-01T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"cc002",name:"陳美惠",phone:"0928-002-002",birthDate:"1985-07-22",gender:"female",policyAnniversary:"2026-09-10",notes:"生日在7月，每年寄賀卡",createdAt:"2024-02-01T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"cc003",name:"李建明",phone:"0935-003-003",birthDate:"1975-12-08",gender:"male",policyAnniversary:"2026-11-25",notes:"企業主，每季定期聯繫",createdAt:"2024-03-01T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"cc004",name:"張淑芬",phone:"0966-004-004",birthDate:"1990-09-15",gender:"female",policyAnniversary:"2026-07-05",notes:"新客戶，第一年特別關心",createdAt:"2025-01-01T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"},
+    {id:"cc005",name:"林志豪",phone:"0922-005-005",birthDate:"1968-05-30",gender:"male",policyAnniversary:"2026-10-18",notes:"高資產客戶，需要定期投資型保單回顧",createdAt:"2023-06-01T00:00:00Z",updatedAt:"2026-06-01T00:00:00Z"}
+  ];
+  var events=[
+    {id:"ce001",customerId:"cc001",type:"anniversary",title:"保單週年日關懷",eventDate:"2026-08-20",notes:"保單生效8年，檢視保障是否足夠",status:"pending",createdAt:"2026-06-01T00:00:00Z"},
+    {id:"ce002",customerId:"cc002",type:"birthday",title:"生日問候",eventDate:"2026-07-22",notes:"生日前3天傳送祝福，附上保障回顧表",status:"pending",createdAt:"2026-06-01T00:00:00Z"},
+    {id:"ce003",customerId:"cc003",type:"quarterly",title:"季度例行聯繫",eventDate:"2026-07-10",notes:"討論下半年理財規劃，推薦年金商品",status:"pending",createdAt:"2026-06-01T00:00:00Z"},
+    {id:"ce004",customerId:"cc004",type:"anniversary",title:"第一年保單週年",eventDate:"2026-07-05",notes:"第一次週年，送小禮物加深關係",status:"pending",createdAt:"2026-06-01T00:00:00Z"},
+    {id:"ce005",customerId:"cc005",type:"review",title:"投資型保單回顧",eventDate:"2026-07-15",notes:"上半年市場表現回顧，討論調整策略",status:"pending",createdAt:"2026-06-01T00:00:00Z"},
+    {id:"ce006",customerId:"cc001",type:"followup",title:"保障缺口後續追蹤",eventDate:"2026-07-01",notes:"上次提到實支實付缺口，本次帶方案",status:"pending",createdAt:"2026-06-10T00:00:00Z"},
+    {id:"ce007",customerId:"cc002",type:"followup",title:"子女教育金諮詢",eventDate:"2026-07-08",notes:"上次提到孩子國小入學，討論教育金規劃",status:"pending",createdAt:"2026-06-10T00:00:00Z"},
+    {id:"ce008",customerId:"cc003",type:"birthday",title:"生日關懷（12月）",eventDate:"2026-12-08",notes:"提前排程，12月8日生日",status:"pending",createdAt:"2026-06-01T00:00:00Z"}
+  ];
+  localStorage.setItem('care_scheduler_customers',JSON.stringify(customers));
+  localStorage.setItem('care_scheduler_care_events',JSON.stringify(events));
+  alert('✅ 關懷排程示範資料已載入！即將刷新頁面...');
+  location.reload();
+})();</div>
+      <button class="copy-btn" onclick="copyScript('script-care',this)">📋 複製腳本</button>
+    </div>
+  </div>
+
+  <!-- 資料異動 -->
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <div>
+        <div class="tool-name">📝 資料異動追蹤</div>
+        <div class="tool-url"><a href="https://insurancetool-hc6senxz.manus.space" target="_blank">insurancetool-hc6senxz.manus.space</a></div>
+      </div>
+      <span class="tag tag-green">localStorage</span>
+    </div>
+    <div class="info-row">
+      <span class="info-item">注入 <strong>5 筆異動記錄</strong>：含地址、受益人、聯絡方式等各類異動</span>
+    </div>
+    <div style="position:relative">
+      <div class="script-box" id="script-change">
+(function(){
+  var data={
+    records:[
+      {id:"r001",customerCode:"C001",changeType:"地址異動",requestDate:"2026-06-10",dueDate:"2026-06-30",requiredDocuments:["身分證正反面","戶口名簿","異動申請書"],submittedDocuments:["身分證正反面"],status:"pending",notes:"客戶搬至新北市三重，本人確認",createdAt:"2026-06-10T00:00:00Z",updatedAt:"2026-06-15T00:00:00Z"},
+      {id:"r002",customerCode:"C003",changeType:"受益人變更",requestDate:"2026-06-05",dueDate:"2026-06-25",requiredDocuments:["受益人變更申請書","受益人身分證","要保人身分證"],submittedDocuments:["受益人變更申請書","受益人身分證","要保人身分證"],status:"submitted",notes:"結婚後變更受益人為配偶，資料齊全送件",createdAt:"2026-06-05T00:00:00Z",updatedAt:"2026-06-12T00:00:00Z"},
+      {id:"r003",customerCode:"C007",changeType:"聯絡電話更換",requestDate:"2026-06-12",dueDate:"2026-07-05",requiredDocuments:["異動申請書","身分證正面"],submittedDocuments:[],status:"pending",notes:"舊號碼停用，新號碼 0966-888-007",createdAt:"2026-06-12T00:00:00Z",updatedAt:"2026-06-12T00:00:00Z"},
+      {id:"r004",customerCode:"C010",changeType:"繳費帳號變更",requestDate:"2026-05-28",dueDate:"2026-06-20",requiredDocuments:["銀行存摺封面","繳費授權書","身分證正反面"],submittedDocuments:["銀行存摺封面","繳費授權書","身分證正反面"],status:"completed",notes:"舊帳號取消，改為玉山銀行扣款，已完成",createdAt:"2026-05-28T00:00:00Z",updatedAt:"2026-06-15T00:00:00Z"},
+      {id:"r005",customerCode:"C015",changeType:"保額增加",requestDate:"2026-06-18",dueDate:"2026-07-18",requiredDocuments:["體檢報告","增額申請書","所得證明"],submittedDocuments:["增額申請書"],status:"pending",notes:"客戶升職加薪，主動要求增額至1000萬",createdAt:"2026-06-18T00:00:00Z",updatedAt:"2026-06-18T00:00:00Z"}
+    ]
+  };
+  localStorage.setItem('insurance_tracking_data',JSON.stringify(data));
+  alert('✅ 資料異動示範資料已載入！即將刷新頁面...');
+  location.reload();
+})();</div>
+      <button class="copy-btn" onclick="copyScript('script-change',this)">📋 複製腳本</button>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 2: Already have content ===== -->
+  <div class="section-title">✨ 已有內容，直接開啟即可（8 個）</div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">🛡️ 保單健檢工具</div>
+      <div class="url"><a href="https://healthcheck-jpqwwhgr.manus.space" target="_blank">healthcheck-jpqwwhgr.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-blue">右上角有「載入示例」按鈕</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">🧮 保障缺口試算</div>
+      <div class="url"><a href="https://faminscalc-dp3zovbv.manus.space" target="_blank">faminscalc-dp3zovbv.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-blue">計算器型，填表即得結果</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">🔄 商品比較表</div>
+      <div class="url"><a href="https://insurecomp-qgjxtpkn.manus.space" target="_blank">insurecomp-qgjxtpkn.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-blue">填商品規格即可比較</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">📄 保險理賠文件清單助手</div>
+      <div class="url"><a href="https://insurancedoc-jbsb2uf9.manus.space" target="_blank">insurancedoc-jbsb2uf9.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">查閱型，點選出險類型即顯示清單</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">🚦 招攬合規紅綠燈</div>
+      <div class="url"><a href="https://insurcomp-zqdamhfb.manus.space" target="_blank">insurcomp-zqdamhfb.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">貼文案即自動檢查，不需資料庫</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">💬 理賠安心關懷訊息產生器</div>
+      <div class="url"><a href="https://insurancetool-euwkserb.manus.space" target="_blank">insurancetool-euwkserb.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">填情境即生成訊息，不需資料庫</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">🆘 客訴拆彈急救包</div>
+      <div class="url"><a href="https://insurhelp-sa5dgu2m.manus.space" target="_blank">insurhelp-sa5dgu2m.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">填客訴情境即產出應對，不需資料庫</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">🎤 增員話術產生器</div>
+      <div class="url"><a href="https://insurecruit-blppqmpc.manus.space" target="_blank">insurecruit-blppqmpc.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">填對象背景即產出話術，不需資料庫</span></div>
+  </div>
+
+  <!-- ===== SECTION 3: Manus Backend ===== -->
+  <div class="section-title">🔐 需要 Manus 帳號登入的工具（3 個）</div>
+  <div class="how-to" style="border-left-color:#f59e0b; background:#fffbeb;">
+    <h2 style="color:#92400e;">⚠️ 說明：這 3 個工具有後端資料庫</h2>
+    <p style="font-size:0.9rem; line-height:1.8; color:#78350f;">
+      這 3 個工具的資料存在 Manus 雲端，需要老師先登入 Manus 帳號（manus.im），然後手動在工具內新增示範資料。
+      每位使用者看到的是自己帳號的資料，所以每位學員登入後會看到空白——這是正常的個人資料隔離設計。
+      <br><br>
+      📌 上課示範建議：用老師的帳號登入，預先填入 3-5 筆示範資料，再用螢幕投影展示。
+    </p>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">📊 客戶分級經營看板</div>
+      <div class="url"><a href="https://clientdash-rg4xv5p4.manus.space" target="_blank">clientdash-rg4xv5p4.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-orange">需 Manus 帳號登入</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">📋 理賠進度追蹤</div>
+      <div class="url"><a href="https://insurancetrk-u4ktd7ps.manus.space" target="_blank">insurancetrk-u4ktd7ps.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-orange">需 Manus 帳號登入</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">💳 繳費提醒追蹤</div>
+      <div class="url"><a href="https://insurremind-cnma8zth.manus.space" target="_blank">insurremind-cnma8zth.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-orange">需 Manus 帳號登入</span></div>
+  </div>
+
+  <!-- ===== SECTION 4: React state only ===== -->
+  <div class="section-title">⚡ React 即時計算（刷新後資料不保留，不需準備）</div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">📈 業績達成儀表板</div>
+      <div class="url"><a href="https://insurancedash-xmsxqk6r.manus.space" target="_blank">insurancedash-xmsxqk6r.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">填目標值 + 當日成交即顯示</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">📂 客訴紀錄管理</div>
+      <div class="url"><a href="https://inscomplaint-y37ybwdt.manus.space" target="_blank">inscomplaint-y37ybwdt.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">即時新增，刷新後清空（示範用即可）</span></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">🎫 說明會簽到管理</div>
+      <div class="url"><a href="https://insurevent-32slhj5g.manus.space" target="_blank">insurevent-32slhj5g.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-gray">現場簽到用，即時即用</span></div>
+  </div>
+
+</div>
+
+<footer>
+  保險 AI 工具箱・阿峰老師課前準備包 | ai@autolab.cloud | 0976-715-102
+</footer>
+
+<script>
+function copyScript(id, btn) {
+  var el = document.getElementById(id);
+  var text = el.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = '✅ 已複製！';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = '📋 複製腳本';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(function() {
+    // fallback
+    var range = document.createRange();
+    range.selectNode(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    btn.textContent = '✅ 已複製！';
+    setTimeout(function() { btn.textContent = '📋 複製腳本'; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
