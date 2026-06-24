@@ -184,8 +184,25 @@
     </ol>
   </div>
 
+  <div class="how-to" style="border-left-color:#0F9F6E; background:#f0fdf4;">
+    <h2 style="color:#0F9F6E;">📊 先看這裡：其實大部分工具「不用」上傳檔案</h2>
+    <p style="font-size:0.92rem; line-height:1.85; color:#1a2e1a; margin-bottom:4px;">
+      實測全部 20 個工具後，真正要事先準備的很少，<strong>沒有任何一個是「非上傳檔案不可」</strong>：
+    </p>
+    <ul style="font-size:0.9rem; line-height:1.9; color:#1a2e1a; margin:6px 0 0 4px; list-style:none; padding:0;">
+      <li>✅ <strong>5 個有內建「載入範例」鈕</strong>：保單健檢、商品比較表、繳費提醒、轉介來源樹、保戶雷達 — 開工具點一下就有資料，免腳本免登入</li>
+      <li>✏️ <strong>9 個現場填一筆就能展示</strong>：計算器、話術產生器、合規紅綠燈、客訴急救包等 — 填個欄位或貼一段範例文字即可</li>
+      <li>🔧 <strong>只有 4 個建議跑下方腳本</strong>：保單追蹤、增員進度、關懷排程、資料異動（看板型，空白畫面不好看，腳本一鍵塞滿）</li>
+      <li>🔐 <strong>只有 2 個要 Manus 登入</strong>：客戶分級看板、理賠進度看板（後端資料庫，老師登入後手動加幾筆）</li>
+    </ul>
+    <p style="font-size:0.86rem; color:#15803d; margin-top:8px;">
+      👉 下方腳本只是給那 4 個看板型工具的捷徑；其餘 16 個開了就能用。
+    </p>
+  </div>
+
   <!-- ===== SECTION 1: localStorage tools ===== -->
-  <div class="section-title">✅ 需要執行腳本的工具（6 個）</div>
+  <div class="section-title">🔧 可用腳本一鍵灌資料的工具（6 個）</div>
+  <p style="font-size:0.85rem; color:#6b7280; margin:-6px 0 10px 2px;">其中「保戶雷達」「轉介來源樹」工具內也有「載入範例」鈕，想快可直接點，不一定要跑腳本。</p>
 
   <!-- 保戶雷達 -->
   <div class="tool-card">
@@ -392,7 +409,7 @@
   </div>
 
   <!-- ===== SECTION 2: Already have content ===== -->
-  <div class="section-title">✨ 已有內容，直接開啟即可（8 個）</div>
+  <div class="section-title">✨ 點「載入範例」鈕或直接開啟即可（9 個）</div>
 
   <div class="status-card">
     <div class="status-left">
@@ -458,12 +475,20 @@
     <div class="status-right"><span class="tag tag-gray">填對象背景即產出話術，不需資料庫</span></div>
   </div>
 
+  <div class="status-card">
+    <div class="status-left">
+      <div class="name">💳 保費繳費提醒系統</div>
+      <div class="url"><a href="https://insurremind-cnma8zth.manus.space" target="_blank">insurremind-cnma8zth.manus.space</a></div>
+    </div>
+    <div class="status-right"><span class="tag tag-blue">免登入！點「載入範例資料」鈕</span></div>
+  </div>
+
   <!-- ===== SECTION 3: Manus Backend ===== -->
-  <div class="section-title">🔐 需要 Manus 帳號登入的工具（3 個）</div>
+  <div class="section-title">🔐 需要 Manus 帳號登入的工具（2 個）</div>
   <div class="how-to" style="border-left-color:#f59e0b; background:#fffbeb;">
-    <h2 style="color:#92400e;">⚠️ 說明：這 3 個工具有後端資料庫</h2>
+    <h2 style="color:#92400e;">⚠️ 說明：這 2 個工具有後端資料庫</h2>
     <p style="font-size:0.9rem; line-height:1.8; color:#78350f;">
-      這 3 個工具的資料存在 Manus 雲端，需要老師先登入 Manus 帳號（manus.im），然後手動在工具內新增示範資料。
+      這 2 個工具的資料存在 Manus 雲端，需要老師先登入 Manus 帳號（manus.im），然後手動在工具內新增示範資料。
       每位使用者看到的是自己帳號的資料，所以每位學員登入後會看到空白——這是正常的個人資料隔離設計。
       <br><br>
       📌 上課示範建議：用老師的帳號登入，預先填入 3-5 筆示範資料，再用螢幕投影展示。
@@ -482,14 +507,6 @@
     <div class="status-left">
       <div class="name">📋 理賠進度追蹤</div>
       <div class="url"><a href="https://insurancetrk-u4ktd7ps.manus.space" target="_blank">insurancetrk-u4ktd7ps.manus.space</a></div>
-    </div>
-    <div class="status-right"><span class="tag tag-orange">需 Manus 帳號登入</span></div>
-  </div>
-
-  <div class="status-card">
-    <div class="status-left">
-      <div class="name">💳 繳費提醒追蹤</div>
-      <div class="url"><a href="https://insurremind-cnma8zth.manus.space" target="_blank">insurremind-cnma8zth.manus.space</a></div>
     </div>
     <div class="status-right"><span class="tag tag-orange">需 Manus 帳號登入</span></div>
   </div>
