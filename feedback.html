@@ -147,8 +147,8 @@
   var $ = function(s,r){ return (r||document).querySelector(s); };
   var $$ = function(s,r){ return [].slice.call((r||document).querySelectorAll(s)); };
 
-  // 問卷截止：6/24 晚上（含 6/24 整天可填）。要改天數改這一行。
-  var DEADLINE = new Date('2026-06-25T00:00:00+08:00');
+  // 問卷截止：7/1 晚上（含 7/1 整天可填，原 6/24 延長一週）。要改天數改這一行。
+  var DEADLINE = new Date('2026-07-02T00:00:00+08:00');
   if(new Date() >= DEADLINE){ $('#f').style.display='none'; $('#closed').style.display='block'; return; }
 
   $$('.opts').forEach(function(box){
