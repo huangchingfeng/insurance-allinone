@@ -161,6 +161,16 @@
       color: #9ca3af;
       font-size: 0.82rem;
     }
+    .step-card { background:#fff; border:1px solid #d1fae5; border-radius:12px; padding:16px 18px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+    .step-head { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; }
+    .step-tool { font-size:1.02rem; font-weight:700; color:#065f46; }
+    .step-flow { display:flex; align-items:stretch; gap:8px; flex-wrap:wrap; }
+    .step { flex:1; min-width:160px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:9px; padding:10px 12px; font-size:0.86rem; line-height:1.5; color:#1a2e1a; }
+    .step-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#0F9F6E; color:#fff; font-weight:700; font-size:0.8rem; margin-right:6px; vertical-align:middle; }
+    .step.done { background:#ecfdf5; border-color:#6ee7b7; }
+    .step.done .step-num { background:#059669; }
+    .btn-hl { background:#fef3c7; color:#92400e; padding:1px 7px; border-radius:5px; font-weight:700; white-space:nowrap; }
+    @media(max-width:640px){ .step{ min-width:100%; } }
   </style>
 </head>
 <body>
@@ -408,37 +418,51 @@
     </div>
   </div>
 
-  <!-- ===== SECTION 1.5: CSV downloads ===== -->
-  <div class="section-title">📎 範例檔下載（想 demo「上傳檔案」這招才需要）</div>
+  <!-- ===== SECTION 1.5: CSV downloads + 操作步驟 ===== -->
+  <div class="section-title">📎 上傳型工具：下載範例檔 ＋ 操作步驟</div>
   <div class="how-to" style="border-left-color:#0D9488; background:#f0fdfa;">
     <p style="font-size:0.9rem; line-height:1.8; color:#134e4a; margin:0;">
-      這 3 個工具支援上傳 CSV 批次匯入。<strong>下載後直接拖進工具就有資料</strong>，不用打開編輯（用 Excel 打開可能顯示亂碼是正常的，不影響上傳）。
-      適合在課堂上展示「上傳一份名單 → 系統自動排出燈號／分級」的畫面感。保單續保、關懷排程也可以改跑上方腳本，效果一樣。
+      這 3 個工具可以「上傳一份名單 → 系統自動排好」，課堂上最有畫面感。<strong>下載範例檔後直接拖進工具就有資料</strong>，不用打開編輯（用 Excel 開可能顯示亂碼是正常的，不影響上傳）。每個工具「按鈕在哪、選哪個檔」都標在下面。
     </p>
   </div>
 
-  <div class="status-card">
-    <div class="status-left">
-      <div class="name">📋 保單續保提醒 — 10 筆保單</div>
-      <div class="url">policetrak · 開工具點「匯入 CSV」→ 選此檔（含即將到期紅燈）</div>
+  <div class="step-card">
+    <div class="step-head">
+      <span class="step-tool">📋 保單續保提醒　<span style="font-size:.82rem;color:#059669;font-weight:600;">免登入</span></span>
+      <a class="copy-btn" href="demo-files/保單續保提醒-範例.csv" download style="text-decoration:none; display:inline-block;">⬇️ 下載範例 CSV</a>
     </div>
-    <div class="status-right"><a class="copy-btn" href="demo-files/保單續保提醒-範例.csv" download style="text-decoration:none; display:inline-block;">⬇️ 下載 CSV</a></div>
+    <div class="step-flow">
+      <div class="step"><span class="step-num">1</span>開啟 policetrak 工具頁（直接開，免登入）</div>
+      <div class="step"><span class="step-num">2</span>點畫面上的 <b class="btn-hl">匯入 CSV</b> 按鈕</div>
+      <div class="step"><span class="step-num">3</span>選剛下載的 <b>保單續保提醒-範例.csv</b></div>
+      <div class="step done"><span class="step-num">✓</span>10 筆保單跑出來，含「即將到期」紅黃燈</div>
+    </div>
   </div>
 
-  <div class="status-card">
-    <div class="status-left">
-      <div class="name">🎂 客戶生日節慶關懷 — 8 位客戶</div>
-      <div class="url">custcare · 點「批次匯入 / 上傳 CSV」→ 選此檔（含 7 月生日名單）</div>
+  <div class="step-card">
+    <div class="step-head">
+      <span class="step-tool">🎂 客戶生日節慶關懷　<span style="font-size:.82rem;color:#059669;font-weight:600;">免登入</span></span>
+      <a class="copy-btn" href="demo-files/客戶生日節慶關懷-範例.csv" download style="text-decoration:none; display:inline-block;">⬇️ 下載範例 CSV</a>
     </div>
-    <div class="status-right"><a class="copy-btn" href="demo-files/客戶生日節慶關懷-範例.csv" download style="text-decoration:none; display:inline-block;">⬇️ 下載 CSV</a></div>
+    <div class="step-flow">
+      <div class="step"><span class="step-num">1</span>開啟 custcare 工具頁（直接開，免登入）</div>
+      <div class="step"><span class="step-num">2</span>點 <b class="btn-hl">上傳 CSV 檔案</b>（或「批次匯入」）</div>
+      <div class="step"><span class="step-num">3</span>選剛下載的 <b>客戶生日節慶關懷-範例.csv</b></div>
+      <div class="step done"><span class="step-num">✓</span>8 位客戶匯入，本月（7 月）生日關懷名單出現</div>
+    </div>
   </div>
 
-  <div class="status-card">
-    <div class="status-left">
-      <div class="name">📊 客戶分級經營看板 — 8 位客戶（需先登入）</div>
-      <div class="url">clientdash · 登入後點「匯入」→ 選此檔（自動排出 A／B／C 級）</div>
+  <div class="step-card">
+    <div class="step-head">
+      <span class="step-tool">📊 客戶分級經營看板　<span style="font-size:.82rem;color:#b45309;font-weight:600;">⚠️ 需先登入 Manus</span></span>
+      <a class="copy-btn" href="demo-files/客戶分級經營看板-範例.csv" download style="text-decoration:none; display:inline-block;">⬇️ 下載範例 CSV</a>
     </div>
-    <div class="status-right"><a class="copy-btn" href="demo-files/客戶分級經營看板-範例.csv" download style="text-decoration:none; display:inline-block;">⬇️ 下載 CSV</a></div>
+    <div class="step-flow">
+      <div class="step"><span class="step-num">1</span>開啟 clientdash → 先用 <b>Manus 帳號登入</b>（manus.im）</div>
+      <div class="step"><span class="step-num">2</span>登入後點 <b class="btn-hl">匯入</b> 按鈕</div>
+      <div class="step"><span class="step-num">3</span>選 <b>客戶分級經營看板-範例.csv</b>（不用含「等級」欄，系統自己算）</div>
+      <div class="step done"><span class="step-num">✓</span>8 位客戶自動排出 A／B／C 分級</div>
+    </div>
   </div>
 
   <!-- ===== SECTION 2: Already have content ===== -->
