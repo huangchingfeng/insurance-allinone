@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陳柏宇・電子名片（科技數位風）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>:root{--bg:#0A1628;--card:#0F1F38;--cyan:#00D4FF;--ink:#D6E4F0;--muted:#7A8CA3}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);display:flex;justify-content:center;padding:24px 14px;min-height:100vh}
+.card{width:100%;max-width:400px;background:var(--card);border:1px solid rgba(0,212,255,.3);border-radius:18px;padding:36px 26px;text-align:center;box-shadow:0 0 50px rgba(0,212,255,.12);position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.avatar{width:106px;height:106px;border-radius:50%;background:var(--bg);color:var(--cyan);font-size:44px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px solid var(--cyan);box-shadow:0 0 24px rgba(0,212,255,.4)}
+h1{font-size:1.95rem;margin-bottom:4px;color:#fff}.title{color:var(--cyan);font-weight:600;margin-bottom:18px;letter-spacing:2px;font-size:.95rem}
+.slogan{border:1px solid rgba(0,212,255,.3);border-radius:12px;padding:14px;font-size:1rem;font-weight:600;color:var(--cyan);margin-bottom:22px;background:rgba(0,212,255,.05)}
+.sec-t{text-align:left;font-size:.76rem;color:var(--cyan);font-weight:700;letter-spacing:2px;margin:0 0 10px 2px}
+.about{text-align:left;line-height:1.85;color:var(--muted);margin-bottom:22px;font-size:.92rem}
+.hl{display:flex;gap:12px;text-align:left;background:rgba(0,212,255,.06);border-left:2px solid var(--cyan);border-radius:8px;padding:13px;margin-bottom:10px;align-items:center}
+.hl .n{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:var(--cyan);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:800}
+.hl b{display:block;font-size:.96rem;color:#fff}.hl span{font-size:.83rem;color:var(--muted)}
+.contacts{display:flex;flex-direction:column;gap:10px;margin:22px 0}
+.contacts a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:10px;background:var(--cyan);color:var(--bg);text-decoration:none;font-weight:700}
+.contacts a.alt{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+.qr img{border-radius:8px;border:4px solid var(--card);background:#fff;padding:4px}.qr p{font-size:.8rem;color:var(--muted);margin-top:8px}
+footer{margin-top:20px;font-size:.72rem;color:#4A5A70;letter-spacing:1px}</style>
+</head>
+<body>
+<div class="card">
+  <div class="avatar">柏</div>
+  <h1>陳柏宇</h1>
+  <p class="title">資深壽險顧問</p>
+  
+  <p class="slogan">把你的保單，當成我自己的家人在顧</p>
+  <p class="sec-t">關於我</p>
+  <p class="about">入行 12 年，專注幫家庭與企業主把保障規劃到位。不只協助投保，更在你需要理賠的那一刻全程陪同。</p>
+  <p class="sec-t">服務亮點</p>
+  <div class="hl"><span class="n">1</span><div><b>退休金與資產規劃</b><span>為你的未來打造穩健的財務基礎</span></div></div>
+<div class="hl"><span class="n">2</span><div><b>家庭保障健檢</b><span>找出保障缺口，量身補強</span></div></div>
+<div class="hl"><span class="n">3</span><div><b>理賠全程協助</b><span>出險時陪你跑流程，不讓你孤單面對</span></div></div>
+  <div class="contacts"><a href="https://line.me/R/ti/p/@chenboyu">＋ 加 LINE</a><a class="alt" href="tel:0912-345-678">撥電話</a><a class="alt" href="mailto:chen.demo@example.com">寄 Email</a></div>
+  <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=0&data=https%3A%2F%2Fhuangchingfeng.github.io%2Finsurance-allinone%2F" alt="QR code" width="140" height="140"><p>掃描存我的名片</p></div>
+  <footer>用 Claude Artifacts 製作　·　範例版型（科技數位風）</footer>
+</div>
+</body>
+</html>

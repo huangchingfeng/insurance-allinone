@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陳柏宇・電子名片（質感雜誌風）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>:root{--ink:#111;--muted:#777;--line:#E5E5E5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Serif TC',serif;background:#F4F4F2;color:var(--ink);display:flex;justify-content:center;padding:24px 14px;min-height:100vh}
+.card{width:100%;max-width:400px;background:#fff;padding:36px 30px;box-shadow:0 6px 30px rgba(0,0,0,.08)}
+.kick{font-size:.72rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
+.avatar{width:96px;height:96px;border-radius:50%;background:#111;color:#fff;font-size:40px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 0 18px;font-family:'Noto Serif TC',serif}
+h1{font-size:2.4rem;line-height:1.1;margin-bottom:6px;font-weight:900}.title{color:var(--muted);font-size:1rem;border-bottom:2px solid #111;display:inline-block;padding-bottom:10px;margin-bottom:20px}
+.slogan{font-size:1.15rem;line-height:1.6;font-style:italic;margin-bottom:24px;border-left:3px solid #111;padding-left:14px}
+.sec-t{font-size:.72rem;letter-spacing:3px;color:#111;text-transform:uppercase;font-weight:700;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:12px;font-family:'Noto Sans TC',sans-serif}
+.about{line-height:1.9;color:#444;margin-bottom:24px;font-size:.96rem}
+.hl{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.hl .n{font-size:1.4rem;font-weight:900;color:#111;min-width:28px}
+.hl b{display:block;font-size:1rem}.hl span{font-size:.86rem;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+.contacts{display:flex;flex-direction:column;gap:0;margin:24px 0 0;font-family:'Noto Sans TC',sans-serif}
+.contacts a{display:flex;justify-content:space-between;padding:15px 2px;border-top:1px solid var(--line);color:#111;text-decoration:none;font-weight:600}
+.contacts a:last-child{border-bottom:1px solid var(--line)}
+.contacts a span:last-child{color:var(--muted)}
+.qr{margin-top:22px;display:flex;align-items:center;gap:14px}.qr img{filter:contrast(1.1)}.qr p{font-size:.82rem;color:var(--muted);font-family:'Noto Sans TC',sans-serif}
+footer{margin-top:22px;font-size:.7rem;letter-spacing:2px;color:#BBB;text-transform:uppercase;text-align:center;font-family:'Noto Sans TC',sans-serif}</style>
+</head>
+<body>
+<div class="card">
+  <div class="avatar">柏</div>
+  <h1>陳柏宇</h1>
+  <p class="title">資深壽險顧問</p>
+  
+  <p class="slogan">把你的保單，當成我自己的家人在顧</p>
+  <p class="sec-t">關於我</p>
+  <p class="about">入行 12 年，專注幫家庭與企業主把保障規劃到位。不只協助投保，更在你需要理賠的那一刻全程陪同。</p>
+  <p class="sec-t">服務亮點</p>
+  <div class="hl"><span class="n">1</span><div><b>退休金與資產規劃</b><span>為你的未來打造穩健的財務基礎</span></div></div>
+<div class="hl"><span class="n">2</span><div><b>家庭保障健檢</b><span>找出保障缺口，量身補強</span></div></div>
+<div class="hl"><span class="n">3</span><div><b>理賠全程協助</b><span>出險時陪你跑流程，不讓你孤單面對</span></div></div>
+  <div class="contacts"><a href="https://line.me/R/ti/p/@chenboyu">＋ 加 LINE</a><a class="alt" href="tel:0912-345-678">撥電話</a><a class="alt" href="mailto:chen.demo@example.com">寄 Email</a></div>
+  <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=0&data=https%3A%2F%2Fhuangchingfeng.github.io%2Finsurance-allinone%2F" alt="QR code" width="140" height="140"><p>掃描存我的名片</p></div>
+  <footer>用 Claude Artifacts 製作　·　範例版型（質感雜誌風）</footer>
+</div>
+</body>
+</html>
