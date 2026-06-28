@@ -1328,7 +1328,7 @@
             const showTxt = (m==='text' || m==='microsystem' || m==='namecard');
             const vis = {'#txt':showTxt, '#chutu':m==='image', '#research':m==='research'};
             Object.keys(vis).forEach(s=>{ const el=$(s); if(el) el.style.display=vis[s]?'':'none'; });
-            if(m==='image' && !inited){ inited=true; renderTabs(); renderGrid(); }
+            if(m==='image' && !inited){ inited=true; activeCat=data()[0].category; renderTabs(); renderGrid(); }
             if(m==='research' && window.__rsInit){ window.__rsInit(); }
             if(showTxt && window.__txtSetMode){ window.__txtSetMode(m); }
             window.scrollTo({top:(($('.cz-mode-band')||{}).offsetTop||0)-8, behavior:'smooth'});
@@ -1336,7 +1336,7 @@
 
           /* ---- 卡片組切換 ---- */
           $$('.cz-set').forEach(b=> b.addEventListener('click', ()=>{
-            activeSet=b.dataset.set; activeCat='全部';
+            activeSet=b.dataset.set; activeCat=data()[0].category;
             $$('.cz-set').forEach(x=>x.classList.toggle('active',x===b));
             renderTabs(); renderGrid();
           }));
@@ -1349,16 +1349,19 @@
             $$('.cz-tab','#czTabs'===0?document:$('#czTabs')).forEach(b=> b.addEventListener('click', ()=>{ activeCat=b.dataset.cat; renderTabs(); renderGrid(); }));
           }
           function renderGrid(){
-            const list = activeCat==='全部'? data() : data().filter(c=>c.category===activeCat);
+            const full = activeCat==='全部'? data() : data().filter(c=>c.category===activeCat);
+            const CAP = 60;  // 單次最多渲染 60 張縮圖,避免一次掛數百張圖讓手機/平板卡死
+            const list = full.slice(0, CAP);
+            const more = full.length - list.length;
             $('#czGrid').innerHTML = list.map(c=>
               `<button class="cz-card" data-set="${c._set}" data-num="${c.num}">
-                <div class="cz-thumb"><img src="${c.img}" alt="${esc(c.card)}範例圖" loading="lazy" onerror="this.style.display='none'"></div>
+                <div class="cz-thumb"><img src="${c.img}" alt="${esc(c.card)}範例圖" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
                 <div class="cz-cardbody">
                   <span class="cz-cardcat">${esc(c.icon||'')} ${esc(c.category)}</span>
                   <span class="cz-cardtitle">${esc(c.card)}</span>
                   <span class="cz-cardcase">${esc(c.caseLabel||'')}</span>
                 </div></button>`
-            ).join('');
+            ).join('') + (more>0 ? `<div style="grid-column:1/-1;padding:16px;text-align:center;color:#64748b;font-size:.9rem;background:#f1f5f9;border-radius:10px;line-height:1.7">還有 <b>${more}</b> 張範例 — 請點上方分類縮小範圍（一次顯示 ${CAP} 張，手機／平板比較順）</div>` : '');
             $$('.cz-card','#czGrid'===0?document:$('#czGrid')).forEach(el=> el.addEventListener('click', ()=> openModal(el.dataset.set, +el.dataset.num)));
           }
 
