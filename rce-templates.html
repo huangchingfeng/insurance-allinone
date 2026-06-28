@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>角色／情境／期望 範本庫｜保險業 AI 提示詞黃金三角</title>
+<meta name="description" content="保險業專屬的 RCE 黃金三角範本：角色（壽險顧問/增員主管/理賠專員…）、情境（客戶開發/保單健檢/理賠…）、期望（寫話術/分析缺口/整理報表…），照著挑就能組出好提示詞。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans TC',sans-serif;background:#f0f9f4;color:#1a2e1a;line-height:1.6}
+  header{background:#0F9F6E;color:#fff;padding:28px 20px;text-align:center}
+  header h1{font-size:1.5rem;margin-bottom:8px}
+  header p{opacity:.92;font-size:.95rem;max-width:680px;margin:0 auto}
+  .container{max-width:1180px;margin:0 auto;padding:22px 16px 60px}
+  .intro{background:#fff;border-radius:14px;padding:20px 22px;margin-bottom:24px;border-left:5px solid #0F9F6E;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .intro h2{font-size:1.1rem;color:#0F9F6E;margin-bottom:10px}
+  .intro .formula{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+  .formula .f{flex:1;min-width:200px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:12px 14px}
+  .formula .f b{color:#0F9F6E;font-size:1.02rem}
+  .formula .f span{font-size:.86rem;color:#52796f;display:block;margin-top:3px}
+  .intro .tip{font-size:.86rem;color:#6b7280;margin-top:10px}
+  .axis{margin-bottom:30px}
+  .axis-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .axis-badge{width:42px;height:42px;border-radius:12px;color:#fff;font-size:1.4rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .axis-head h2{font-size:1.25rem}
+  .axis-head p{font-size:.85rem;color:#6b7280}
+  .r .axis-badge{background:#0F9F6E}.c .axis-badge{background:#0d9488}.e .axis-badge{background:#b45309}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .col{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .col h3{font-size:.96rem;padding:8px 12px;border-radius:8px;margin-bottom:12px;color:#fff}
+  .r .col h3{background:#0F9F6E}.c .col h3{background:#0d9488}.e .col h3{background:#b45309}
+  .item{padding:10px 12px;border-radius:9px;background:#f8fafc;border:1px solid #eef2f7;margin-bottom:8px;cursor:pointer;transition:.15s;position:relative}
+  .item:hover{background:#f0fdf4;border-color:#bbf7d0}
+  .item:active{transform:scale(.99)}
+  .item b{display:block;font-size:.92rem;color:#1a2e1a}
+  .item span{display:block;font-size:.82rem;color:#6b7280;margin-top:2px}
+  .item .copy-hint{position:absolute;top:8px;right:10px;font-size:.7rem;color:#0F9F6E;opacity:0;font-weight:700}
+  .item:hover .copy-hint{opacity:.7}
+  .item.copied{background:#dcfce7;border-color:#86efac}
+  .item.copied .copy-hint{opacity:1;color:#15803d}
+  .combo{background:#fff;border-radius:14px;padding:22px;margin-top:8px;border:2px dashed #0F9F6E}
+  .combo h2{font-size:1.15rem;color:#0F9F6E;margin-bottom:6px}
+  .combo > p{font-size:.88rem;color:#6b7280;margin-bottom:16px}
+  .combo-card{background:#f0fdf4;border-radius:12px;padding:16px;margin-bottom:12px}
+  .combo-row{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+  .combo-row:last-child{margin-bottom:0}
+  .tag{flex-shrink:0;width:26px;height:26px;border-radius:7px;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+  .tag.r{background:#0F9F6E}.tag.c{background:#0d9488}.tag.e{background:#b45309}
+  .combo-row p{font-size:.9rem;line-height:1.7}
+  .combo-copy{margin-top:6px;background:#0F9F6E;color:#fff;border:none;border-radius:9px;padding:11px 18px;font-size:.92rem;font-weight:700;cursor:pointer;font-family:inherit}
+  .combo-copy:active{transform:scale(.98)}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1a2e1a;color:#fff;padding:12px 24px;border-radius:30px;font-size:.9rem;font-weight:700;opacity:0;transition:.3s;z-index:50}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+  footer{text-align:center;padding:24px;color:#9ca3af;font-size:.82rem}
+  @media(max-width:760px){.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>📐 角色／情境／期望 範本庫</h1>
+  <p>保險業專屬的「提示詞黃金三角」。不知道怎麼跟 AI 開口？從下面挑一個角色、一個情境、一個期望，組起來就是一句好提示詞。點任何一格即可複製。</p>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>為什麼要這三個？</h2>
+    <p>同樣問 AI，給的條件越清楚，回來的東西越能用。一句好提示詞 = <b>角色 + 情境 + 期望</b>：</p>
+    <div class="formula">
+      <div class="f"><b>R 角色</b><span>叫 AI 用「誰」的身分回答。給它年資與專業，回答才到位。</span></div>
+      <div class="f"><b>C 情境</b><span>講清楚「現在的狀況」。客戶是誰、發生什麼事、卡在哪。</span></div>
+      <div class="f"><b>E 期望</b><span>說明「要它幫你做出什麼」。要話術？要表格？要分析？講明白。</span></div>
+    </div>
+    <p class="tip">💡 用法：在下方各挑一格 → 自動複製 → 貼到 ChatGPT／Claude／Gemini，三段接起來就能用。最下面有現成的組合示範。</p>
+  </div>
+
+  <!-- R 角色 -->
+  <div class="axis r">
+    <div class="axis-head">
+      <div class="axis-badge">R</div>
+      <div><h2>角色範本</h2><p>叫 AI 站在哪種保險人的角度回答</p></div>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <h3>業務與通路類</h3>
+        <div class="item"><b>資深壽險顧問（15 年，MDRT）</b><span>服務雙薪家庭與企業主，擅長把複雜保障講成白話</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>增員主管／處經理（帶 30 人團隊）</b><span>負責團隊招募、新人輔導與業績達成</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>保險經紀人</b><span>跨多家保險公司，為客戶比較最適合的商品組合</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>財務規劃師（CFP）</b><span>從整體資產配置看保險，做退休與資產傳承規劃</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>銀行保險理財專員</b><span>在分行為客戶做存款以外的保障與理財建議</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+      <div class="col">
+        <h3>服務與理賠類</h3>
+        <div class="item"><b>理賠服務專員</b><span>協助保戶準備文件、追蹤理賠進度、安撫情緒</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>保戶服務專員</b><span>負責保單健檢、契約變更、續保與生日關懷</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>客服中心專員</b><span>第一線處理保戶諮詢與客訴，講求同理與效率</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>核保人員</b><span>評估投保風險、審核件況，熟悉條款與規範</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+      <div class="col">
+        <h3>經營與行銷類</h3>
+        <div class="item"><b>通訊處行政主管</b><span>彙整業績報表、規劃早會與通訊處活動</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>保險自媒體經營者</b><span>經營個人品牌，產出衛教與商品觀念內容</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>增員招募負責人</b><span>規劃創說會、面談新人、設計招募流程</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C 情境 -->
+  <div class="axis c">
+    <div class="axis-head">
+      <div class="axis-badge">C</div>
+      <div><h2>情境範本</h2><p>把你現在遇到的狀況講清楚</p></div>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <h3>客戶開發與經營</h3>
+        <div class="item"><b>初次開發</b><span>認識一位新朋友，想用不推銷的方式讓他了解保障觀念</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>加保與交叉銷售</b><span>老客戶人生階段改變（結婚、生子、創業），想提醒他補強</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>轉介紹經營</b><span>想請滿意的老客戶，幫忙介紹同樣有需要的人</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>保單健檢約訪</b><span>想約客戶坐下來，檢視現有保單夠不夠</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>沉睡客戶喚醒</b><span>一年以上沒聯絡的客戶，想重新開啟對話</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+      <div class="col">
+        <h3>服務與理賠</h3>
+        <div class="item"><b>理賠協助</b><span>客戶剛出險、心情慌亂，需要安撫並說明流程</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>契約變更</b><span>客戶要改受益人／地址／繳費方式，要說明清楚</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>續保提醒</b><span>保單快到期或快繳費，要提醒又不能太像催繳</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>客訴處理</b><span>客戶對服務或理賠結果不滿，情緒上來了</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>保單到期關懷</b><span>保障即將結束，想協助客戶銜接不中斷</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+      <div class="col">
+        <h3>增員與團隊</h3>
+        <div class="item"><b>增員面談</b><span>和有興趣的人，聊這份工作的真實樣貌</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>創說會邀約</b><span>邀請名單來參加事業說明會</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>新人輔導</b><span>帶剛報到的夥伴，熟悉商品與基本話術</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>團隊業績分析</b><span>月底檢視團隊數字，找出可以加強的地方</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E 期望 -->
+  <div class="axis e">
+    <div class="axis-head">
+      <div class="axis-badge">E</div>
+      <div><h2>期望範本</h2><p>說清楚要 AI 幫你做出什麼</p></div>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <h3>文案與話術類</h3>
+        <div class="item"><b>幫我寫開發訊息</b><span>口氣自然不推銷，引發客戶想多聊</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我把術語改白話</b><span>把專業條款，改成國中生也聽得懂的說法</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我寫約訪話術</b><span>讓客戶覺得保單健檢是為他好，不是要賣東西</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我寫理賠關懷訊息</b><span>先安撫情緒，再說明下一步要做什麼</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+      <div class="col">
+        <h3>分析與規劃類</h3>
+        <div class="item"><b>幫我分析保障缺口</b><span>看完現有保單，列出優先補強的順序</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我比較保單差異</b><span>把幾張保單的差別，做成一張對照表</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我整理保單清單</b><span>險種、保額、到期日、繳費日整理成一張表</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我設計規劃方向</b><span>依客戶年齡收入，給退休規劃的建議方向</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+      <div class="col">
+        <h3>整理與報告類</h3>
+        <div class="item"><b>幫我做業績報表</b><span>把這個月的數字，整理成清楚的成果報表</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我把客戶分級</b><span>依價值與加保潛力，分成 A／B／C 級</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我整理早會重點</b><span>把一段內容，整理成 5 條好記的摘要</span><span class="copy-hint">點擊複製</span></div>
+        <div class="item"><b>幫我規劃說明會流程</b><span>排出一場 60 分鐘增員說明會的段落與時間</span><span class="copy-hint">點擊複製</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 組合示範 -->
+  <div class="combo">
+    <h2>🎯 組合示範：R + C + E 串起來就是完整提示詞</h2>
+    <p>看三段怎麼接成一句能直接用的提示詞，按「複製整段」帶走改成你的狀況。</p>
+
+    <div class="combo-card" data-combo="1">
+      <div class="combo-row"><span class="tag r">R</span><p>你是一位有 15 年經驗的資深壽險顧問，服務對象以雙薪家庭為主，擅長把複雜的保障觀念講成客戶聽得懂的白話。</p></div>
+      <div class="combo-row"><span class="tag c">C</span><p>我有一位老客戶最近剛生了第二個小孩，目前只有基本醫療險，家庭責任變重了。</p></div>
+      <div class="combo-row"><span class="tag e">E</span><p>請幫我寫一段 LINE 訊息，先恭喜他新生兒報到，再用關心的口氣提醒他可以檢視一下家庭保障。口氣要自然、不推銷，讓他願意約時間聊。</p></div>
+      <button class="combo-copy" onclick="copyCombo(1,this)">📋 複製整段</button>
+    </div>
+
+    <div class="combo-card" data-combo="2">
+      <div class="combo-row"><span class="tag r">R</span><p>你是一位理賠服務專員，熟悉理賠流程，擅長同理與安撫保戶情緒。</p></div>
+      <div class="combo-row"><span class="tag c">C</span><p>我的客戶昨天車禍住院，傳訊息來時很慌張，不知道理賠要準備什麼。</p></div>
+      <div class="combo-row"><span class="tag e">E</span><p>請幫我寫一段回覆，先安撫他的情緒、請他安心養傷，再條列接下來理賠需要準備的文件與步驟，語氣溫暖、條理清楚。</p></div>
+      <button class="combo-copy" onclick="copyCombo(2,this)">📋 複製整段</button>
+    </div>
+
+    <div class="combo-card" data-combo="3">
+      <div class="combo-row"><span class="tag r">R</span><p>你是一位增員主管，帶 30 人團隊，擅長用真實、不誇大的方式介紹保險工作。</p></div>
+      <div class="combo-row"><span class="tag c">C</span><p>我約了一位在餐飲業、考慮轉職的朋友，下週要做增員面談。</p></div>
+      <div class="combo-row"><span class="tag e">E</span><p>請幫我列出這場面談的對談大綱，包含我該先了解他的哪些狀況、可以怎麼誠實說明這份工作的辛苦與機會，以及收尾可以邀請他做什麼。</p></div>
+      <button class="combo-copy" onclick="copyCombo(3,this)">📋 複製整段</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">已複製，貼到 AI 工具就能用 ✓</div>
+
+<footer>阿峰老師 AI 工具箱 · 角色／情境／期望範本庫 · 把 AI 用進保險每天的工作</footer>
+
+<script>
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>toast.classList.remove('show'), 1800);
+  }
+  function copyText(t){
+    if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(t); }
+    const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
+    try{document.execCommand('copy')}catch(e){} document.body.removeChild(ta); return Promise.resolve();
+  }
+  // 單格複製：複製「標題：描述」
+  document.querySelectorAll('.item').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const b = el.querySelector('b').innerText.trim();
+      const s = el.querySelector('span') ? el.querySelector('span').innerText.trim() : '';
+      copyText(s ? (b + '：' + s) : b).then(()=>{
+        document.querySelectorAll('.item.copied').forEach(x=>x.classList.remove('copied'));
+        el.classList.add('copied');
+        showToast('已複製「' + b + '」✓');
+      });
+    });
+  });
+  // 組合複製：R+C+E 三段
+  function copyCombo(n, btn){
+    const card = document.querySelector('.combo-card[data-combo="'+n+'"]');
+    const ps = card.querySelectorAll('.combo-row p');
+    const text = Array.from(ps).map(p=>p.innerText.trim()).join('\n');
+    copyText(text).then(()=>{
+      const old = btn.textContent; btn.textContent = '✓ 已複製整段';
+      showToast('整段已複製，貼到 AI 工具就能用 ✓');
+      setTimeout(()=>btn.textContent = old, 2000);
+    });
+  }
+</script>
+</body>
+</html>
