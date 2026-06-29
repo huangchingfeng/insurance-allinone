@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黃金提示詞優化師｜不會下指令？一鍵把爛指令變好指令</title>
+<meta name="description" content="保險業務專用：把你平常亂打的需求貼進來，一鍵變成 ChatGPT／Gemini／Claude 看得懂的「角色＋情境＋期望」好指令。不會下指令也能用得很深。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans TC',sans-serif;background:#f0f9f4;color:#1a2e1a;line-height:1.6}
+  header{background:#0F9F6E;color:#fff;padding:28px 20px;text-align:center}
+  header h1{font-size:1.5rem;margin-bottom:8px}
+  header p{opacity:.93;font-size:.95rem;max-width:660px;margin:0 auto}
+  .container{max-width:760px;margin:0 auto;padding:22px 16px 60px}
+  .step{background:#fff;border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .step-label{display:inline-flex;align-items:center;gap:7px;font-size:.92rem;font-weight:700;color:#0F9F6E;margin-bottom:12px}
+  .step-num{width:24px;height:24px;border-radius:50%;background:#0F9F6E;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+  textarea{width:100%;min-height:96px;border:2px solid #bbf7d0;border-radius:10px;padding:13px;font-size:1rem;font-family:inherit;line-height:1.6;resize:vertical;color:#1a2e1a}
+  textarea:focus{outline:none;border-color:#0F9F6E}
+  .examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .ex-chip{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:20px;padding:7px 14px;font-size:.85rem;color:#15803d;cursor:pointer;transition:.15s}
+  .ex-chip:hover{background:#dcfce7;border-color:#86efac}
+  .ex-hint{font-size:.82rem;color:#6b7280;margin-top:10px}
+  .go-btn{width:100%;background:#0F9F6E;color:#fff;border:none;border-radius:12px;padding:16px;font-size:1.08rem;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 3px 10px rgba(15,159,110,.3);transition:.15s}
+  .go-btn:hover{background:#0d8a60}
+  .go-btn:active{transform:scale(.99)}
+  .go-btn:disabled{background:#cbd5e1;box-shadow:none;cursor:not-allowed}
+  #outBox{display:none}
+  .out-pre{background:#0f1f18;color:#e8f5ee;border-radius:10px;padding:16px;font-size:.9rem;line-height:1.7;white-space:pre-wrap;word-break:break-word;max-height:340px;overflow-y:auto;font-family:ui-monospace,'Noto Sans TC',monospace}
+  .copy-btn{width:100%;margin-top:12px;background:#0F9F6E;color:#fff;border:none;border-radius:10px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit}
+  .copy-btn.done{background:#059669}
+  .out-next{font-size:.86rem;color:#134e4a;background:#f0fdfa;border-left:4px solid #0D9488;border-radius:8px;padding:12px 14px;margin-top:12px;line-height:1.8}
+  .tool-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .tool-links a{flex:1;min-width:120px;text-align:center;background:#fff;border:1.5px solid #0F9F6E;color:#0F9F6E;border-radius:8px;padding:9px;text-decoration:none;font-size:.85rem;font-weight:700}
+  .edu{background:#fffbeb;border-left:4px solid #f59e0b;border-radius:10px;padding:16px 18px;margin-top:8px}
+  .edu h2{font-size:1rem;color:#92400e;margin-bottom:8px}
+  .edu ul{margin:0;padding-left:4px;list-style:none}
+  .edu li{font-size:.9rem;line-height:1.85;color:#78350f}
+  .edu b{color:#0F9F6E}
+  .edu .more{display:inline-block;margin-top:10px;color:#0F9F6E;font-weight:700;text-decoration:none;font-size:.88rem}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1a2e1a;color:#fff;padding:12px 24px;border-radius:30px;font-size:.9rem;font-weight:700;opacity:0;transition:.3s;z-index:50}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+  footer{text-align:center;padding:24px;color:#9ca3af;font-size:.82rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>🪄 黃金提示詞優化師</h1>
+  <p>不會下指令？把你平常想叫 AI 做的事，用最白話的講法打進來——一鍵幫你變成 ChatGPT／Gemini／Claude 真正聽得懂的好指令。</p>
+</header>
+
+<div class="container">
+
+  <div class="step">
+    <div class="step-label"><span class="step-num">1</span>你想叫 AI 幫你做什麼？</div>
+    <textarea id="userInput" placeholder="用你平常的講法就好，例如：幫我寫個給客戶的訊息"></textarea>
+    <div class="examples" id="exChips"></div>
+    <div class="ex-hint">💡 上面點一個範例會自動帶入，你再改成自己的狀況。</div>
+  </div>
+
+  <button class="go-btn" id="goBtn">🪄 一鍵變成好指令</button>
+
+  <div class="step" id="outBox" style="margin-top:16px">
+    <div class="step-label"><span class="step-num">2</span>複製這段，貼到 AI 就會幫你優化</div>
+    <div class="out-pre" id="outPre"></div>
+    <button class="copy-btn" id="copyBtn">📋 複製整段</button>
+    <div class="tool-links">
+      <a href="https://chat.openai.com/" target="_blank">開 ChatGPT</a>
+      <a href="https://gemini.google.com/app" target="_blank">開 Gemini</a>
+      <a href="https://claude.ai/" target="_blank">開 Claude</a>
+    </div>
+    <div class="out-next">貼上後，AI 會回你三段：①你原本缺了什麼 ②補好的「角色＋情境＋期望」完整版 ③一段可以直接複製去用的乾淨指令，還會反問你幾個讓結果更準的問題。</div>
+  </div>
+
+  <div class="edu">
+    <h2>為什麼這樣就會變好？——RCE 黃金三角</h2>
+    <ul>
+      <li><b>角色 R</b>：叫 AI 用「誰」的身分回答（例：40 年資深壽險顧問），它才講得到位。</li>
+      <li><b>情境 C</b>：講清楚「現在的狀況」——客戶是誰、發生什麼、卡在哪。</li>
+      <li><b>期望 E</b>：說明「要它做出什麼」——要話術？要表格？幾個字？什麼語氣？</li>
+    </ul>
+    <a class="more" href="rce-templates.html">想直接挑現成的角色／情境／期望範本 → 看 RCE 範本庫</a>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">已複製，貼到 AI 就會幫你優化 ✓</div>
+<footer>阿峰老師 AI 工具箱 · 黃金提示詞優化師 · 不會下指令也能把 AI 用得很深</footer>
+
+<script>
+  const EXAMPLES = [
+    '幫我寫個給客戶的訊息',
+    '幫我分析這個客戶',
+    '幫我做一份退休規劃簡報',
+    '幫我把保單條款講白話',
+    '幫我想客戶說「保險買夠了」怎麼回',
+    '幫我寫一篇 FB 貼文',
+  ];
+  const exWrap = document.getElementById('exChips');
+  EXAMPLES.forEach(t => {
+    const c = document.createElement('span');
+    c.className = 'ex-chip'; c.textContent = t;
+    c.onclick = () => { document.getElementById('userInput').value = t; document.getElementById('userInput').focus(); };
+    exWrap.appendChild(c);
+  });
+
+  function buildMetaPrompt(raw){
+    return `你是一位專門幫保險業務優化 AI 指令的「RCE 黃金三角優化師」。RCE＝角色 Role＋情境 Context＋期望 Expectation。
+
+【我平常會這樣跟 AI 講】
+${raw}
+
+【請你幫我做三件事】
+① 診斷：上面這句缺了什麼？逐項點出是缺角色、缺情境、還是缺期望。
+② 優化版：幫我補成完整的「角色＋情境＋期望」三段——角色要有年資與專業背景（例：服務高資產客戶 20 年的資深壽險顧問）、情境要把「客戶是誰／發生什麼事／卡在哪」講具體、期望要寫清楚要什麼格式、長度、語氣。
+③ 可直接用：把優化版整理成「一段我可以直接複製去用的乾淨指令」，最後再反問我 2–3 個「補上會讓結果更準」的問題。
+
+【鐵律】如果這是保險情境，你的優化版與任何範例一律不得出現「保證、最高、絕對、穩賺、第一、節稅、避稅」等違反招攬廣告自律規範的字眼；談理賠不要寫具體金額或時程承諾。請全程用繁體中文、條理清楚地回覆我。`;
+  }
+
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(){ toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(()=>toast.classList.remove('show'), 1800); }
+  function copyText(t){
+    if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+    const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
+    try{document.execCommand('copy')}catch(e){} document.body.removeChild(ta); return Promise.resolve();
+  }
+
+  const goBtn = document.getElementById('goBtn');
+  const outBox = document.getElementById('outBox');
+  const outPre = document.getElementById('outPre');
+  let lastPrompt = '';
+  goBtn.onclick = () => {
+    const raw = document.getElementById('userInput').value.trim();
+    if(!raw){ document.getElementById('userInput').focus(); showToastMsg('先打一句你想叫 AI 做的事'); return; }
+    lastPrompt = buildMetaPrompt(raw);
+    outPre.textContent = lastPrompt;
+    outBox.style.display = 'block';
+    outBox.scrollIntoView({behavior:'smooth', block:'start'});
+    // 順手自動複製一次
+    copyText(lastPrompt).then(showToast);
+  };
+  function showToastMsg(m){ toast.textContent = m; showToast(); setTimeout(()=>toast.textContent='已複製，貼到 AI 就會幫你優化 ✓', 1900); }
+
+  const copyBtn = document.getElementById('copyBtn');
+  copyBtn.onclick = () => {
+    copyText(lastPrompt).then(() => {
+      copyBtn.textContent = '✓ 已複製！貼到 AI 吧';
+      copyBtn.classList.add('done');
+      showToast();
+      setTimeout(()=>{ copyBtn.textContent='📋 複製整段'; copyBtn.classList.remove('done'); }, 2200);
+    });
+  };
+</script>
+</body>
+</html>

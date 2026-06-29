@@ -1706,7 +1706,10 @@
                         <div>
                             <h2>📝 保險文案</h2>
                             <p>選分類 → 點一張卡 → 填客戶情境 → 一鍵複製,貼到 ChatGPT／Claude／Gemini。業務開發、服務關懷、異議處理話術都在這。</p>
-                            <a href="rce-templates.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:10px 18px;background:#0F9F6E;color:#fff;border-radius:10px;text-decoration:none;font-size:.92rem;font-weight:700;box-shadow:0 2px 8px rgba(15,159,110,.3)">🪄 不會下指令？先來「RCE 黃金三角」挑角色／情境／期望三格 →</a>
+                            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+                              <a href="prompt-optimizer.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#0F9F6E;color:#fff;border-radius:10px;text-decoration:none;font-size:.92rem;font-weight:700;box-shadow:0 2px 8px rgba(15,159,110,.3)">🪄 提示詞優化師：把爛指令一鍵變好</a>
+                              <a href="rce-templates.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#fff;color:#0F9F6E;border:1.5px solid #0F9F6E;border-radius:10px;text-decoration:none;font-size:.92rem;font-weight:700">📐 RCE 範本庫：挑現成三格</a>
+                            </div>
                         </div>
                         <div class="search-field" style="max-width:260px">
                             <i class="bi bi-search"></i>
@@ -1764,7 +1767,7 @@
           async function load(){
             try{
               const r = await fetch('prompt-templates.json?v='+Date.now(), {cache:'no-store'});
-              TXT = await r.json();
+              TXT = (await r.json()).filter(t=> !(t && typeof t.id==='string' && t.id.startsWith('_')));
               TXT.forEach((t,i)=>{ if(!t.id) t.id='tpl-'+i; });
               renderTabs(); renderGrid();
             }catch(e){ $('#txtGrid').innerHTML='<div class="cz-empty">模板載入失敗,請重新整理。</div>'; }
@@ -8148,7 +8151,7 @@ SOP名稱：<<<{sop_title}>>>
         };
 
         const normalizeImported = (arr) => arr
-            .filter((item) => item && (item.name || item.template))
+            .filter((item) => item && !String(item.id || '').startsWith('_') && (item.name || item.template))
             .map((item, index) => ({
                 id: item.id || ('template_import_' + index),
                 name: item.name || '未命名模板',
