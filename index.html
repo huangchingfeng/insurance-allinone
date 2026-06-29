@@ -1390,19 +1390,19 @@
           /* ---- 通用版:單段複製 ---- */
           function buildGeneric(c, wrap){
             wrap.innerHTML = `
-              <p class="cz-hint">這是固定的出圖提示詞,直接複製 → 貼進 Gemini／NotebookLM 的「自訂資訊圖表」指令欄就能出圖。記得先把你自己的數據貼進來源。</p>
+              <p class="cz-hint">這是固定的出圖提示詞,直接複製 → 貼進 Gemini／Nano Banana Pro 就能出圖。</p>
               <div class="cz-out a">
-                <div class="cz-ohead"><span class="cz-ot">🎨 出圖提示詞</span><span class="cz-otag">貼進 Gemini／NotebookLM</span></div>
+                <div class="cz-ohead"><span class="cz-ot">🎨 出圖提示詞</span><span class="cz-otag">貼進 Gemini／Nano Banana Pro</span></div>
                 <div class="cz-pre" id="czGenPre">${esc(c.copyPrompt)}</div>
               </div>
               <button class="cz-copy primary" id="czGenCopy" style="width:calc(100% - 24px)">📋 複製出圖提示詞</button>`;
-            $('#czGenCopy').addEventListener('click', ()=> doCopy(c.copyPrompt, '已複製,去 Gemini／NotebookLM 貼上出圖'));
+            $('#czGenCopy').addEventListener('click', ()=> doCopy(c.copyPrompt, '已複製,去 Gemini／Nano Banana Pro 貼上出圖'));
           }
 
           /* ---- 保險版:填空兩段 A/B ---- */
           function buildInsurance(c, wrap){
             wrap.innerHTML = `
-              <p class="cz-hint">填入你客戶的<strong>去識別</strong>資料(用化名／代號,別填真名與身分證)。工具會自動組好 A 段(來源)+ B 段(風格),分段複製去 NotebookLM 出圖。利變／投資型記得標「預估、非保證」。</p>
+              <p class="cz-hint">填入你客戶的<strong>去識別</strong>資料(用化名／代號,別填真名與身分證)。工具會自動組好 A 段(來源)+ B 段(風格),分段複製去 Nano Banana Pro／NotebookLM 出圖。利變／投資型記得標「預估、非保證」。</p>
               <div class="cz-actions">
                 <button class="cz-actbtn" id="czFillAll">✨ 帶入全部範例</button>
                 <button class="cz-actbtn" id="czClearAll">🧹 清空</button>
