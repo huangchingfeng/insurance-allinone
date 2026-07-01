@@ -1079,11 +1079,11 @@
                     </a>
                     <div class="metric-grid" aria-label="網站重點數據">
                         <div class="metric">
-                            <strong id="heroTemplateCount">276</strong>
+                            <strong id="heroTemplateCount">311</strong>
                             <span>提示詞模板</span>
                         </div>
                         <div class="metric">
-                            <strong id="heroCategoryCount">13</strong>
+                            <strong id="heroCategoryCount">16</strong>
                             <span>分類入口</span>
                         </div>
                         <div class="metric">
@@ -1758,7 +1758,7 @@
           const $ = (s,r)=> (r||document).querySelector(s);
           const $$ = (s,r)=> [...(r||document).querySelectorAll(s)];
           const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-          const ICON={'保險':'💼','業務':'📞','客服':'🎧','人資':'👥','行銷':'📣','會計財務':'💰','市場分析':'📊','企劃':'📋','培訓':'🎓','行政':'🗂️','經營管理':'🧭','法務':'⚖️','採購':'🛒','通用':'🔧','資訊':'💻','客戶關係':'🤝','活動':'🎪','營運':'⚙️','政府':'🏛️'};
+          const ICON={'保險':'💼','業務':'📞','客服':'🎧','人資':'👥','行銷':'📣','會計財務':'💰','市場分析':'📊','企劃':'📋','培訓':'🎓','行政':'🗂️','經營管理':'🧭','法務':'⚖️','採購':'🛒','通用':'🔧','資訊':'💻','客戶關係':'🤝','活動':'🎪','營運':'⚙️','政府':'🏛️','社群經營':'📱','拜訪後跟進':'✉️','主管帶團隊':'👔'};
           const icon = c => ICON[c] || '📝';
           let TXT=[], activeCat='全部', kw='', cur=null, lastFocus=null, inited=false;
           const MICRO_CAT='保險微系統', NAMECARD_CAT='電子名片'; let viewMode='text';
