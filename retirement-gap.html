@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>退休缺口試算器｜保險業務帶客戶當場算退休金缺口</title>
+<meta name="description" content="輸入年齡、想要的退休生活費、已有的勞保勞退與儲蓄，一鍵算出退休金缺口與每月該補多少。紅黃綠燈直覺呈現，可當拜訪工具。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans TC',sans-serif;background:#f0f9f4;color:#1a2e1a;line-height:1.6}
+  header{background:#0F9F6E;color:#fff;padding:26px 20px;text-align:center}
+  header h1{font-size:1.45rem;margin-bottom:6px}
+  header p{opacity:.93;font-size:.92rem;max-width:640px;margin:0 auto}
+  .container{max-width:820px;margin:0 auto;padding:22px 16px 60px}
+  .card{background:#fff;border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .card h2{font-size:1.05rem;color:#0F9F6E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+  .field label{display:block;font-size:.88rem;font-weight:700;margin-bottom:5px;color:#334}
+  .field .hint{font-size:.78rem;color:#6b7280;font-weight:400}
+  .field input{width:100%;border:2px solid #bbf7d0;border-radius:9px;padding:11px 12px;font-size:1rem;font-family:inherit}
+  .field input:focus{outline:none;border-color:#0F9F6E}
+  .unit{position:relative}
+  .unit span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:.85rem}
+  .go-btn{width:100%;background:#0F9F6E;color:#fff;border:none;border-radius:12px;padding:16px;font-size:1.08rem;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 3px 10px rgba(15,159,110,.3)}
+  .go-btn:active{transform:scale(.99)}
+  #result{display:none}
+  .light{text-align:center;padding:20px;border-radius:14px;margin-bottom:16px}
+  .light.red{background:#fef2f2;border:2px solid #fecaca}
+  .light.yellow{background:#fffbeb;border:2px solid #fde68a}
+  .light.green{background:#f0fdf4;border:2px solid #86efac}
+  .light .emoji{font-size:2.4rem}
+  .light .big{font-size:2rem;font-weight:900;margin:6px 0}
+  .light.red .big{color:#dc2626}.light.yellow .big{color:#b45309}.light.green .big{color:#059669}
+  .light .sub{font-size:.9rem;color:#555}
+  .bars{margin:16px 0}
+  .bar-row{margin-bottom:12px}
+  .bar-row .lab{display:flex;justify-content:space-between;font-size:.86rem;font-weight:700;margin-bottom:5px}
+  .bar-track{height:26px;background:#f1f5f9;border-radius:8px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:10px;color:#fff;font-size:.82rem;font-weight:700;white-space:nowrap}
+  .bar-need{background:#64748b}.bar-have{background:#0F9F6E}
+  .report{background:#f0fdfa;border-left:4px solid #0D9488;border-radius:8px;padding:14px 16px;font-size:.9rem;line-height:1.9;color:#134e4a}
+  .report b{color:#0F9F6E}
+  .disclaimer{font-size:.78rem;color:#9ca3af;margin-top:14px;line-height:1.7;border-top:1px solid #eee;padding-top:12px}
+  .copy-btn{width:100%;margin-top:12px;background:#fff;color:#0F9F6E;border:1.5px solid #0F9F6E;border-radius:10px;padding:12px;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit}
+  footer{text-align:center;padding:24px;color:#9ca3af;font-size:.82rem}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1a2e1a;color:#fff;padding:12px 24px;border-radius:30px;font-size:.9rem;font-weight:700;opacity:0;transition:.3s;z-index:50}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧮 退休缺口試算器</h1>
+  <p>帶客戶當場算：退休後想過的生活，需要多少錢？現在準備夠不夠？差多少、每月該補多少？一目了然。</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>① 填客戶的基本狀況</h2>
+    <div class="grid">
+      <div class="field"><label>目前年齡 <span class="hint">歲</span></label><div class="unit"><input type="number" id="age" value="40"><span>歲</span></div></div>
+      <div class="field"><label>預計退休年齡 <span class="hint">歲</span></label><div class="unit"><input type="number" id="retire" value="65"><span>歲</span></div></div>
+      <div class="field"><label>退休後預計要用幾年 <span class="hint">如活到 85 就填 20</span></label><div class="unit"><input type="number" id="years" value="20"><span>年</span></div></div>
+      <div class="field"><label>退休後每月想要的生活費 <span class="hint">用現在的物價感覺</span></label><div class="unit"><input type="number" id="monthly" value="60000"><span>元/月</span></div></div>
+      <div class="field"><label>通膨率 <span class="hint">預設 2%</span></label><div class="unit"><input type="number" id="inflation" value="2" step="0.1"><span>%</span></div></div>
+      <div class="field"><label>勞保＋勞退 預估月領 <span class="hint">勞保局試算，沒有填 0</span></label><div class="unit"><input type="number" id="pension" value="20000"><span>元/月</span></div></div>
+      <div class="field"><label>已為退休準備的資產 <span class="hint">儲蓄/投資/年金現值</span></label><div class="unit"><input type="number" id="saved" value="2000000"><span>元</span></div></div>
+      <div class="field"><label>這些資產的年報酬 <span class="hint">保守填 2-3%</span></label><div class="unit"><input type="number" id="roi" value="2" step="0.1"><span>%</span></div></div>
+    </div>
+  </div>
+
+  <button class="go-btn" id="calcBtn">🧮 算出退休缺口</button>
+
+  <div class="card" id="result" style="margin-top:16px">
+    <h2>② 試算結果</h2>
+    <div class="light" id="light">
+      <div class="emoji" id="lEmoji"></div>
+      <div class="big" id="lBig"></div>
+      <div class="sub" id="lSub"></div>
+    </div>
+    <div class="bars">
+      <div class="bar-row"><div class="lab"><span>退休總需求</span><span id="needTxt"></span></div><div class="bar-track"><div class="bar-fill bar-need" id="needBar"></div></div></div>
+      <div class="bar-row"><div class="lab"><span>已準備（含成長＋勞退）</span><span id="haveTxt"></span></div><div class="bar-track"><div class="bar-fill bar-have" id="haveBar"></div></div></div>
+    </div>
+    <div class="report" id="report"></div>
+    <button class="copy-btn" id="copyBtn">📋 複製一頁報告（給客戶看／貼 LINE）</button>
+    <div class="disclaimer">※ 本試算為簡化估算，僅供觀念溝通與規劃參考，非任何投資或保險商品的收益承諾。實際退休所需與準備金額，會因通膨、投資報酬、個人健康與家庭狀況而變動，正式規劃前建議完整評估。數字不代表未來績效、不保證收益。</div>
+  </div>
+</div>
+
+<div class="toast" id="toast">已複製 ✓</div>
+<footer>阿峰老師 AI 工具箱 · 退休缺口試算器 · 帶客戶把「感覺不夠」變成「差多少」</footer>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const nf = n => Math.round(n).toLocaleString('zh-TW');
+  const wan = n => (n/10000).toFixed(0);
+  let lastReport = '';
+
+  $('calcBtn').onclick = () => {
+    const age=+$('age').value, retire=+$('retire').value, years=+$('years').value;
+    const monthly=+$('monthly').value, inf=+$('inflation').value/100;
+    const pension=+$('pension').value, saved=+$('saved').value, roi=+$('roi').value/100;
+    const n = Math.max(0, retire - age);           // 距退休年數
+    // 退休時每月所需（通膨後）
+    const monthlyAtRetire = monthly * Math.pow(1+inf, n);
+    // 退休期間總需求（名目、保守不折現）
+    const totalNeed = monthlyAtRetire * 12 * years;
+    // 已準備：現有資產成長到退休 + 勞退月領總額
+    const savedGrown = saved * Math.pow(1+roi, n);
+    const pensionTotal = pension * 12 * years;
+    const totalHave = savedGrown + pensionTotal;
+    const gap = totalNeed - totalHave;
+    // 每月要補（距退休 n 年，簡化不含投報，保守）
+    const monthlyFill = n>0 ? gap / (n*12) : gap;
+
+    // 燈號
+    const ratio = totalHave / totalNeed;
+    let cls, emoji, big, sub;
+    if (gap <= 0){ cls='green'; emoji='🟢'; big='準備充足'; sub=`已備比需求多約 ${wan(-gap)} 萬，行有餘力`; }
+    else if (ratio >= 0.6){ cls='yellow'; emoji='🟡'; big=`缺口約 ${wan(gap)} 萬`; sub=`已備約覆蓋 ${Math.round(ratio*100)}%，還差一段，及早補上就穩`; }
+    else { cls='red'; emoji='🔴'; big=`缺口約 ${wan(gap)} 萬`; sub=`已備僅覆蓋 ${Math.round(ratio*100)}%，缺口偏大，越早開始越輕鬆`; }
+
+    $('light').className = 'light '+cls;
+    $('lEmoji').textContent = emoji; $('lBig').textContent = big; $('lSub').textContent = sub;
+
+    const mx = Math.max(totalNeed, totalHave);
+    $('needBar').style.width = '100%'; $('needBar').textContent = wan(totalNeed)+' 萬';
+    $('haveBar').style.width = Math.max(6,(totalHave/mx*100))+'%'; $('haveBar').textContent = wan(totalHave)+' 萬';
+    $('needTxt').textContent = nf(totalNeed)+' 元';
+    $('haveTxt').textContent = nf(totalHave)+' 元';
+
+    lastReport =
+`【退休缺口試算】
+· 目前 ${age} 歲，預計 ${retire} 歲退休、退休後用 ${years} 年
+· 退休後想要每月 ${nf(monthly)} 元（現值），${n} 年後考慮 ${(inf*100).toFixed(1)}% 通膨 ≈ 每月 ${nf(monthlyAtRetire)} 元
+· 退休期間總需求：約 ${wan(totalNeed)} 萬
+· 已準備：現有資產成長後 ${wan(savedGrown)} 萬 ＋ 勞保勞退 ${wan(pensionTotal)} 萬 ＝ ${wan(totalHave)} 萬
+· 缺口：${gap>0?'約 '+wan(gap)+' 萬':'無缺口，行有餘力'}`
++ (gap>0 && n>0 ? `\n· 若從現在起每月補上約 ${nf(monthlyFill)} 元，可望補足這個缺口` : '')
++ `\n\n（本試算為簡化估算、僅供規劃參考，非收益承諾；實際依通膨、報酬與個人狀況而定。）`;
+    $('report').innerHTML = lastReport.replace(/\n/g,'<br>').replace(/約 ([\d,]+) 萬/g,'<b>約 $1 萬</b>');
+    $('result').style.display='block';
+    $('result').scrollIntoView({behavior:'smooth',block:'start'});
+  };
+
+  const toast=$('toast'); let tt;
+  $('copyBtn').onclick = () => {
+    const t = lastReport;
+    const done=()=>{ toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1600); };
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done);
+    else { const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy')}catch(e){} document.body.removeChild(ta); done(); }
+  };
+</script>
+</body>
+</html>
