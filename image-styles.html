@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>30 種出圖風格庫｜同一個畫面，換個風格就完全不一樣</title>
-<meta name="description" content="保險業務出圖不再只有水彩插畫：30 種風格（插畫、攝影寫實、設計編排、質感特殊、在地文化），每種附提示詞片段、適合場景與客群，點一下就複製。">
+<title>35 種出圖風格庫｜同一個畫面，換個風格就完全不一樣</title>
+<meta name="description" content="保險業務出圖不再只有水彩插畫：35 種風格（插畫、攝影寫實、設計編排、質感特殊、LINE 實戰、在地文化），每種附提示詞片段、適合場景與客群，點一下就複製。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -45,7 +45,7 @@
 </head>
 <body>
 <header>
-  <h1>🎨 30 種出圖風格庫</h1>
+  <h1>🎨 35 種出圖風格庫</h1>
   <p>同一個畫面，換個風格就完全不一樣。不用再每張圖都是水彩插畫——依你的客群跟場合挑風格，客戶的感受差很多。</p>
 </header>
 
@@ -53,18 +53,25 @@
   <div class="how">
     <h2>三種用法，挑你順手的</h2>
     <ol>
-      <li><b>直接換</b>：出圖模式點開任一張卡 → 上面有「🎨 換個風格試試」下拉 → 選一個 → 提示詞自動換好 → 複製去出圖。</li>
+      <li><b>直接換</b>：出圖模式點開任一張<b>行銷做圖</b>卡（資訊圖表填空卡目前不支援換風格） → 上面有「🎨 換個風格試試」下拉 → 選一個 → 提示詞自動換好 → 複製去出圖。</li>
       <li><b>自己組</b>：在這頁挑一個風格，複製它的風格片段，貼在你自己的畫面描述前面。</li>
       <li><b>比一比</b>：同一個畫面用兩三種風格各出一張，選最適合那位客戶的。</li>
     </ol>
   </div>
 
+  <div style="background:#FEF2F2;border-left:4px solid #DC2626;border-radius:10px;padding:14px 16px;margin-bottom:16px">
+    <b style="color:#991B1B">⚠️ 出圖前一定要知道的兩件事</b>
+    <div style="font-size:.88rem;color:#7F1D1D;line-height:1.85;margin-top:6px">
+      ① <b>圖上的中文字不要叫 AI 打</b>——AI 打繁中常缺筆畫、跑出簡體、整排亂碼。出圖後自己用 Canva 或手機修圖把字疊上去。<br>
+      ② <b>尺寸看平台</b>：LINE 群組會裁成正方形（人臉別放太邊邊）、FB 用 1.91:1、IG 用 4:5。細節太密的風格在 LINE 縮圖會糊成一團。
+    </div>
+  </div>
   <div class="filters" id="filters"></div>
   <div class="grid" id="grid"></div>
 </div>
 
 <div class="toast" id="toast">已複製 ✓</div>
-<footer>阿峰老師 AI 工具箱 · 30 種出圖風格庫 · 風格對了，客戶才有感</footer>
+<footer>阿峰老師 AI 工具箱 · 35 種出圖風格庫 · 風格對了，客戶才有感</footer>
 
 <script>
 let STYLES=[], active='全部';
@@ -74,19 +81,20 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 fetch('image-styles.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{STYLES=d;renderFilters();render();})
   .catch(()=>{$('grid').innerHTML='<p style="color:#dc2626">風格庫載入失敗，請重新整理。</p>';});
 
+const SCENES=['節慶祝福','關懷問候','觀念圖解','數據比較','增員招募','個人品牌','對內激勵'];
 function renderFilters(){
-  const groups=['全部',...new Set(STYLES.map(s=>s.group))];
-  $('filters').innerHTML=groups.map(g=>{
-    const n=g==='全部'?STYLES.length:STYLES.filter(s=>s.group===g).length;
+  const groups=['全部',...SCENES];
+  $('filters').innerHTML=`<div style="width:100%;font-size:.82rem;color:#15803d;font-weight:700;margin-bottom:6px">你這次要發什麼？點一下看推薦風格 👇</div>`+groups.map(g=>{
+    const n=g==='全部'?STYLES.length:STYLES.filter(s=>(s.scenes||[]).includes(g)).length;
     return `<button class="fbtn${g===active?' on':''}" data-g="${esc(g)}">${esc(g)} <span style="opacity:.65">${n}</span></button>`;
   }).join('');
   $('filters').querySelectorAll('.fbtn').forEach(b=>b.onclick=()=>{active=b.dataset.g;renderFilters();render();});
 }
 function render(){
-  const list=active==='全部'?STYLES:STYLES.filter(s=>s.group===active);
+  const list=active==='全部'?STYLES:STYLES.filter(s=>(s.scenes||[]).includes(active));
   $('grid').innerHTML=list.map((s,i)=>`
     <div class="card${s.current?' cur':''}">
-      <div class="chead"><span class="em">${esc(s.emoji)}</span><h3>${esc(s.name)}</h3>${s.current?'<span class="badge now">網站現用</span>':'<span class="badge">新增</span>'}</div>
+      <div class="chead"><span class="em">${esc(s.emoji)}</span><h3>${esc(s.name)}</h3>${s.current?'<span class="badge now">新手先用這個</span>':''}</div>
       <div class="grp">${esc(s.group)}</div>
       <div class="meta"><b>適合場景：</b>${esc(s.use)}<br><b>適合客群：</b>${esc(s.who)}</div>
       <div class="tip">💡 ${esc(s.tip)}</div>
@@ -95,7 +103,8 @@ function render(){
     </div>`).join('');
   $('grid').querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{
     const s=list[+b.dataset.i];
-    copy(s.prompt);
+    const guard='\n\n（合規提醒：圖上不得出現保額、保證字樣、商品名稱或公司商標；人物與情境為示意，非真實客戶。）';
+    copy(s.prompt+(s.palette?'\n'+s.palette:'')+guard);
     b.textContent='✓ 已複製！貼在你的畫面描述前面';b.classList.add('done');
     setTimeout(()=>{b.textContent='📋 複製這段風格';b.classList.remove('done');},2000);
   });
