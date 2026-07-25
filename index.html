@@ -1409,11 +1409,13 @@
           let STYLES=[];
           fetch('image-styles.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{STYLES=d;}).catch(()=>{});
           // 把提示詞的「風格段」(第一句) 換成指定風格
-          function swapStyle(prompt, stylePrompt){
-            if(!stylePrompt) return prompt;
+          function swapStyle(prompt, style){
+            if(!style) return prompt;
+            const sp = typeof style==='string' ? style : style.prompt;
+            const ov = (typeof style==='object' && style.override) ? style.override+'\n\n' : '';
             const m = prompt.match(/^(.{8,120}?)。/);
-            if(!m) return stylePrompt + '。' + prompt;
-            return stylePrompt + '。' + prompt.slice(m[0].length);
+            const body = m ? prompt.slice(m[0].length) : prompt;
+            return ov + sp + '。' + body;
           }
           function buildGeneric(c, wrap){
             const groups=[...new Set(STYLES.map(s=>s.group))];
@@ -1439,7 +1441,7 @@
             if(sel){
               sel.addEventListener('change', ()=>{
                 const s = STYLES.find(x=>x.id===sel.value);
-                cur = s ? swapStyle(c.copyPrompt, s.prompt) : c.copyPrompt;
+                cur = s ? swapStyle(c.copyPrompt, s) : c.copyPrompt;
                 $('#czGenPre').textContent = cur;
                 $('#czStyleTip').innerHTML = s ? `<b>適合：</b>${esc(s.use)}　<b>客群：</b>${esc(s.who)}<br>💡 ${esc(s.tip)}` : '';
               });
