@@ -81,20 +81,20 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 fetch('image-styles.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{STYLES=d;renderFilters();render();})
   .catch(()=>{$('grid').innerHTML='<p style="color:#dc2626">風格庫載入失敗，請重新整理。</p>';});
 
-const SCENES=['節慶祝福','關懷問候','觀念圖解','數據比較','增員招募','個人品牌','對內激勵'];
+const SCENES=['🔰 新手先學這5款','節慶祝福','關懷問候','觀念圖解','數據比較','增員招募','個人品牌','對內激勵'];
 function renderFilters(){
   const groups=['全部',...SCENES];
   $('filters').innerHTML=`<div style="width:100%;font-size:.82rem;color:#15803d;font-weight:700;margin-bottom:6px">你這次要發什麼？點一下看推薦風格 👇</div>`+groups.map(g=>{
-    const n=g==='全部'?STYLES.length:STYLES.filter(s=>(s.scenes||[]).includes(g)).length;
+    const n=g==='全部'?STYLES.length:(g.includes('新手')?STYLES.filter(s=>s.starter).length:STYLES.filter(s=>(s.scenes||[]).includes(g)).length);
     return `<button class="fbtn${g===active?' on':''}" data-g="${esc(g)}">${esc(g)} <span style="opacity:.65">${n}</span></button>`;
   }).join('');
   $('filters').querySelectorAll('.fbtn').forEach(b=>b.onclick=()=>{active=b.dataset.g;renderFilters();render();});
 }
 function render(){
-  const list=active==='全部'?STYLES:STYLES.filter(s=>(s.scenes||[]).includes(active));
+  const list=active==='全部'?STYLES:(active.includes('新手')?STYLES.filter(s=>s.starter):STYLES.filter(s=>(s.scenes||[]).includes(active)));
   $('grid').innerHTML=list.map((s,i)=>`
     <div class="card${s.current?' cur':''}">
-      <div class="chead"><span class="em">${esc(s.emoji)}</span><h3>${esc(s.name)}</h3>${s.current?'<span class="badge now">新手先用這個</span>':''}</div>
+      <div class="chead"><span class="em">${esc(s.emoji)}</span><h3>${esc(s.name)}</h3>${s.starter?'<span class="badge now">🔰 新手先學</span>':''}</div>
       <div class="grp">${esc(s.group)}</div>
       <div class="meta"><b>適合場景：</b>${esc(s.use)}<br><b>適合客群：</b>${esc(s.who)}</div>
       <div class="tip">💡 ${esc(s.tip)}</div>

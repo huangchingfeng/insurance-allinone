@@ -14,7 +14,8 @@
    "節慶祝福"
   ],
   "palette": "配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: 3d plastic look, photorealistic."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: 3d plastic look, photorealistic.",
+  "starter": true
  },
  {
   "id": "flat-vector",
@@ -31,7 +32,8 @@
    "數據比較"
   ],
   "palette": "配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy gradients, photorealistic."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy gradients, photorealistic.",
+  "starter": true
  },
  {
   "id": "crayon",
@@ -47,7 +49,8 @@
    "節慶祝福"
   ],
   "palette": "配色：飽和帶復古濾鏡感的暖色調，品牌青綠可作一處點綴；紙張米白底。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp vector edges, photorealistic."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp vector edges, photorealistic.",
+  "starter": false
  },
  {
   "id": "line-art",
@@ -63,7 +66,8 @@
    "觀念圖解"
   ],
   "palette": "配色：單色線條（深藍 #0A1628 或黑）配大量留白，可用一處品牌青綠 #00D4FF 點綴。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy fill, complex shading."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy fill, complex shading.",
+  "starter": false
  },
  {
   "id": "papercut",
@@ -78,7 +82,8 @@
    "節慶祝福"
   ],
   "palette": "配色：色紙層次分明的中彩度配色，品牌青綠可為主色之一；背景單色。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, gradient mesh."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, gradient mesh.",
+  "starter": false
  },
  {
   "id": "ink-wash",
@@ -94,7 +99,8 @@
    "關懷問候"
   ],
   "palette": "配色：水墨黑白灰為主，赭石與花青少量點染；宣紙米白底，不使用螢光色。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: neon colors, photorealistic, chinese palace style."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: neon colors, photorealistic, chinese palace style.",
+  "starter": false
  },
  {
   "id": "picture-book",
@@ -110,7 +116,8 @@
    "關懷問候"
   ],
   "palette": "配色：柔和厚塗暖色系，品牌青綠可作點綴；紙質溫潤底。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, harsh contrast."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, harsh contrast.",
+  "starter": false
  },
  {
   "id": "doodle",
@@ -127,7 +134,8 @@
    "增員招募"
   ],
   "palette": "配色：白或方格紙底、藍黑原子筆線條、螢光黃或青綠重點色塊。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector.",
+  "starter": false
  },
  {
   "id": "portrait-photo",
@@ -143,7 +151,8 @@
    "增員招募"
   ],
   "palette": "配色：自然膚色與真實環境色，柔和棚燈；背景乾淨中性。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines.",
+  "starter": false
  },
  {
   "id": "lifestyle",
@@ -160,7 +169,8 @@
    "增員招募"
   ],
   "palette": "配色：自然光下的真實色彩，溫暖但不過度飽和。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines.",
+  "starter": true
  },
  {
   "id": "japanese-air",
@@ -176,7 +186,8 @@
    "關懷問候"
   ],
   "palette": "配色：高明度低對比、淡雅柔和色調、大量白，柔光過曝感。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, high contrast, heavy saturation."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, high contrast, heavy saturation.",
+  "starter": false
  },
  {
   "id": "cinematic",
@@ -192,7 +203,8 @@
    "觀念圖解"
   ],
   "palette": "配色：電影調色（青橙或低飽和冷調），戲劇性明暗對比。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat lighting."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat lighting.",
+  "starter": false
  },
  {
   "id": "bw-doc",
@@ -207,7 +219,8 @@
    "觀念圖解"
   ],
   "palette": "配色：全畫面黑白灰階，無任何彩色與色碼。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: color, illustration, any hex color."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: color, illustration, any hex color.",
+  "starter": false
  },
  {
   "id": "product-studio",
@@ -222,7 +235,8 @@
    "對內激勵"
   ],
   "palette": "配色：深色漸層背景配主體高光，金屬或獎盃質感反射。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat background."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat background.",
+  "starter": false
  },
  {
   "id": "aerial",
@@ -238,7 +252,8 @@
    "觀念圖解"
   ],
   "palette": "配色：自然地景色彩、天空層次，開闊明亮。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon.",
+  "starter": false
  },
  {
   "id": "editorial",
@@ -255,7 +270,8 @@
    "增員招募"
   ],
   "palette": "配色：黑白灰為主、單一強調色，印刷質感。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered layout, low contrast text."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered layout, low contrast text.",
+  "starter": false
  },
  {
   "id": "infographic",
@@ -272,7 +288,8 @@
    "觀念圖解"
   ],
   "palette": "配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text.",
+  "starter": true
  },
  {
   "id": "isometric",
@@ -287,7 +304,8 @@
    "觀念圖解"
   ],
   "palette": "配色：清爽中彩度色塊，品牌青綠為主色，柔和陰影。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, perspective distortion."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, perspective distortion.",
+  "starter": false
  },
  {
   "id": "swiss",
@@ -303,7 +321,8 @@
    "數據比較"
   ],
   "palette": "配色：黑白灰配單一強調色（紅或品牌青綠），嚴謹網格。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative ornaments, gradients."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative ornaments, gradients.",
+  "starter": false
  },
  {
   "id": "typo-poster",
@@ -319,7 +338,8 @@
    "個人品牌"
   ],
   "palette": "配色：單色或雙色高對比背景，文字為主角。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered background, small text."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered background, small text.",
+  "starter": false
  },
  {
   "id": "dashboard",
@@ -335,7 +355,8 @@
    "數據比較"
   ],
   "palette": "配色：系統色票（深底或淺底擇一），品牌青綠為數據主色。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: hand-drawn, photorealistic."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: hand-drawn, photorealistic.",
+  "starter": false
  },
  {
   "id": "clay",
@@ -352,7 +373,8 @@
    "增員招募"
   ],
   "palette": "配色：馬卡龍柔和色系，黏土霧面質感，柔和棚燈。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp edges, photorealistic, flat vector."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp edges, photorealistic, flat vector.",
+  "starter": false
  },
  {
   "id": "glass",
@@ -367,7 +389,8 @@
    "個人品牌"
   ],
   "palette": "配色：半透明毛玻璃層次配深色或漸層背景，冷色光暈。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat opaque shapes, hand-drawn."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat opaque shapes, hand-drawn.",
+  "starter": false
  },
  {
   "id": "neon",
@@ -382,7 +405,8 @@
    "對內激勵"
   ],
   "palette": "配色：深色背景配霓虹光管（青紫或藍粉），高對比光暈。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: daylight, pastel, hand-drawn."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: daylight, pastel, hand-drawn.",
+  "starter": false
  },
  {
   "id": "retro-tw",
@@ -398,7 +422,8 @@
    "關懷問候"
   ],
   "palette": "配色：1980-90 年代印刷質感，暖黃泛舊色調、網點與輕微套色偏移。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern clean vector, cool white balance."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern clean vector, cool white balance.",
+  "starter": false
  },
  {
   "id": "miniature",
@@ -413,7 +438,8 @@
    "觀念圖解"
   ],
   "palette": "配色：高飽和玩具感色彩，移軸淺景深。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat illustration, wide depth of field."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat illustration, wide depth of field.",
+  "starter": false
  },
  {
   "id": "luxury-gold",
@@ -428,7 +454,8 @@
    "個人品牌"
   ],
   "palette": "配色：純黑或深藍底配金箔 #C9A227 燙印，低調高級。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: light background, pastel, cluttered."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: light background, pastel, cluttered.",
+  "starter": false
  },
  {
   "id": "temple",
@@ -443,7 +470,8 @@
    "節慶祝福"
   ],
   "palette": "配色：飽和朱紅與金線、傳統吉祥色，濃厚民俗感。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: chinese palace style, deity faces, modern minimalism."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: chinese palace style, deity faces, modern minimalism.",
+  "starter": false
  },
  {
   "id": "notebook",
@@ -458,7 +486,8 @@
    "觀念圖解"
   ],
   "palette": "配色：方格或橫線紙底、藍黑筆跡、螢光筆重點。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector.",
+  "starter": false
  },
  {
   "id": "old-photo",
@@ -474,7 +503,8 @@
    "節慶祝福"
   ],
   "palette": "配色：褪色暖棕與泛黃調，模擬底片沖印，允許 sepia 與 amber。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern saturation, cool white balance, flat vector."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern saturation, cool white balance, flat vector.",
+  "starter": false
  },
  {
   "id": "morning-greeting",
@@ -490,7 +520,8 @@
    "節慶祝福"
   ],
   "palette": "配色：暖色漸層、明亮飽和、金邊裝飾，留大片空白給文字。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: dark background, cluttered composition."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: dark background, cluttered composition.",
+  "starter": true
  },
  {
   "id": "line-sticker",
@@ -506,7 +537,8 @@
    "關懷問候"
   ],
   "palette": "配色：白底或透明去背、明亮飽和、粗黑輪廓線。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: complex background, photorealistic."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: complex background, photorealistic.",
+  "starter": false
  },
  {
   "id": "news-card",
@@ -522,7 +554,8 @@
    "數據比較"
   ],
   "palette": "配色：紅或藍標題色帶配白底，資訊層級分明。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative illustration, low contrast."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative illustration, low contrast.",
+  "starter": false
  },
  {
   "id": "plain-table",
@@ -538,7 +571,8 @@
    "觀念圖解"
   ],
   "palette": "配色：白底細灰格線、無裝飾、數字對齊清楚。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative graphics, gradient, illustration."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative graphics, gradient, illustration.",
+  "starter": false
  },
  {
   "id": "before-after",
@@ -554,6 +588,7 @@
    "觀念圖解"
   ],
   "palette": "配色：左側灰階、右側品牌青綠彩色，中央清楚分隔線。",
-  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: ambiguous divider, cluttered."
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: ambiguous divider, cluttered.",
+  "starter": false
  }
 ]
