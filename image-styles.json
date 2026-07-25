@@ -2,24 +2,36 @@
  {
   "id": "watercolor",
   "group": "插畫類",
-  "name": "溫潤水彩淡塗",
+  "name": "柔和水彩",
   "emoji": "🎨",
   "current": true,
   "prompt": "溫潤水彩淡塗插畫風，柔和手繪線稿、低彩度療癒，紙張紋理感、邊緣自然暈染",
   "use": "家庭情境、關懷訊息、節慶祝福",
   "who": "家庭客群、長輩",
-  "tip": "最安全的萬用風格，人物不會有恐怖谷問題"
+  "tip": "最安全的萬用風格，AI 畫人臉不會怪怪的",
+  "scenes": [
+   "關懷問候",
+   "節慶祝福"
+  ],
+  "palette": "配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: 3d plastic look, photorealistic."
  },
  {
   "id": "flat-vector",
   "group": "插畫類",
-  "name": "扁平向量",
+  "name": "乾淨圖解風",
   "emoji": "🔷",
   "current": true,
   "prompt": "乾淨扁平向量插畫，粗細一致的線條、大色塊、幾乎無漸層陰影，現代俐落",
   "use": "觀念圖解、流程說明、社群圖卡",
-  "who": "全客群",
-  "tip": "文字放上去最清楚，適合要加標題的圖"
+  "who": "連 60 歲長輩都看得懂，不會覺得花俏",
+  "tip": "文字放上去最清楚，適合要加標題的圖",
+  "scenes": [
+   "觀念圖解",
+   "數據比較"
+  ],
+  "palette": "配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy gradients, photorealistic."
  },
  {
   "id": "crayon",
@@ -29,17 +41,29 @@
   "prompt": "蠟筆與色鉛筆在紙上摩擦的顆粒質感，粗糙線條、造型圓潤微變形、飽和帶復古濾鏡感，童趣可愛",
   "use": "兒童保單、親子主題、教育基金",
   "who": "年輕父母",
-  "tip": "講小孩的主題用這個，比水彩更有童趣"
+  "tip": "講小孩的主題用這個，比水彩更有童趣",
+  "scenes": [
+   "關懷問候",
+   "節慶祝福"
+  ],
+  "palette": "配色：飽和帶復古濾鏡感的暖色調，品牌青綠可作一處點綴；紙張米白底。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp vector edges, photorealistic."
  },
  {
   "id": "line-art",
   "group": "插畫類",
-  "name": "單線 Line Art",
+  "name": "一筆細線速寫",
   "emoji": "✏️",
   "prompt": "極簡單線藝術，一筆連續細線勾勒輪廓、大量留白、無填色或僅一色點綴，高級簡約",
   "use": "高端形象、極簡風貼文、名片配圖",
   "who": "高資產客戶",
-  "tip": "留白多，適合放大段文字"
+  "tip": "留白多，適合放大段文字",
+  "scenes": [
+   "個人品牌",
+   "觀念圖解"
+  ],
+  "palette": "配色：單色線條（深藍 #0A1628 或黑）配大量留白，可用一處品牌青綠 #00D4FF 點綴。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy fill, complex shading."
  },
  {
   "id": "papercut",
@@ -48,8 +72,13 @@
   "emoji": "✂️",
   "prompt": "剪紙拼貼風，色紙層層堆疊的立體邊緣與細微陰影、質樸手作感、色塊分明",
   "use": "節慶賀圖、農曆新年、活動宣傳",
-  "who": "全客群",
-  "tip": "節慶用這個比水彩更有記憶點"
+  "who": "節慶時全客群都適用，比水彩更有記憶點",
+  "tip": "節慶用這個比水彩更有記憶點　⚠️ 滿版花紋會吃掉文字，祝福語要大就改用「金句大字」或「乾淨圖解風」",
+  "scenes": [
+   "節慶祝福"
+  ],
+  "palette": "配色：色紙層次分明的中彩度配色，品牌青綠可為主色之一；背景單色。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, gradient mesh."
  },
  {
   "id": "ink-wash",
@@ -59,7 +88,13 @@
   "prompt": "東方水墨淡彩，濃淡墨韻、留白意境、少量赭石與花青點染，宣紙纖維質感",
   "use": "傳承規劃、長者關懷、中秋端午",
   "who": "長輩、傳統家庭",
-  "tip": "談傳承、家族時很有份量"
+  "tip": "談傳承、家族時很有份量",
+  "scenes": [
+   "節慶祝福",
+   "關懷問候"
+  ],
+  "palette": "配色：水墨黑白灰為主，赭石與花青少量點染；宣紙米白底，不使用螢光色。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: neon colors, photorealistic, chinese palace style."
  },
  {
   "id": "picture-book",
@@ -68,8 +103,14 @@
   "emoji": "📖",
   "prompt": "歐美繪本童書插畫風，柔和厚塗、圓潤造型、溫暖敘事感，像睡前故事的一頁",
   "use": "說故事、衛教說明、保障觀念",
-  "who": "家庭客群",
-  "tip": "要「講一個故事」時用"
+  "who": "家裡有小孩的客戶",
+  "tip": "要「講一個故事」時用",
+  "scenes": [
+   "觀念圖解",
+   "關懷問候"
+  ],
+  "palette": "配色：柔和厚塗暖色系，品牌青綠可作點綴；紙質溫潤底。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, harsh contrast."
  },
  {
   "id": "doodle",
@@ -79,7 +120,14 @@
   "prompt": "手帳塗鴉風，原子筆手繪感、隨手註記與箭頭、螢光筆重點色塊、方格紙背景",
   "use": "輕鬆社群貼文、學習筆記、觀念整理",
   "who": "年輕客群、增員對象",
-  "tip": "看起來親切不官方，社群互動率高"
+  "tip": "增員最強的一張——像同事在分享，不像招募廣告，年輕人才會私訊你",
+  "scenes": [
+   "觀念圖解",
+   "個人品牌",
+   "增員招募"
+  ],
+  "palette": "配色：白或方格紙底、藍黑原子筆線條、螢光黃或青綠重點色塊。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector."
  },
  {
   "id": "portrait-photo",
@@ -87,10 +135,15 @@
   "name": "商業人像攝影",
   "emoji": "📷",
   "prompt": "專業商業人像攝影，中景鏡頭、淺景深、柔和棚燈打光，膚色自然、眼神有光，照片級真實感高細節",
-  "use": "個人品牌形象、專業自介、名片大頭照",
+  "use": "個人品牌形象情境圖、專業感配圖",
   "who": "經營個人品牌的業務員",
-  "tip": "要「看起來專業可信」就用這個",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "tip": "⚠️ AI 生的臉不是你本人，不能當大頭照或個人照使用；真人照請自己拍",
+  "scenes": [
+   "個人品牌",
+   "增員招募"
+  ],
+  "palette": "配色：自然膚色與真實環境色，柔和棚燈；背景乾淨中性。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines."
  },
  {
   "id": "lifestyle",
@@ -98,10 +151,16 @@
   "name": "生活感抓拍",
   "emoji": "📸",
   "prompt": "生活風格抓拍攝影，自然光、非擺拍的瞬間感、淺景深、色調溫暖不過度飽和，照片級真實感",
-  "use": "真實家庭情境、日常陪伴、客戶見證",
-  "who": "全客群",
-  "tip": "比插畫更有說服力，因為「像真的」",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "use": "日常陪伴情境、生活感配圖（非真實客戶）",
+  "who": "誰看都不像廣告，這是它最強的地方",
+  "tip": "⚠️ AI 生成人物僅供情境示意，不可當成真實客戶見證或推薦——那是招攬不實",
+  "scenes": [
+   "關懷問候",
+   "個人品牌",
+   "增員招募"
+  ],
+  "palette": "配色：自然光下的真實色彩，溫暖但不過度飽和。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines."
  },
  {
   "id": "japanese-air",
@@ -111,8 +170,13 @@
   "prompt": "日系空氣感攝影，柔和過曝、低對比、淡雅色調、大量自然光與留白，清透療癒",
   "use": "溫馨關懷、母親節、女性客群溝通",
   "who": "女性客群",
-  "tip": "溫柔不business，關懷訊息配這個",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "tip": "溫柔不生硬，關懷訊息配這個最不像在推銷",
+  "scenes": [
+   "節慶祝福",
+   "關懷問候"
+  ],
+  "palette": "配色：高明度低對比、淡雅柔和色調、大量白，柔光過曝感。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, high contrast, heavy saturation."
  },
  {
   "id": "cinematic",
@@ -123,29 +187,42 @@
   "use": "人生重大時刻、故事型貼文、品牌形象",
   "who": "全客群",
   "tip": "有「大片感」，重要議題用",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "scenes": [
+   "個人品牌",
+   "觀念圖解"
+  ],
+  "palette": "配色：電影調色（青橙或低飽和冷調），戲劇性明暗對比。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat lighting."
  },
  {
   "id": "bw-doc",
   "group": "攝影寫實類",
-  "name": "紀實黑白",
+  "name": "紀實黑白（不放人臉）",
   "emoji": "⚫",
   "prompt": "紀實黑白攝影，高對比顆粒感、自然光、抓拍瞬間、情感含蓄不煽情，經典紀實質地",
-  "use": "深度議題、傳承故事、人生回顧",
-  "who": "高資產、長輩",
-  "tip": "有重量感，談生命議題不輕浮",
-  "override": "【覆蓋指令，優先於後述】本張為黑白影像，忽略後文所有色碼與配色規則（含品牌青綠），僅保留構圖、人物與場景描述，以黑白灰階呈現。"
+  "use": "風景、物件、老街場景的深度議題配圖",
+  "who": "想做有質感的觀念貼文時",
+  "tip": "⚠️ 千萬別放人物臉部特寫——台灣長輩看到黑白人像會聯想遺照，發客戶群等於觸霉頭",
+  "scenes": [
+   "觀念圖解"
+  ],
+  "palette": "配色：全畫面黑白灰階，無任何彩色與色碼。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: color, illustration, any hex color."
  },
  {
   "id": "product-studio",
   "group": "攝影寫實類",
-  "name": "產品棚拍",
+  "name": "獎盃打光特寫",
   "emoji": "🏆",
   "prompt": "高端產品攝影棚拍，深色漸層背景、聚光燈與柔光箱、精緻反射與陰影、質感奢華不浮誇",
-  "use": "獎盃證書、MDRT 榮耀、業績達標",
-  "who": "團隊內部激勵",
-  "tip": "拍獎盃、證書專用",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "use": "MDRT／高峰會／破百萬達成，個人品牌年度重點貼文",
+  "who": "公開發沒問題，但圖上別出現金額",
+  "tip": "可以公開發，這是你一年最重要的個人品牌貼文；但圖上絕對別出現金額或業績數字",
+  "scenes": [
+   "對內激勵"
+  ],
+  "palette": "配色：深色漸層背景配主體高光，金屬或獎盃質感反射。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat background."
  },
  {
   "id": "aerial",
@@ -156,7 +233,12 @@
   "use": "願景、格局、企業主溝通、年度目標",
   "who": "企業主、高資產",
   "tip": "談「長遠」「格局」時用",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "scenes": [
+   "個人品牌",
+   "觀念圖解"
+  ],
+  "palette": "配色：自然地景色彩、天空層次，開闊明亮。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon."
  },
  {
   "id": "editorial",
@@ -166,7 +248,14 @@
   "prompt": "雜誌編輯設計風，大標題壓字、細緻分隔線、充足留白、襯線標題配無襯線內文、色彩克制",
   "use": "專業文章配圖、人物專訪感、個人品牌",
   "who": "高資產、專業人士",
-  "tip": "最有「專業媒體」感的排版"
+  "tip": "最有「專業媒體」感的排版　⚠️ AI 打中文常出錯字，圖出來後建議自己用 Canva 或手機修圖把字疊上去",
+  "scenes": [
+   "個人品牌",
+   "觀念圖解",
+   "增員招募"
+  ],
+  "palette": "配色：黑白灰為主、單一強調色，印刷質感。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered layout, low contrast text."
  },
  {
   "id": "infographic",
@@ -176,48 +265,77 @@
   "current": true,
   "prompt": "乾淨資訊圖表設計，圖示化數據、清楚層級、有限色票（主色一條輔色一條）、標籤文字精簡",
   "use": "數據說明、保障比較、流程圖解",
-  "who": "全客群",
-  "tip": "要放數字、比較時用"
+  "who": "需要看數字才安心的客戶",
+  "tip": "要放數字、比較時用",
+  "scenes": [
+   "數據比較",
+   "觀念圖解"
+  ],
+  "palette": "配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text."
  },
  {
   "id": "isometric",
   "group": "設計編排類",
-  "name": "等距 3D",
+  "name": "積木小場景",
   "emoji": "🧊",
   "prompt": "等距投影 isometric 插畫，45 度視角、幾何精準、柔和陰影、清爽配色，現代科技感",
   "use": "流程說明、系統架構、服務全貌",
   "who": "科技業客群、年輕族群",
-  "tip": "講「流程」「系統」最清楚"
+  "tip": "講「流程」「系統」最清楚",
+  "scenes": [
+   "觀念圖解"
+  ],
+  "palette": "配色：清爽中彩度色塊，品牌青綠為主色，柔和陰影。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, perspective distortion."
  },
  {
   "id": "swiss",
   "group": "設計編排類",
-  "name": "極簡瑞士風",
+  "name": "留白高冷風",
   "emoji": "⬜",
   "prompt": "瑞士國際主義平面設計，嚴謹網格系統、Helvetica 式無襯線、大量留白、紅黑或單色系、幾何構成",
   "use": "企業提案、高端形象、專業報告",
   "who": "企業主、高資產",
-  "tip": "最「高冷專業」的風格"
+  "tip": "最「高冷專業」的風格　⚠️ AI 打中文常出錯字，圖出來後建議自己用 Canva 或手機修圖把字疊上去",
+  "scenes": [
+   "個人品牌",
+   "數據比較"
+  ],
+  "palette": "配色：黑白灰配單一強調色（紅或品牌青綠），嚴謹網格。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative ornaments, gradients."
  },
  {
   "id": "typo-poster",
   "group": "設計編排類",
-  "name": "大字報標語",
+  "name": "金句大字",
   "emoji": "🔠",
   "prompt": "大字報標語設計，超大字級主標佔畫面、強烈字體對比、單色或雙色背景、極簡裝飾",
   "use": "社群金句、觀念圖卡、活動宣傳",
   "who": "社群受眾",
-  "tip": "一句話要人記住就用這個"
+  "tip": "一句話戳中「我不想再做這份工作」，比任何招募文案有效　⚠️ AI 打中文常出錯字，圖出來後建議自己用 Canva 或手機修圖把字疊上去",
+  "scenes": [
+   "觀念圖解",
+   "個人品牌"
+  ],
+  "palette": "配色：單色或雙色高對比背景，文字為主角。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered background, small text."
  },
  {
   "id": "dashboard",
   "group": "設計編排類",
-  "name": "儀表板數據風",
+  "name": "業績數字看板",
   "emoji": "📈",
   "prompt": "數據儀表板視覺化風格，卡片式區塊、大數字強調、簡潔圖表、深色或淺色系統色票",
-  "use": "業績榮耀、達成率、團隊成果",
-  "who": "團隊內部",
-  "tip": "呈現數字成果專用"
+  "use": "年度成果、服務里程碑、團隊達標",
+  "who": "對內激勵為主；對外發要拿掉業績數字",
+  "tip": "⚠️ 對外發一定要拿掉業績數字——客戶看到會想「原來你從我身上賺這麼多」　⚠️ AI 打中文常出錯字，圖出來後建議自己用 Canva 或手機修圖把字疊上去",
+  "scenes": [
+   "對內激勵",
+   "數據比較"
+  ],
+  "palette": "配色：系統色票（深底或淺底擇一），品牌青綠為數據主色。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: hand-drawn, photorealistic."
  },
  {
   "id": "clay",
@@ -227,29 +345,44 @@
   "prompt": "3D 黏土定格動畫風，柔軟黏土質感與指紋細節、圓潤造型、柔和棚燈、馬卡龍色系，可愛親和",
   "use": "親和溝通、輕鬆話題、年輕客群",
   "who": "年輕客群、親子",
-  "tip": "可愛但不幼稚，降低距離感"
+  "tip": "可愛但不幼稚，降低距離感",
+  "scenes": [
+   "關懷問候",
+   "節慶祝福",
+   "增員招募"
+  ],
+  "palette": "配色：馬卡龍柔和色系，黏土霧面質感，柔和棚燈。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp edges, photorealistic, flat vector."
  },
  {
   "id": "glass",
   "group": "質感特殊類",
-  "name": "玻璃擬態",
+  "name": "毛玻璃科技感",
   "emoji": "🔮",
   "prompt": "玻璃擬態 glassmorphism，半透明毛玻璃層次、柔和光暈與模糊背景、細緻邊框高光，現代科技感",
   "use": "數位服務、線上投保、科技形象",
   "who": "科技業、年輕族群",
   "tip": "要有「數位感」時用",
-  "override": "【覆蓋指令，優先於後述】本張為深色調視覺，忽略後文「背景用淺色／近白／柔白」等淺底規則，改以深色背景呈現；品牌色可作為霓虹或點綴光色。"
+  "scenes": [
+   "個人品牌"
+  ],
+  "palette": "配色：半透明毛玻璃層次配深色或漸層背景，冷色光暈。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat opaque shapes, hand-drawn."
  },
  {
   "id": "neon",
   "group": "質感特殊類",
-  "name": "霓虹賽博",
+  "name": "都會夜景霓虹",
   "emoji": "🌃",
   "prompt": "霓虹賽博龐克風，深色背景配霓虹光管（青紫或藍粉）、光暈反射、都會夜景質地，前衛有活力",
-  "use": "增員招募、年輕世代溝通、活動宣傳",
-  "who": "25-35 歲增員對象",
-  "tip": "吸引年輕人，但別用在長輩客群",
-  "override": "【覆蓋指令，優先於後述】本張為深色調視覺，忽略後文「背景用淺色／近白／柔白」等淺底規則，改以深色背景呈現；品牌色可作為霓虹或點綴光色。"
+  "use": "尾牙、頒獎典禮、活動視覺",
+  "who": "團隊活動場合",
+  "tip": "⚠️ 別拿來做增員圖——深色霓虹＋保險在台灣容易被聯想成幣圈或博弈廣告",
+  "scenes": [
+   "對內激勵"
+  ],
+  "palette": "配色：深色背景配霓虹光管（青紫或藍粉），高對比光暈。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: daylight, pastel, hand-drawn."
  },
  {
   "id": "retro-tw",
@@ -260,18 +393,27 @@
   "use": "懷舊話題、在地連結、長輩共鳴",
   "who": "長輩、在地客群",
   "tip": "很有台灣味，長輩看了會笑",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "scenes": [
+   "節慶祝福",
+   "關懷問候"
+  ],
+  "palette": "配色：1980-90 年代印刷質感，暖黃泛舊色調、網點與輕微套色偏移。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern clean vector, cool white balance."
  },
  {
   "id": "miniature",
   "group": "質感特殊類",
-  "name": "微縮模型",
+  "name": "小人國視角",
   "emoji": "🔍",
   "prompt": "微縮模型 tilt-shift 攝影風，移軸淺景深讓場景像小模型、高飽和、俯視視角，趣味精緻",
   "use": "有趣的觀念比喻、以小見大",
-  "who": "全客群",
+  "who": "想讓抽象觀念變有趣時",
   "tip": "把抽象觀念變成「一個小世界」",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "scenes": [
+   "觀念圖解"
+  ],
+  "palette": "配色：高飽和玩具感色彩，移軸淺景深。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat illustration, wide depth of field."
  },
  {
   "id": "luxury-gold",
@@ -281,8 +423,12 @@
   "prompt": "燙金奢華質感，純黑或深藍底配金箔燙印效果、細緻金線分隔、襯線字體、低調高級不浮誇",
   "use": "高資產客戶、VIP 邀請、傳承規劃",
   "who": "高資產、企業主",
-  "tip": "高端客群專用，別亂用會顯浮誇",
-  "override": "【覆蓋指令，優先於後述】本張為深色調視覺，忽略後文「背景用淺色／近白／柔白」等淺底規則，改以深色背景呈現；品牌色可作為霓虹或點綴光色。"
+  "tip": "⚠️ 圖上絕對不要出現數字或報酬字樣——黑底金字＋數字在台灣視覺語彙近似高報酬投資邀請，保險廣告不得引人誤信",
+  "scenes": [
+   "個人品牌"
+  ],
+  "palette": "配色：純黑或深藍底配金箔 #C9A227 燙印，低調高級。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: light background, pastel, cluttered."
  },
  {
   "id": "temple",
@@ -292,17 +438,27 @@
   "prompt": "台灣傳統廟宇彩繪風，飽和朱紅與金線、對稱吉祥紋樣、剪黏與交趾陶質地，濃厚民俗喜氣",
   "use": "農曆新年、媽祖遶境、傳統節慶",
   "who": "長輩、在地客群",
-  "tip": "過年節慶用，台灣味最濃"
+  "tip": "⚠️ 只取朱紅金線與吉祥紋樣，別讓神像入鏡；AI 容易出成中國宮廷龍鳳風，看到就重生　⚠️ 滿版花紋會吃掉文字，祝福語要大就改用「金句大字」或「乾淨圖解風」",
+  "scenes": [
+   "節慶祝福"
+  ],
+  "palette": "配色：飽和朱紅與金線、傳統吉祥色，濃厚民俗感。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: chinese palace style, deity faces, modern minimalism."
  },
  {
   "id": "notebook",
   "group": "在地文化類",
-  "name": "手寫筆記",
+  "name": "手寫筆記（橫線紙）",
   "emoji": "📝",
   "prompt": "手寫筆記風，方格或橫線紙背景、藍黑原子筆字跡、螢光筆畫重點、便利貼與迴紋針點綴",
-  "use": "教學說明、觀念筆記、學習分享",
+  "use": "教學說明、觀念筆記、課後複習圖",
   "who": "學習型受眾、增員對象",
-  "tip": "像老師的板書，很有親近感"
+  "tip": "跟「手帳塗鴉」很像，差別是這個更像上課筆記、那個更像隨手畫",
+  "scenes": [
+   "觀念圖解"
+  ],
+  "palette": "配色：方格或橫線紙底、藍黑筆跡、螢光筆重點。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector."
  },
  {
   "id": "old-photo",
@@ -313,6 +469,91 @@
   "use": "家族回憶、傳承故事、週年紀念",
   "who": "長輩、家族客群",
   "tip": "講「回憶」「傳承」時很催淚",
-  "override": "【覆蓋指令，優先於後述】本張以真實攝影呈現，忽略後文所有「插畫、手繪線稿、扁平向量、水彩、低彩度療癒」等插畫用語；後文提到的品牌色僅作為畫面中物件顏色的參考（例如衣物、道具），不套用為插畫填色。"
+  "scenes": [
+   "關懷問候",
+   "節慶祝福"
+  ],
+  "palette": "配色：褪色暖棕與泛黃調，模擬底片沖印，允許 sepia 與 amber。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern saturation, cool white balance, flat vector."
+ },
+ {
+  "id": "morning-greeting",
+  "group": "LINE 實戰類",
+  "name": "早安問候圖（長輩圖）",
+  "emoji": "🌅",
+  "prompt": "台灣長輩問候圖風格，柔焦花卉或風景背景、暖色漸層、金邊裝飾框、留出大片空白給祝福文字，溫暖明亮飽和",
+  "use": "每日問候、節氣祝福、長輩客戶關懷",
+  "who": "45 歲以上客戶（他們自己每天都在轉這種）",
+  "tip": "別覺得俗——這是長輩每天在用的視覺語言，講對方的話轉發率遠高於精緻插畫",
+  "scenes": [
+   "關懷問候",
+   "節慶祝福"
+  ],
+  "palette": "配色：暖色漸層、明亮飽和、金邊裝飾，留大片空白給文字。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: dark background, cluttered composition."
+ },
+ {
+  "id": "line-sticker",
+  "group": "LINE 實戰類",
+  "name": "LINE 貼圖感",
+  "emoji": "💬",
+  "prompt": "LINE 貼圖風格，白底或透明去背、圓潤可愛角色、誇張大表情、粗黑輪廓線、旁邊一句手寫短字，簡潔討喜",
+  "use": "祝福、打招呼、輕鬆互動",
+  "who": "全年齡，LINE 群組最自然",
+  "tip": "同一個角色重複用可以養成你的個人 IP，客戶會記得「那個有小人的業務」",
+  "scenes": [
+   "節慶祝福",
+   "關懷問候"
+  ],
+  "palette": "配色：白底或透明去背、明亮飽和、粗黑輪廓線。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: complex background, photorealistic."
+ },
+ {
+  "id": "news-card",
+  "group": "LINE 實戰類",
+  "name": "新聞快報卡",
+  "emoji": "📢",
+  "prompt": "新聞快報卡風格，紅或藍色標題色帶、跑馬燈式下標欄、清楚層級的資訊排版、電視新聞台視覺語彙，正式可信",
+  "use": "法規更新、新制上路、稅制變動、健保調整",
+  "who": "所有需要「即時知道」的客戶",
+  "tip": "⚠️ 一年發最多次也轉最兇的一類；但標題不能誇大成農場標，寫清楚事實就好　⚠️ AI 打中文常出錯字，圖出來後建議自己用 Canva 或手機修圖把字疊上去",
+  "scenes": [
+   "觀念圖解",
+   "數據比較"
+  ],
+  "palette": "配色：紅或藍標題色帶配白底，資訊層級分明。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative illustration, low contrast."
+ },
+ {
+  "id": "plain-table",
+  "group": "LINE 實戰類",
+  "name": "一眼表格（截圖感）",
+  "emoji": "📋",
+  "prompt": "樸素表格截圖風格，白底細灰格線、無多餘裝飾、等寬字體數字對齊、像試算表或系統畫面的截圖，資訊清楚不花俏",
+  "use": "保障比較、理賠流程、費率對照",
+  "who": "務實型客戶、企業主",
+  "tip": "「不像廣告」反而有人看——資訊圖表太花時改用這個　⚠️ AI 打中文常出錯字，圖出來後建議自己用 Canva 或手機修圖把字疊上去",
+  "scenes": [
+   "數據比較",
+   "觀念圖解"
+  ],
+  "palette": "配色：白底細灰格線、無裝飾、數字對齊清楚。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative graphics, gradient, illustration."
+ },
+ {
+  "id": "before-after",
+  "group": "LINE 實戰類",
+  "name": "前後對比（左右分割）",
+  "emoji": "↔️",
+  "prompt": "左右分割對比版型，中央一條清楚分隔線、左側灰階代表現況、右側彩色代表規劃後、上方各一個標題，對比強烈一眼看懂",
+  "use": "有規劃 vs 沒規劃、保單健檢前後、退休準備對照",
+  "who": "猶豫中、需要被說服的客戶",
+  "tip": "保險最核心的句型；但左邊別畫得太慘，恐嚇訴求會反效果",
+  "scenes": [
+   "數據比較",
+   "觀念圖解"
+  ],
+  "palette": "配色：左側灰階、右側品牌青綠彩色，中央清楚分隔線。",
+  "avoid": "avoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: ambiguous divider, cluttered."
  }
 ]
