@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 種出圖風格庫｜同一個畫面，換個風格就完全不一樣</title>
+<meta name="description" content="保險業務出圖不再只有水彩插畫：30 種風格（插畫、攝影寫實、設計編排、質感特殊、在地文化），每種附提示詞片段、適合場景與客群，點一下就複製。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans TC',sans-serif;background:#f0f9f4;color:#1a2e1a;line-height:1.6}
+  header{background:#0F9F6E;color:#fff;padding:26px 20px;text-align:center}
+  header h1{font-size:1.45rem;margin-bottom:6px}
+  header p{opacity:.93;font-size:.92rem;max-width:680px;margin:0 auto}
+  .container{max-width:1100px;margin:0 auto;padding:22px 16px 60px}
+  .how{background:#fffbeb;border-left:4px solid #f59e0b;border-radius:10px;padding:16px 18px;margin-bottom:18px}
+  .how h2{font-size:1rem;color:#92400e;margin-bottom:8px}
+  .how ol{margin:0;padding-left:20px}
+  .how li{font-size:.9rem;color:#78350f;line-height:1.85}
+  .how b{color:#0F9F6E}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;position:sticky;top:0;background:#f0f9f4;padding:10px 0;z-index:10}
+  .fbtn{border:1.5px solid #bbf7d0;background:#fff;color:#15803d;border-radius:20px;padding:7px 15px;font-size:.86rem;font-weight:700;cursor:pointer;font-family:inherit}
+  .fbtn.on{background:#0F9F6E;color:#fff;border-color:#0F9F6E}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+  .card{background:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.05);border-top:4px solid #0F9F6E;display:flex;flex-direction:column}
+  .card.cur{border-top-color:#94a3b8}
+  .chead{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .chead .em{font-size:1.5rem}
+  .chead h3{font-size:1.05rem;font-weight:900}
+  .badge{font-size:.7rem;background:#f1f5f9;color:#64748b;padding:2px 8px;border-radius:10px;font-weight:700}
+  .badge.now{background:#e0f2fe;color:#0369a1}
+  .grp{font-size:.75rem;color:#94a3b8;margin-bottom:10px}
+  .meta{font-size:.83rem;line-height:1.75;color:#475569;margin-bottom:10px;flex:1}
+  .meta b{color:#0F9F6E}
+  .tip{font-size:.8rem;background:#f0fdf4;border-radius:8px;padding:8px 10px;color:#15803d;margin-bottom:10px;line-height:1.6}
+  .pbox{background:#0f1f18;color:#e8f5ee;border-radius:8px;padding:11px 12px;font-size:.82rem;line-height:1.65;margin-bottom:10px;max-height:110px;overflow-y:auto}
+  .cbtn{width:100%;background:#0F9F6E;color:#fff;border:none;border-radius:9px;padding:11px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:inherit}
+  .cbtn.done{background:#059669}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1a2e1a;color:#fff;padding:12px 24px;border-radius:30px;font-size:.9rem;font-weight:700;opacity:0;transition:.3s;z-index:50}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+  footer{text-align:center;padding:24px;color:#9ca3af;font-size:.82rem}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎨 30 種出圖風格庫</h1>
+  <p>同一個畫面，換個風格就完全不一樣。不用再每張圖都是水彩插畫——依你的客群跟場合挑風格，客戶的感受差很多。</p>
+</header>
+
+<div class="container">
+  <div class="how">
+    <h2>三種用法，挑你順手的</h2>
+    <ol>
+      <li><b>直接換</b>：出圖模式點開任一張卡 → 上面有「🎨 換個風格試試」下拉 → 選一個 → 提示詞自動換好 → 複製去出圖。</li>
+      <li><b>自己組</b>：在這頁挑一個風格，複製它的風格片段，貼在你自己的畫面描述前面。</li>
+      <li><b>比一比</b>：同一個畫面用兩三種風格各出一張，選最適合那位客戶的。</li>
+    </ol>
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="toast" id="toast">已複製 ✓</div>
+<footer>阿峰老師 AI 工具箱 · 30 種出圖風格庫 · 風格對了，客戶才有感</footer>
+
+<script>
+let STYLES=[], active='全部';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+fetch('image-styles.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{STYLES=d;renderFilters();render();})
+  .catch(()=>{$('grid').innerHTML='<p style="color:#dc2626">風格庫載入失敗，請重新整理。</p>';});
+
+function renderFilters(){
+  const groups=['全部',...new Set(STYLES.map(s=>s.group))];
+  $('filters').innerHTML=groups.map(g=>{
+    const n=g==='全部'?STYLES.length:STYLES.filter(s=>s.group===g).length;
+    return `<button class="fbtn${g===active?' on':''}" data-g="${esc(g)}">${esc(g)} <span style="opacity:.65">${n}</span></button>`;
+  }).join('');
+  $('filters').querySelectorAll('.fbtn').forEach(b=>b.onclick=()=>{active=b.dataset.g;renderFilters();render();});
+}
+function render(){
+  const list=active==='全部'?STYLES:STYLES.filter(s=>s.group===active);
+  $('grid').innerHTML=list.map((s,i)=>`
+    <div class="card${s.current?' cur':''}">
+      <div class="chead"><span class="em">${esc(s.emoji)}</span><h3>${esc(s.name)}</h3>${s.current?'<span class="badge now">網站現用</span>':'<span class="badge">新增</span>'}</div>
+      <div class="grp">${esc(s.group)}</div>
+      <div class="meta"><b>適合場景：</b>${esc(s.use)}<br><b>適合客群：</b>${esc(s.who)}</div>
+      <div class="tip">💡 ${esc(s.tip)}</div>
+      <div class="pbox">${esc(s.prompt)}</div>
+      <button class="cbtn" data-i="${i}">📋 複製這段風格</button>
+    </div>`).join('');
+  $('grid').querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{
+    const s=list[+b.dataset.i];
+    copy(s.prompt);
+    b.textContent='✓ 已複製！貼在你的畫面描述前面';b.classList.add('done');
+    setTimeout(()=>{b.textContent='📋 複製這段風格';b.classList.remove('done');},2000);
+  });
+}
+let tt;
+function copy(t){
+  const d=()=>{const el=$('toast');el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(d);
+  else{const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);d();}
+}
+</script>
+</body>
+</html>
