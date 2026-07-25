@@ -34,6 +34,8 @@
   .meta{font-size:.83rem;line-height:1.75;color:#475569;margin-bottom:10px;flex:1}
   .meta b{color:#0F9F6E}
   .tip{font-size:.8rem;background:#f0fdf4;border-radius:8px;padding:8px 10px;color:#15803d;margin-bottom:10px;line-height:1.6}
+  .demo{width:100%;border-radius:9px;margin-bottom:10px;display:block;background:#f1f5f9}
+  .demo-ph{width:100%;padding:22px;text-align:center;background:#f1f5f9;color:#94a3b8;border-radius:9px;margin-bottom:10px;font-size:.8rem}
   .pbox{background:#0f1f18;color:#e8f5ee;border-radius:8px;padding:11px 12px;font-size:.82rem;line-height:1.65;margin-bottom:10px;max-height:110px;overflow-y:auto}
   .cbtn{width:100%;background:#0F9F6E;color:#fff;border:none;border-radius:9px;padding:11px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:inherit}
   .cbtn.done{background:#059669}
@@ -98,6 +100,9 @@ function render(){
       <div class="grp">${esc(s.group)}</div>
       <div class="meta"><b>適合場景：</b>${esc(s.use)}<br><b>適合客群：</b>${esc(s.who)}</div>
       <div class="tip">💡 ${esc(s.tip)}</div>
+      <img class="demo" src="style-demos/${esc(s.id)}.jpg" alt="${esc(s.name)}示範圖" loading="lazy" decoding="async"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div class="demo-ph" style="display:none">示範圖製作中</div>
       <div class="pbox">${esc(s.prompt)}</div>
       <button class="cbtn" data-i="${i}">📋 複製這段風格</button>
     </div>`).join('');
