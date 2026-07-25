@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>35 種風格・批次出圖清單｜一次把所有風格的示範圖生出來</title>
+<meta name="description" content="35 種出圖風格的完整提示詞，一鍵複製貼到 Gemini 或 ChatGPT，連續生成不用等。適合老師備課、也適合業務員一次做出自己的風格圖庫。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans TC',sans-serif;background:#f0f9f4;color:#1a2e1a;line-height:1.6}
+  header{background:#0F9F6E;color:#fff;padding:26px 20px;text-align:center}
+  header h1{font-size:1.4rem;margin-bottom:6px}
+  header p{opacity:.93;font-size:.92rem;max-width:660px;margin:0 auto}
+  .container{max-width:900px;margin:0 auto;padding:22px 16px 60px}
+  .how{background:#fffbeb;border-left:4px solid #f59e0b;border-radius:10px;padding:16px 18px;margin-bottom:16px}
+  .how h2{font-size:1rem;color:#92400e;margin-bottom:8px}
+  .how ol{margin:0;padding-left:20px}
+  .how li{font-size:.9rem;color:#78350f;line-height:1.9}
+  .how b{color:#0F9F6E}
+  .tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .tools a{flex:1;min-width:140px;text-align:center;background:#0F9F6E;color:#fff;border-radius:9px;padding:11px;text-decoration:none;font-weight:700;font-size:.9rem}
+  .tools a.alt{background:#fff;color:#0F9F6E;border:1.5px solid #0F9F6E}
+  .row{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;gap:12px;align-items:flex-start}
+  .row .n{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#0F9F6E;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.82rem}
+  .row .body{flex:1;min-width:0}
+  .row h3{font-size:.98rem;margin-bottom:3px}
+  .row .grp{font-size:.75rem;color:#94a3b8;margin-bottom:7px}
+  .row .p{background:#f8fafc;border:1px solid #eef2f7;border-radius:8px;padding:9px 11px;font-size:.8rem;line-height:1.6;color:#475569;max-height:76px;overflow-y:auto;margin-bottom:8px}
+  .row .cp{background:#0F9F6E;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:.86rem;font-weight:700;cursor:pointer;font-family:inherit}
+  .row .cp.done{background:#059669}
+  .row.done{opacity:.55}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1a2e1a;color:#fff;padding:12px 24px;border-radius:30px;font-size:.9rem;font-weight:700;opacity:0;transition:.3s;z-index:50}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+  .prog{position:sticky;top:0;background:#f0f9f4;padding:10px 0;z-index:9;font-size:.88rem;font-weight:700;color:#15803d}
+  footer{text-align:center;padding:24px;color:#9ca3af;font-size:.82rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>📸 35 種風格・批次出圖清單</h1>
+  <p>一次把 35 種風格的示範圖全生出來。同一個畫面、35 種風格，擺在一起就知道差多少。</p>
+</header>
+
+<div class="container">
+  <div class="how">
+    <h2>怎麼用（大約 20 分鐘生完 35 張）</h2>
+    <ol>
+      <li>先開 Gemini 或 ChatGPT（下面有按鈕）。</li>
+      <li>回這頁點第 1 個「複製」→ 貼到 AI → 按 Enter 送出。</li>
+      <li><b>不用等圖出來</b>，直接回來複製第 2 個 → 貼上 → 送出。這樣一路貼完 35 個。</li>
+      <li>全部貼完後，AI 會陸續把圖生出來，回頭一張張下載即可。</li>
+    </ol>
+  </div>
+
+  <div class="tools">
+    <a href="https://gemini.google.com/app" target="_blank">開 Gemini 生圖</a>
+    <a class="alt" href="https://chatgpt.com/" target="_blank">開 ChatGPT 生圖</a>
+  </div>
+
+  <div class="prog" id="prog">已複製 0 / 35</div>
+  <div id="list"></div>
+</div>
+
+<div class="toast" id="toast">已複製 ✓</div>
+<footer>阿峰老師 AI 工具箱 · 批次出圖清單 · 貼完就去泡杯咖啡，回來圖都好了</footer>
+
+<script>
+let DATA=[], done=new Set();
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+fetch('batch-prompts.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{DATA=d;render();})
+  .catch(()=>{$('list').innerHTML='<p style="color:#dc2626">清單載入失敗，請重新整理。</p>';});
+function render(){
+  $('list').innerHTML=DATA.map((x,i)=>`
+    <div class="row${done.has(i)?' done':''}" id="row${i}">
+      <span class="n">${i+1}</span>
+      <div class="body">
+        <h3>${esc(x.emoji)} ${esc(x.name)}</h3>
+        <div class="grp">${esc(x.group)}　·　檔名建議：${esc(x.id)}.jpg</div>
+        <div class="p">${esc(x.prompt)}</div>
+        <button class="cp" data-i="${i}">${done.has(i)?'✓ 已複製':'📋 複製這則'}</button>
+      </div>
+    </div>`).join('');
+  $('list').querySelectorAll('.cp').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i; copy(DATA[i].prompt); done.add(i);
+    $('prog').textContent=`已複製 ${done.size} / ${DATA.length}`;
+    b.textContent='✓ 已複製'; b.classList.add('done'); $('row'+i).classList.add('done');
+  });
+  $('prog').textContent=`已複製 ${done.size} / ${DATA.length}`;
+}
+let tt;
+function copy(t){
+  const d=()=>{const el=$('toast');el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),1400);};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(d);
+  else{const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);d();}
+}
+</script>
+</body>
+</html>

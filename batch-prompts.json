@@ -1,0 +1,247 @@
+[
+ {
+  "id": "watercolor",
+  "name": "柔和水彩",
+  "emoji": "🎨",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n溫潤水彩淡塗插畫風，柔和手繪線稿、低彩度療癒，紙張紋理感、邊緣自然暈染。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: 3d plastic look, photorealistic.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "flat-vector",
+  "name": "乾淨圖解風",
+  "emoji": "🔷",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n乾淨扁平向量插畫，粗細一致的線條、大色塊、幾乎無漸層陰影，現代俐落。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy gradients, photorealistic.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "crayon",
+  "name": "蠟筆童趣",
+  "emoji": "🖍️",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n蠟筆與色鉛筆在紙上摩擦的顆粒質感，粗糙線條、造型圓潤微變形、飽和帶復古濾鏡感，童趣可愛。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：飽和帶復古濾鏡感的暖色調，品牌青綠可作一處點綴；紙張米白底。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp vector edges, photorealistic.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "line-art",
+  "name": "一筆細線速寫",
+  "emoji": "✏️",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n極簡單線藝術，一筆連續細線勾勒輪廓、大量留白、無填色或僅一色點綴，高級簡約。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：單色線條（深藍 #0A1628 或黑）配大量留白，可用一處品牌青綠 #00D4FF 點綴。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: heavy fill, complex shading.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "papercut",
+  "name": "剪紙拼貼",
+  "emoji": "✂️",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n剪紙拼貼風，色紙層層堆疊的立體邊緣與細微陰影、質樸手作感、色塊分明。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：色紙層次分明的中彩度配色，品牌青綠可為主色之一；背景單色。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, gradient mesh.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "ink-wash",
+  "name": "水墨淡彩",
+  "emoji": "🖌️",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n東方水墨淡彩，濃淡墨韻、留白意境、少量赭石與花青點染，宣紙纖維質感。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：水墨黑白灰為主，赭石與花青少量點染；宣紙米白底，不使用螢光色。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: neon colors, photorealistic, chinese palace style.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "picture-book",
+  "name": "繪本童書",
+  "emoji": "📖",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n歐美繪本童書插畫風，柔和厚塗、圓潤造型、溫暖敘事感，像睡前故事的一頁。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：柔和厚塗暖色系，品牌青綠可作點綴；紙質溫潤底。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, harsh contrast.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "doodle",
+  "name": "手帳塗鴉",
+  "emoji": "🖊️",
+  "group": "插畫類",
+  "prompt": "請生成一張圖片。\n\n手帳塗鴉風，原子筆手繪感、隨手註記與箭頭、螢光筆重點色塊、方格紙背景。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：白或方格紙底、藍黑原子筆線條、螢光黃或青綠重點色塊。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "portrait-photo",
+  "name": "商業人像攝影",
+  "emoji": "📷",
+  "group": "攝影寫實類",
+  "prompt": "請生成一張圖片。\n\n專業商業人像攝影，中景鏡頭、淺景深、柔和棚燈打光，膚色自然、眼神有光，照片級真實感高細節。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：自然膚色與真實環境色，柔和棚燈；背景乾淨中性。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "lifestyle",
+  "name": "生活感抓拍",
+  "emoji": "📸",
+  "group": "攝影寫實類",
+  "prompt": "請生成一張圖片。\n\n生活風格抓拍攝影，自然光、非擺拍的瞬間感、淺景深、色調溫暖不過度飽和，照片級真實感。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：自然光下的真實色彩，溫暖但不過度飽和。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon, flat vector, hand-drawn lines.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "japanese-air",
+  "name": "日系空氣感",
+  "emoji": "🌸",
+  "group": "攝影寫實類",
+  "prompt": "請生成一張圖片。\n\n日系空氣感攝影，柔和過曝、低對比、淡雅色調、大量自然光與留白，清透療癒。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：高明度低對比、淡雅柔和色調、大量白，柔光過曝感。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, high contrast, heavy saturation.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "cinematic",
+  "name": "電影感",
+  "emoji": "🎬",
+  "group": "攝影寫實類",
+  "prompt": "請生成一張圖片。\n\n電影感攝影，寬幅構圖、戲劇性光影、電影調色（青橙或低飽和冷調）、淺景深，照片級真實感。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：電影調色（青橙或低飽和冷調），戲劇性明暗對比。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat lighting.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "bw-doc",
+  "name": "紀實黑白（不放人臉）",
+  "emoji": "⚫",
+  "group": "攝影寫實類",
+  "prompt": "請生成一張圖片。\n\n紀實黑白攝影，高對比顆粒感、自然光、抓拍瞬間、情感含蓄不煽情，經典紀實質地。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：全畫面黑白灰階，無任何彩色與色碼。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: color, illustration, any hex color.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "product-studio",
+  "name": "獎盃打光特寫",
+  "emoji": "🏆",
+  "group": "攝影寫實類",
+  "prompt": "請生成一張圖片。\n\n高端產品攝影棚拍，深色漸層背景、聚光燈與柔光箱、精緻反射與陰影、質感奢華不浮誇。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：深色漸層背景配主體高光，金屬或獎盃質感反射。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, flat background.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "aerial",
+  "name": "空拍廣角",
+  "emoji": "🚁",
+  "group": "攝影寫實類",
+  "prompt": "請生成一張圖片。\n\n空拍或廣角風景攝影，開闊視野、地平線構圖、自然光層次、壯闊格局感，照片級真實感。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：自然地景色彩、天空層次，開闊明亮。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: illustration, cartoon.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "editorial",
+  "name": "雜誌編輯風",
+  "emoji": "📰",
+  "group": "設計編排類",
+  "prompt": "請生成一張圖片。\n\n雜誌編輯設計風，大標題壓字、細緻分隔線、充足留白、襯線標題配無襯線內文、色彩克制。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：黑白灰為主、單一強調色，印刷質感。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered layout, low contrast text.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "infographic",
+  "name": "資訊圖表",
+  "emoji": "📊",
+  "group": "設計編排類",
+  "prompt": "請生成一張圖片。\n\n乾淨資訊圖表設計，圖示化數據、清楚層級、有限色票（主色一條輔色一條）、標籤文字精簡。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：品牌青綠 teal 定錨——主色亮 #00D4FF、輔色沉穩 #00B4D8（至少 2 處清楚可見）；最深陰影與輪廓用深藍 #0A1628；背景乾淨淺冷灰藍或柔白（NOT cream, NOT beige, NOT yellow-tinted）；暖色僅小面積點綴 <15%。光線 soft natural daylight, neutral-to-cool ~5200K。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "isometric",
+  "name": "積木小場景",
+  "emoji": "🧊",
+  "group": "設計編排類",
+  "prompt": "請生成一張圖片。\n\n等距投影 isometric 插畫，45 度視角、幾何精準、柔和陰影、清爽配色，現代科技感。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：清爽中彩度色塊，品牌青綠為主色，柔和陰影。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, perspective distortion.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "swiss",
+  "name": "留白高冷風",
+  "emoji": "⬜",
+  "group": "設計編排類",
+  "prompt": "請生成一張圖片。\n\n瑞士國際主義平面設計，嚴謹網格系統、Helvetica 式無襯線、大量留白、紅黑或單色系、幾何構成。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：黑白灰配單一強調色（紅或品牌青綠），嚴謹網格。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative ornaments, gradients.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "typo-poster",
+  "name": "金句大字",
+  "emoji": "🔠",
+  "group": "設計編排類",
+  "prompt": "請生成一張圖片。\n\n大字報標語設計，超大字級主標佔畫面、強烈字體對比、單色或雙色背景、極簡裝飾。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：單色或雙色高對比背景，文字為主角。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: cluttered background, small text.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "dashboard",
+  "name": "業績數字看板",
+  "emoji": "📈",
+  "group": "設計編排類",
+  "prompt": "請生成一張圖片。\n\n數據儀表板視覺化風格，卡片式區塊、大數字強調、簡潔圖表、深色或淺色系統色票。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：系統色票（深底或淺底擇一），品牌青綠為數據主色。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: hand-drawn, photorealistic.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "clay",
+  "name": "3D 黏土風",
+  "emoji": "🧸",
+  "group": "質感特殊類",
+  "prompt": "請生成一張圖片。\n\n3D 黏土定格動畫風，柔軟黏土質感與指紋細節、圓潤造型、柔和棚燈、馬卡龍色系，可愛親和。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：馬卡龍柔和色系，黏土霧面質感，柔和棚燈。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: sharp edges, photorealistic, flat vector.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "glass",
+  "name": "毛玻璃科技感",
+  "emoji": "🔮",
+  "group": "質感特殊類",
+  "prompt": "請生成一張圖片。\n\n玻璃擬態 glassmorphism，半透明毛玻璃層次、柔和光暈與模糊背景、細緻邊框高光，現代科技感。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：半透明毛玻璃層次配深色或漸層背景，冷色光暈。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat opaque shapes, hand-drawn.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "neon",
+  "name": "都會夜景霓虹",
+  "emoji": "🌃",
+  "group": "質感特殊類",
+  "prompt": "請生成一張圖片。\n\n霓虹賽博龐克風，深色背景配霓虹光管（青紫或藍粉）、光暈反射、都會夜景質地，前衛有活力。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：深色背景配霓虹光管（青紫或藍粉），高對比光暈。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: daylight, pastel, hand-drawn.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "retro-tw",
+  "name": "復古台灣風",
+  "emoji": "📼",
+  "group": "質感特殊類",
+  "prompt": "請生成一張圖片。\n\n台灣復古懷舊風，1980-90 年代印刷質感、網點與輕微套色偏移、暖黃泛舊色調、老招牌字體。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：1980-90 年代印刷質感，暖黃泛舊色調、網點與輕微套色偏移。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern clean vector, cool white balance.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "miniature",
+  "name": "小人國視角",
+  "emoji": "🔍",
+  "group": "質感特殊類",
+  "prompt": "請生成一張圖片。\n\n微縮模型 tilt-shift 攝影風，移軸淺景深讓場景像小模型、高飽和、俯視視角，趣味精緻。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：高飽和玩具感色彩，移軸淺景深。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: flat illustration, wide depth of field.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "luxury-gold",
+  "name": "燙金奢華",
+  "emoji": "👑",
+  "group": "質感特殊類",
+  "prompt": "請生成一張圖片。\n\n燙金奢華質感，純黑或深藍底配金箔燙印效果、細緻金線分隔、襯線字體、低調高級不浮誇。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：純黑或深藍底配金箔 #C9A227 燙印，低調高級。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: light background, pastel, cluttered.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "temple",
+  "name": "台灣廟宇彩繪",
+  "emoji": "🏮",
+  "group": "在地文化類",
+  "prompt": "請生成一張圖片。\n\n台灣傳統廟宇彩繪風，飽和朱紅與金線、對稱吉祥紋樣、剪黏與交趾陶質地，濃厚民俗喜氣。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：飽和朱紅與金線、傳統吉祥色，濃厚民俗感。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: chinese palace style, deity faces, modern minimalism.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "notebook",
+  "name": "手寫筆記（橫線紙）",
+  "emoji": "📝",
+  "group": "在地文化類",
+  "prompt": "請生成一張圖片。\n\n手寫筆記風，方格或橫線紙背景、藍黑原子筆字跡、螢光筆畫重點、便利貼與迴紋針點綴。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：方格或橫線紙底、藍黑筆跡、螢光筆重點。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: photorealistic, polished vector.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "old-photo",
+  "name": "老照片泛黃",
+  "emoji": "🖼️",
+  "group": "在地文化類",
+  "prompt": "請生成一張圖片。\n\n老照片泛黃風，褪色暖棕調、輕微顆粒與刮痕、白色相框邊、模擬底片沖印質地，懷舊溫暖。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：褪色暖棕與泛黃調，模擬底片沖印，允許 sepia 與 amber。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: modern saturation, cool white balance, flat vector.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "morning-greeting",
+  "name": "早安問候圖（長輩圖）",
+  "emoji": "🌅",
+  "group": "LINE 實戰類",
+  "prompt": "請生成一張圖片。\n\n台灣長輩問候圖風格，柔焦花卉或風景背景、暖色漸層、金邊裝飾框、留出大片空白給祝福文字，溫暖明亮飽和。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：暖色漸層、明亮飽和、金邊裝飾，留大片空白給文字。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: dark background, cluttered composition.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "line-sticker",
+  "name": "LINE 貼圖感",
+  "emoji": "💬",
+  "group": "LINE 實戰類",
+  "prompt": "請生成一張圖片。\n\nLINE 貼圖風格，白底或透明去背、圓潤可愛角色、誇張大表情、粗黑輪廓線、旁邊一句手寫短字，簡潔討喜。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：白底或透明去背、明亮飽和、粗黑輪廓線。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: complex background, photorealistic.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "news-card",
+  "name": "新聞快報卡",
+  "emoji": "📢",
+  "group": "LINE 實戰類",
+  "prompt": "請生成一張圖片。\n\n新聞快報卡風格，紅或藍色標題色帶、跑馬燈式下標欄、清楚層級的資訊排版、電視新聞台視覺語彙，正式可信。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：紅或藍標題色帶配白底，資訊層級分明。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative illustration, low contrast.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "plain-table",
+  "name": "一眼表格（截圖感）",
+  "emoji": "📋",
+  "group": "LINE 實戰類",
+  "prompt": "請生成一張圖片。\n\n樸素表格截圖風格，白底細灰格線、無多餘裝飾、等寬字體數字對齊、像試算表或系統畫面的截圖，資訊清楚不花俏。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：白底細灰格線、無裝飾、數字對齊清楚。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: decorative graphics, gradient, illustration.\n16:9 比例，畫面中不要出現任何文字。"
+ },
+ {
+  "id": "before-after",
+  "name": "前後對比（左右分割）",
+  "emoji": "↔️",
+  "group": "LINE 實戰類",
+  "prompt": "請生成一張圖片。\n\n左右分割對比版型，中央一條清楚分隔線、左側灰階代表現況、右側彩色代表規劃後、上方各一個標題，對比強烈一眼看懂。畫面：一位40多歲的台灣男性壽險顧問，坐在明亮的咖啡廳窗邊木桌前，面對一對30多歲的年輕夫妻，桌上攤著文件與兩杯咖啡，三人神情輕鬆自然像朋友聊天。人物都是當代台灣東亞臉孔、自然健康膚色、日常得體穿著。\n配色：左側灰階、右側品牌青綠彩色，中央清楚分隔線。\navoid: simplified chinese, western faces, distorted hands or faces, over-saturation, watermark, unreadable text. avoid: ambiguous divider, cluttered.\n16:9 比例，畫面中不要出現任何文字。"
+ }
+]
