@@ -1,0 +1,578 @@
+[
+ [
+  {
+   "id": "template_133",
+   "name": "準保戶第一次接觸訊息",
+   "category": "業務"
+  },
+  {
+   "id": "template_284",
+   "name": "理賠完成關懷＋保障缺口檢視",
+   "category": "保險"
+  },
+  {
+   "id": "svc2_orphan_policy_first_contact",
+   "name": "修復7｜孤兒保單接手：第一次聯繫，他根本不知道你是誰（含防詐自證）",
+   "category": "客服"
+  },
+  {
+   "id": "reactivate_dormant_client",
+   "name": "沉睡客戶重新聯繫",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "mgr2_external_training_to_unit_material",
+   "name": "教材1｜外訓內容轉成單位教材（一場外訓拆成三段能複製的動作）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "ppt_morning_meeting_five_min_deck",
+   "name": "早會輪到我上台：把我這禮拜做的一件事，講成一頁 A4＋4 頁投影片（新人也講得出來）",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_137",
+   "name": "舊保戶重啟對話計畫（保單健檢邀約）",
+   "category": "業務"
+  },
+  {
+   "id": "template_288",
+   "name": "壽險核保意見書草稿",
+   "category": "保險"
+  },
+  {
+   "id": "svc2_cross_company_policy_master_sheet",
+   "name": "主題3｜幫保戶把散在各家公司的保單整理成一張總表（家人也找得到人）",
+   "category": "客服"
+  },
+  {
+   "id": "fu2_day7_give_something_useful",
+   "name": "時軸3｜第 7 天：給他一個今天就用得到的東西，不要再問「考慮得怎麼樣」",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "mgr2_senior_newbie_pairing",
+   "name": "人管4｜資深帶新人的搭配設計（配對、權責、案件歸屬、出師標準一次講明）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "ppt_new_product_internal_briefing",
+   "name": "（帶團隊用）新商品內部說明簡報：跟舊那張差在哪、誰該談誰別談",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_141",
+   "name": "保障規劃建議書面談腳本",
+   "category": "業務"
+  },
+  {
+   "id": "template_292",
+   "name": "理賠部分給付／拒賠說明函",
+   "category": "保險"
+  },
+  {
+   "id": "svc2_why_did_my_premium_go_up",
+   "name": "主題7｜保戶問「保費怎麼越繳越貴」（原因先查清楚再講，不認錯也不甩鍋）",
+   "category": "客服"
+  },
+  {
+   "id": "fu2_one_year_honest_reconnect",
+   "name": "時軸7｜整整一年沒聯絡：承認自己斷線的開場，比假裝一直記得他有效",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "mgr2_final_talk_before_leaving",
+   "name": "人管8｜他已經決定要走了，最後一次談話（這一次不是挽留）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "ppt_rookie_training_class_deck",
+   "name": "（帶團隊用）新人訓練簡報：把老手的直覺，拆成新人跟得上的一堂課",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_145",
+   "name": "個人業績目標與活動量拆解",
+   "category": "業務"
+  },
+  {
+   "id": "template_296",
+   "name": "續期保費催繳通知（三階段）",
+   "category": "保險"
+  },
+  {
+   "id": "svc2_group_chat_public_complaint",
+   "name": "困境3｜保戶在 LINE 群組裡公開抱怨我（群裡還有其他保戶在看）",
+   "category": "客服"
+  },
+  {
+   "id": "fu2_spouse_decision_followup",
+   "name": "拒絕1｜他說要回去問另一半（分辨是真商量還是擋箭牌，做出 7 天兩步跟進）",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "mgr2_unit_culture_and_rules",
+   "name": "經營3｜把單位的規矩寫成白紙黑字（一頁公約＋紅線條款，新人第一天就給）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "ppt_case_study_share_deck",
+   "name": "主題7｜個案分享簡報：把一件成交案拆成別人抄得走的時間軸",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_149",
+   "name": "保單成交後一年的服務節奏表",
+   "category": "業務"
+  },
+  {
+   "id": "template_510",
+   "name": "儲蓄險 vs 定存對話框架",
+   "category": "保險"
+  },
+  {
+   "id": "news_post_king",
+   "name": "新聞貼文王",
+   "category": "社群經營"
+  },
+  {
+   "id": "fu2_friend_is_agent_second_opinion",
+   "name": "拒絕5｜他說朋友或親戚也在做保險（不搶單，改當他的第二意見）",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "fl_claim_first_care",
+   "name": "理賠1｜保戶住院／確診，第一時間的關懷與該做的事",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "ppt_book_club_share_deck",
+   "name": "主題9｜輪到我在讀書會分享：三個重點，接到保險現場的做法讓 AI 幫你想",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_313",
+   "name": "講座／說明會後 48 小時跟進訊息",
+   "category": "業務"
+  },
+  {
+   "id": "template_514",
+   "name": "退休規劃簡報大綱",
+   "category": "保險"
+  },
+  {
+   "id": "trend_decoder_king",
+   "name": "趨勢解讀王",
+   "category": "社群經營"
+  },
+  {
+   "id": "fu2_comparing_others_checklist",
+   "name": "拒絕9｜他要自己去比別家、你又看不到對方資料（給他一張比得動的檢查表）",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "fl_claim_denied_next_step",
+   "name": "理賠4｜理賠不賠，陪保戶決定下一步（申覆／評議／接受）",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "ppt_client_protection_proposal_deck",
+   "name": "主題1｜保障規劃說明簡報（輔助溝通用，做到你不在旁邊，他也講得通）",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_317",
+   "name": "引薦感謝 ＋ 準保戶首次問候（雙訊息）",
+   "category": "業務"
+  },
+  {
+   "id": "ins2_daily_benefit_reality_check",
+   "name": "商品3｜住院日額到底夠不夠：用他自己那次住院的帳單算一遍",
+   "category": "保險"
+  },
+  {
+   "id": "soc2_self_intro_post",
+   "name": "日常1｜自我介紹貼文（讓人知道「遇到什麼事可以找你」）",
+   "category": "社群經營"
+  },
+  {
+   "id": "fu2_newborn_parents_first",
+   "name": "新生兒｜孩子出生後，先講爸媽再講寶寶（順序講反就沒下文）",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "fl_premium_difficulty_options",
+   "name": "保全1｜保費繳不出來，攤開四個選項給他看（一頁對照表）",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "ppt_group_insurance_proposal_deck",
+   "name": "主題3｜企業團險提案簡報（同一份要同時答人資的痛跟老闆的帳）",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_321",
+   "name": "準保戶婉拒後的收尾訊息（留關係不糾纏）",
+   "category": "業務"
+  },
+  {
+   "id": "ins2_ltc_vs_disability_vs_similar",
+   "name": "商品7｜長照險、失能扶助、類長照：先講誰來判定，再講錢怎麼給",
+   "category": "保險"
+  },
+  {
+   "id": "soc2_learning_notes_post",
+   "name": "日常5｜讀書上課心得貼文（不寫摘要，只寫你明天要改哪一句話）",
+   "category": "社群經營"
+  },
+  {
+   "id": "fu2_startup_first_year",
+   "name": "創業｜他辭職當老闆的第一年，先把「他這個人」保住",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "fl_competitor_attack_response",
+   "name": "保全4｜保戶被同業說「你這張買錯了」，怎麼回應",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "ppt_retirement_cashflow_couple_deck",
+   "name": "主題5｜退休後每個月錢從哪來（給 50 歲以上夫妻看的現金流對照簡報）",
+   "category": "簡報製作"
+  }
+ ],
+ [
+  {
+   "id": "template_325",
+   "name": "企業團險窗口拜訪前功課單",
+   "category": "業務"
+  },
+  {
+   "id": "ins2_fresh_grad_first_policy",
+   "name": "主題1｜社會新鮮人的第一張保單（預算有限，先買什麼、什麼先不用急）",
+   "category": "保險"
+  },
+  {
+   "id": "soc2_year_in_review_post",
+   "name": "日常9｜年度回顧貼文（放服務型數字，不放業績截圖）",
+   "category": "社群經營"
+  },
+  {
+   "id": "fu2_first_pure_service_touch",
+   "name": "主題1｜成交後第一次見面，全程不談保險（純服務接觸怎麼設計）",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "clm2_accident_definition_statement",
+   "name": "險種3｜意外險：事故經過怎麼描述，才不會自己把「意外」寫成「疾病」",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "policy-checkup",
+   "name": "保單健檢表",
+   "category": "保險微系統"
+  }
+ ],
+ [
+  {
+   "id": "template_329",
+   "name": "第一次見面前的準保戶速讀",
+   "category": "業務"
+  },
+  {
+   "id": "ins2_sandwich_midlife_self_last",
+   "name": "主題5｜中年三明治族：上有父母、下有小孩，自己永遠排最後面",
+   "category": "保險"
+  },
+  {
+   "id": "soc2_jargon_plain_words_series",
+   "name": "專業內容2｜保險名詞白話貼文（一篇只講一個詞，講到你家長輩也懂）",
+   "category": "社群經營"
+  },
+  {
+   "id": "fu2_promotion_congrats",
+   "name": "主題5｜客戶升遷、開分店、拿獎：祝賀怎麼寫才不像在等他加保",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "clm2_disability_longrun_calendar",
+   "name": "險種6｜失能理賠是一場長跑：排出未來三年的送件與複檢行事曆",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "client-tier",
+   "name": "客戶分級經營看板",
+   "category": "保險微系統"
+  }
+ ],
+ [
+  {
+   "id": "template_333",
+   "name": "一頁保障規劃重點摘要（給家裡拿主意的人看）",
+   "category": "業務"
+  },
+  {
+   "id": "template_484",
+   "name": "保戶來電抱怨的接話腳本（電話一線）",
+   "category": "客服"
+  },
+  {
+   "id": "soc2_regulation_change_explainer",
+   "name": "專業內容6｜政策法規變動解讀貼文（先講「跟你有沒有關」，再講細節）",
+   "category": "社群經營"
+  },
+  {
+   "id": "manager_recruit_post_interview_attract",
+   "name": "選才1｜面試後吸引訊息（隔天不催決定、講團隊真實故事）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_occupation_change_audit",
+   "name": "險種9｜保戶換工作、開始兼差卻沒說：職業變更的年度盤點與提醒訊息",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "referral-tracker",
+   "name": "轉介紹來源追蹤樹",
+   "category": "保險微系統"
+  }
+ ],
+ [
+  {
+   "id": "template_337",
+   "name": "促成前的試探確認問句（不施壓版）",
+   "category": "業務"
+  },
+  {
+   "id": "template_488",
+   "name": "保戶情緒炸了的當場降溫話術",
+   "category": "客服"
+  },
+  {
+   "id": "soc2_the_question_i_hear_most",
+   "name": "專業內容10｜客戶最常問我的那一句話（寫成一則有你聲音的貼文）",
+   "category": "社群經營"
+  },
+  {
+   "id": "manager_deploy_stretch_assignment_motivate",
+   "name": "用才1｜指派高難度任務激勵（肯定成績＋點特質＋我陪你跑前3案）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_waiting_period_date_dispute",
+   "name": "爭議2｜卡在等待期：診斷日、初診日到底怎麼算，先講清楚再談別的",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "premium-reminder",
+   "name": "保費繳費提醒系統",
+   "category": "保險微系統"
+  }
+ ],
+ [
+  {
+   "id": "template_341",
+   "name": "準保戶說「保費負擔不起」時的分階段規劃說法",
+   "category": "業務"
+  },
+  {
+   "id": "template_492",
+   "name": "服務出狀況後，主動打給保戶的致歉電話腳本",
+   "category": "客服"
+  },
+  {
+   "id": "soc2_group_posting_rhythm_plan",
+   "name": "互動3｜社團／社群發文節奏表（一個月排好，不再想到才發）",
+   "category": "社群經營"
+  },
+  {
+   "id": "manager_morning_meeting_opening",
+   "name": "早會1｜每天早會 5 分鐘開場（看當月進度與士氣，不喊口號）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_rescission_vs_termination_letter",
+   "name": "爭議5｜撤銷、解除、終止：陪保戶看懂公司寄來的那封信（先看期限）",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "seminar-checkin",
+   "name": "說明會報名簽到表",
+   "category": "保險微系統"
+  }
+ ],
+ [
+  {
+   "id": "template_345",
+   "name": "建議書送出後沒有回音的溫和跟進訊息",
+   "category": "業務"
+  },
+  {
+   "id": "template_496",
+   "name": "保戶最常問的問題，全單位統一回覆句庫",
+   "category": "客服"
+  },
+  {
+   "id": "soc2_public_cynical_comment_reply",
+   "name": "互動7｜留言區被酸「保險都是騙人的」，公開回一句不吵架",
+   "category": "社群經營"
+  },
+  {
+   "id": "manager_underperformer_1on1",
+   "name": "業績1｜業績落後夥伴的一對一談話（找卡點，不是罵人）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_document_challenged_dignity",
+   "name": "爭議8｜文件被退、被追問：保戶覺得自己被當成騙子的時候",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "client-radar",
+   "name": "保戶經營雷達",
+   "category": "保險微系統"
+  }
+ ],
+ [
+  {
+   "id": "template_349",
+   "name": "建議書被婉拒後的關係保溫訊息",
+   "category": "業務"
+  },
+  {
+   "id": "template_500",
+   "name": "保戶申訴／抱怨回覆信草稿",
+   "category": "客服"
+  },
+  {
+   "id": "soc2_30sec_concept_reel_script",
+   "name": "影音1｜30 秒保險觀念短影音腳本（一支只講一個觀念，全片不出現商品名）",
+   "category": "社群經營"
+  },
+  {
+   "id": "manager_joint_visit_feedback",
+   "name": "陪訪2｜陪訪後的回饋（先肯定再修正，講行為不講個性）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_policy_reinstatement_clock",
+   "name": "保全5｜保單已經停效想救回來：把時間、金額、體況三件事查清楚再開口（已經停效用這支；還在寬限期用保全12）",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "namecard-minimal",
+   "name": "簡約商務風",
+   "category": "電子名片"
+  }
+ ],
+ [
+  {
+   "id": "template_353",
+   "name": "久未聯絡保戶的再接觸訊息",
+   "category": "業務"
+  },
+  {
+   "id": "template_504",
+   "name": "新進保戶服務人員訓練大綱",
+   "category": "客服"
+  },
+  {
+   "id": "soc2_one_take_self_intro_video",
+   "name": "影音5｜一鏡到底自我介紹影片（60 秒，不用剪也不會 NG）",
+   "category": "社群經營"
+  },
+  {
+   "id": "manager_group_praise",
+   "name": "氛圍2｜群組表揚不引起反感（表揚行為，不是只表揚數字）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_contract_conversion_feasibility",
+   "name": "保全8｜保戶問「可不可以換成別張」：先確認這件事能不能做，再開口回答",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "namecard-warm",
+   "name": "溫暖家庭風",
+   "category": "電子名片"
+  }
+ ],
+ [
+  {
+   "id": "template_276",
+   "name": "陌生客戶 LINE 破冰訊息",
+   "category": "保險"
+  },
+  {
+   "id": "template_508",
+   "name": "保戶網路公開抱怨：通報路徑與私下處理",
+   "category": "客服"
+  },
+  {
+   "id": "post_visit_thank_you",
+   "name": "初次見面後感謝跟進",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "mgr2_weekly_meeting_agenda",
+   "name": "會議1｜週會議程設計（90 分鐘怎麼排，不變成報數字大會）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_policy_loan_repayment_rhythm",
+   "name": "保全11｜已經借過款的保單：先把三個數字查清楚，再排一張你自己的追蹤表（不交給保戶）",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "namecard-magazine",
+   "name": "質感雜誌風",
+   "category": "電子名片"
+  }
+ ],
+ [
+  {
+   "id": "template_280",
+   "name": "高資產客戶資產傳承提案大綱",
+   "category": "保險"
+  },
+  {
+   "id": "svc2_inherit_unhappy_client",
+   "name": "修復3｜接手前一位業務員留下的不滿保戶（不批評前手，也不替他背書）",
+   "category": "客服"
+  },
+  {
+   "id": "policy_anniversary_review",
+   "name": "保單週年健檢邀約",
+   "category": "拜訪後跟進"
+  },
+  {
+   "id": "mgr2_public_feedback_standard",
+   "name": "講評1｜主管當眾講評的標準（同一把尺，不看交情）",
+   "category": "主管帶團隊"
+  },
+  {
+   "id": "clm2_minor_policy_age15_handover",
+   "name": "保全14｜未成年子女的保單：孩子長大的每個節點該回來講什麼（含成年那年你要出現做的事）",
+   "category": "理賠與保全"
+  },
+  {
+   "id": "namecard-fresh",
+   "name": "清新親和風",
+   "category": "電子名片"
+  }
+ ]
+]

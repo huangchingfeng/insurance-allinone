@@ -1812,7 +1812,7 @@
           const $ = (s,r)=> (r||document).querySelector(s);
           const $$ = (s,r)=> [...(r||document).querySelectorAll(s)];
           const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-          const ICON={'保險':'💼','業務':'📞','客服':'🎧','人資':'👥','行銷':'📣','會計財務':'💰','市場分析':'📊','企劃':'📋','培訓':'🎓','行政':'🗂️','經營管理':'🧭','法務':'⚖️','採購':'🛒','通用':'🔧','資訊':'💻','客戶關係':'🤝','活動':'🎪','營運':'⚙️','政府':'🏛️','社群經營':'📱','拜訪後跟進':'✉️','主管帶團隊':'👔'};
+          const ICON={'保險':'💼','業務':'📞','客服':'🎧','人資':'👥','行銷':'📣','會計財務':'💰','市場分析':'📊','企劃':'📋','培訓':'🎓','行政':'🗂️','經營管理':'🧭','法務':'⚖️','採購':'🛒','通用':'🔧','資訊':'💻','客戶關係':'🤝','活動':'🎪','營運':'⚙️','政府':'🏛️','社群經營':'📱','拜訪後跟進':'✉️','主管帶團隊':'👔','理賠與保全':'🛡️','簡報製作':'📽️'};
           const icon = c => ICON[c] || '📝';
           let TXT=[], activeCat='全部', kw='', cur=null, lastFocus=null, inited=false;
           const MICRO_CAT='保險微系統', NAMECARD_CAT='電子名片'; let viewMode='text';
@@ -1874,15 +1874,22 @@
             if(!fields.length){
               fw.innerHTML = '<p style="font-size:.85rem;color:var(--muted)">這個模板不用填空,直接複製右邊使用即可。</p>';
             }else{
-              fw.innerHTML = fields.map(f=>
-                `<div class="cz-field">
-                  <div class="cz-flabel"><span>${esc(f.label||f.id)}</span></div>
-                  ${ f.type==='textarea'
+              fw.innerHTML = fields.map(f=>{
+                // 有 options 的欄位渲染成下拉選單。之前不管填什麼 type 都變成文字框,
+                // 所以模板寫了選項也沒用,分流開關、法定值全變成自由文字。
+                const ctl = (Array.isArray(f.options) && f.options.length)
+                  ? `<select id="txf_${esc(f.id)}" class="cz-fselect"><option value="">— 請選 —</option>${
+                      f.options.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join('')}</select>`
+                  : (f.type==='textarea'
                      ? `<textarea id="txf_${esc(f.id)}" placeholder="${esc(f.placeholder||'')}"></textarea>`
-                     : `<textarea id="txf_${esc(f.id)}" rows="1" placeholder="${esc(f.placeholder||'')}"></textarea>` }
-                </div>`).join('');
+                     : `<textarea id="txf_${esc(f.id)}" rows="1" placeholder="${esc(f.placeholder||'')}"></textarea>`);
+                return `<div class="cz-field">
+                  <div class="cz-flabel"><span>${esc(f.label||f.id)}</span></div>
+                  ${ctl}
+                </div>`;}).join('');
               fields.forEach(f=>{
                 const ta=$('#txf_'+CSS.escape(f.id), fw);
+                if(ta.tagName==='SELECT'){ ta.addEventListener('change', build); return; }
                 autoGrow(ta);
                 ta.addEventListener('input', ()=>{ autoGrow(ta); build(); });
               });
@@ -1903,13 +1910,89 @@
             if(!cur) return;
             let s = String(cur.template||'');
             const fields = Array.isArray(cur.structure)? cur.structure : [];
+            const blank = [], weak = [];
+            /* 敷衍值：使用者有填,但填的等於沒填。
+               舊版只判空字串,所以填「再看看」「還不錯」「有啊」時閘完全不動,
+               AI 拿著這三個字硬要生出「可直接寄出」的成品,只能自己編。 */
+            const LAZY = /^(再看看|不知道|不清楚|不確定|還好|還不錯|不錯|普通|隨便|沒有|沒|無|沒差|都可以|可以|有啊|有|是|對|嗯|待補|待確認|tbd|na|n\/a|ok|好|-|—|\?|？)$/i;
+            const isWeak = (v, f) => {
+              const bare = v.replace(/[。、，,.!！?？\s~～]/g,'');
+              if(LAZY.test(bare)) return true;
+              // 長答型欄位填不到 8 個字,通常是敷衍;短答型(選單、日期、數字)不套這條
+              return f.type==='textarea' && !(Array.isArray(f.options)&&f.options.length) && bare.length < 8;
+            };
             fields.forEach(f=>{
               const val = ($('#txf_'+CSS.escape(f.id))?.value||'').trim();
-              s = s.split('<<<{'+f.id+'}>>>').join(val || ('〔'+(f.label||f.id)+'〕'));
+              if(!val) blank.push(f.label||f.id);
+              else if(isWeak(val, f)) weak.push(f.label||f.id);
+              // 空欄改成「（未提供）」——舊版填〔label問句〕，AI 會讀成待答問題然後自己編一個答案
+              s = s.split('<<<{'+f.id+'}>>>').join(val || '（未提供）');
             });
             // 清掉任何殘留佔位語法
             s = s.replace(/<<<\{[^}]+\}>>>/g,'');
-            $('#txtOut').textContent = s;
+
+            /* 缺料閘：全站共用的防編造防線。
+               模板本身普遍寫著「要具體、可直接複製送出」,欄位一空 AI 只能靠編的,
+               編出來的客戶背景會直接進到業務員要講出口的話術裡。 */
+            let guard = '\n\n────────────────';
+
+            /* 【一律附上】不管欄位填得多滿都要有。
+               最常見的編造不是「欄位空著」,而是模板的期望段要求一個
+               「根本沒有對應欄位」的事實(團隊成員的故事、業界平均、公司已決定的措施),
+               這時零空欄、缺料閘不觸發,AI 只能編,而且編得很像真的。 */
+            guard += '\n【不准編造（這條最優先）】\n'
+                   + '凡是我沒有在上面提供的具體事實，一律不准自己生出來——包括人名、同事或客戶的經歷、業績數字、業界平均、日期、金額、對話原話、公司已決定的處理措施與承諾。\n'
+                   + '如果你要寫的某一段需要這類資訊而我沒給，就在那個位置寫「〔待補：需要什麼〕」，並在最後用一份清單告訴我你需要我補哪些東西。寫不出來要講，不要湊。\n';
+
+            const missing = blank.concat(weak);
+            if(missing.length){
+              guard += '\n【這幾格我沒填或填得很含糊】\n'
+                     + blank.map(b=>'・'+b+'（未填）').concat(weak.map(w=>'・'+w+'（填了但等於沒講）')).join('\n')
+                     + '\n這些地方不得推測、不得代入常見情況，也不得用「一般來說／通常／多數家庭」帶過。\n';
+              /* 停產門檻：舊版是「空欄數 ≥ 欄位數一半」,兩欄的模板空一格就整份熄火。
+                 改成同時要滿足「至少缺 3 格」與「超過一半」,少數欄位的模板才不會被誤殺。 */
+              if(missing.length >= 3 && missing.length > fields.length/2){
+                guard += '\n⚠️ 我這次大部分都沒給。請先不要產出成品，改成列一份「你要先問到的幾件事」給我，我補齊再回來重跑。\n';
+              }
+              /* 缺料時最容易出事的地方:〔待補〕被留在「可直接複製送出」的訊息正中間,
+                 業務員沒看到就整段貼給客戶了。 */
+              guard += '\n【可以直接送出的東西不准留待補】\n'
+                     + '凡是你標示「可直接複製送出／可直接照唸／可直接寄出」的內容，本體裡不得出現〔待補〕、方括號、底線或任何佔位符。缺料就把那一段整段省略，改在成品外面另外告訴我少了什麼。\n';
+            }
+
+            /* 以下三條是「條件式通則」：只有模板真的踩到那個坑才附上,
+               不相關的提示詞不加,避免每一份都拖一大段沒用的文字。
+               這樣做的原因是:這三個坑分別散在 207／4／6 支模板裡,
+               去改模板本文風險太高,放在這裡改一次全部受益。 */
+
+            // A. 字數上限沒對照硬性條數算過 → 模型硬壓時砍掉的永遠是最有價值的那段
+            if(/\d{2,4}\s*[～~\-—]?\s*\d{0,4}\s*字/.test(s)){
+              guard += '\n【字數怎麼算】\n'
+                     + '免責聲明、合規揭露、法遵但書、表格內文字，以及你標為附錄或備忘的內容，一律不計入字數上限。\n'
+                     + '真的塞不下就不要硬壓：先告訴我哪幾段被壓縮了，優先保留「可以直接照唸的話術」與「你的判斷理由」，'
+                     + '最後才砍背景鋪陳。不准為了湊字數刪掉演練腳本、待查清單或安全提醒。\n';
+            }
+
+            // M. 有管道/長度欄位卻沒依它分流 → 填「電話關懷」拿到書面 LINE 稿
+            if(fields.some(f=>/channel|管道|通路|媒介|長度|字數限制|平台/.test((f.id||'')+(f.label||'')))){
+              guard += '\n【要照我填的管道走】\n'
+                     + '我上面填了管道或長度限制，產出必須跟著變：填電話就給口語逐字稿不要給書面稿，'
+                     + '填簡訊 70 字就真的壓在 70 字內，填當面談就不要寫成訊息。'
+                     + '模板裡的共同格式規則不得覆蓋我填的長度限制。\n';
+            }
+
+            // B. 模板正文的禁用詞是裸清單 → 誤傷序數與條款正式名詞,連防呆示範句都被閹掉
+            if(/禁用詞|不得使用「|禁字|違反保險招攬/.test(s)){
+              guard += '\n【禁用詞看語意不看單字】\n'
+                     + '上面若列了禁用詞，一律用「有沒有在做承諾或誇大」判斷，不要看到字就刪：\n'
+                     + '「第一次接觸」「第一時間」「第一張保單」是序數，「保證給付」「保證期間」「保證續保」是條款正式名詞，這些都可以用。\n'
+                     + '真正要擋的是保證獲利、一定會賠、穩賺不賠、業界第一、節稅避稅這類承諾與誇大。\n'
+                     + '如果我要你示範「不能說的錯誤句」，那幾句必須原樣寫出含禁用詞的版本，不然示範就失去意義了。\n';
+            }
+
+            guard += '\n【個資保護】\n我填的內容若含真實姓名、保單號碼、身分證字號、確切病名或金額，請在你的產出中一律改成代號或「＿＿」，不要原樣複述。\n';
+
+            $('#txtOut').textContent = s + guard;
           }
           function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow=''; cur=null; if(lastFocus)lastFocus.focus(); }
           function doCopy(text){
