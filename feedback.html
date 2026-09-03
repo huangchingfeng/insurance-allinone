@@ -29,6 +29,8 @@
   label.o.on{border-color:var(--primary);background:#EFFAF5}
   textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px;font:inherit;font-size:14px;resize:vertical;min-height:74px}
   textarea:focus{outline:none;border-color:var(--primary)}
+  input.t{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px;font:inherit;font-size:14px}
+  input.t:focus{outline:none;border-color:var(--primary)}
   .mycontact{margin-top:11px;background:#fff;border:1px dashed #F2C879;border-radius:10px;padding:11px 13px;font-size:12.5px;color:#92560C;line-height:1.7}
   .mycontact b{color:#7C2D12}
   .submit{display:block;width:calc(100% - 48px);margin:18px 24px 22px;background:var(--primary);color:#fff;border:none;border-radius:10px;padding:14px;font-weight:800;font-size:16px;cursor:pointer}
@@ -51,11 +53,16 @@
       <span class="pill">🙋 情境許願 · 手機 3 分鐘</span>
     </div>
     <div class="intro">
-      嗨，我是阿峰 👋 工具箱最近升級了，加了很多現成的小工具跟範本。<br><br>
+      嗨，我是阿峰 👋 謝謝你今天聽我分享。剛剛看到的 AI 工具箱裡有很多現成的小工具跟範本，你隨時都可以拿去用。<br><br>
       但我更想知道——<b>你工作上「還有哪些麻煩事、哪些情境」，希望 AI 也能幫你？</b>你許的願，我會一個一個幫你做進工具箱。沒有對錯、想到什麼就寫什麼，幾乎都用點選的。
     </div>
 
     <form id="f">
+      <!-- 姓名（必填）-->
+      <div class="q">
+        <div class="qt">你的姓名<span class="star"> *</span></div>
+        <input type="text" class="t" id="name" autocomplete="name" maxlength="40" placeholder="請填你的姓名，老師才知道這個願望是誰許的">
+      </div>
       <!-- Q1 角色 -->
       <div class="q">
         <div class="qt"><span class="num">1</span>你現在主要是？<span class="star"> *</span></div>
@@ -105,17 +112,17 @@
       </div>
       <!-- Q6 邀課 -->
       <div class="q invite">
-        <div class="qt"><span class="num">6</span>你的單位／通訊處有沒有興趣，請阿峰老師今年下半年去上一堂保險業 AI 課？<span class="star"> *</span></div>
+        <div class="qt"><span class="num">6</span>如果你的單位有開一堂這樣的保險業 AI 課，你會想上嗎？<span class="star"> *</span></div>
         <div class="opts" data-q="q6" data-type="single">
-          <label class="o"><input type="radio" name="q6" value="有！想請老師來上課">有！想請老師來單位上課</label>
-          <label class="o"><input type="radio" name="q6" value="想先了解、可以跟我聯絡">想先了解看看，可以跟我聯絡</label>
-          <label class="o"><input type="radio" name="q6" value="我幫單位問問看／轉給主管">我幫單位問問看／轉給主管</label>
-          <label class="o"><input type="radio" name="q6" value="目前沒有這個需求">目前沒有這個需求</label>
+          <label class="o"><input type="radio" name="q6" value="會，我想上">會，我想上 🙋</label>
+          <label class="o"><input type="radio" name="q6" value="會，而且我可以幫忙跟主管／單位提">會，而且我可以幫忙跟主管／單位提</label>
+          <label class="o"><input type="radio" name="q6" value="想先了解看看，可以跟我聯絡">想先了解看看，可以跟我聯絡</label>
+          <label class="o"><input type="radio" name="q6" value="目前沒有興趣">目前沒有興趣</label>
         </div>
       </div>
       <!-- Q7 單位+聯絡 -->
       <div class="q invite">
-        <div class="qt"><span class="num">7</span>想邀課或想要專屬範例的話，留下你的單位與聯絡方式，老師會親自跟你聯繫<span class="opt"> 選填</span></div>
+        <div class="qt"><span class="num">7</span>想上課、想要專屬範例，或希望老師跟你聯絡的話，留下你的單位與聯絡方式<span class="opt"> 選填</span></div>
         <textarea id="q7" placeholder="單位／通訊處名稱／你的職稱＋姓名／聯絡方式（LINE、電話或 email）"></textarea>
         <div class="mycontact">想直接找老師也可以 👉 <b>阿峰老師（黃敬峰）</b>｜LINE／電話 0976-715-102｜Email ai@autolab.cloud｜網站 autolab.cloud</div>
       </div>
@@ -147,9 +154,9 @@
   var $ = function(s,r){ return (r||document).querySelector(s); };
   var $$ = function(s,r){ return [].slice.call((r||document).querySelectorAll(s)); };
 
-  // 問卷截止：7/1 晚上（含 7/1 整天可填，原 6/24 延長一週）。要改天數改這一行。
-  var DEADLINE = new Date('2026-07-02T00:00:00+08:00');
-  if(new Date() >= DEADLINE){ $('#f').style.display='none'; $('#closed').style.display='block'; return; }
+  // 本問卷不設截止日，永久開放。
+  // 之後若要手動關閉：把下面這行前面的 // 拿掉即可（會改顯示「已截止」畫面）。
+  // $('#f').style.display='none'; $('#closed').style.display='block'; return;
 
   $$('.opts').forEach(function(box){
     var type = box.dataset.type;
@@ -166,9 +173,13 @@
 
   $('#f').addEventListener('submit', function(ev){
     ev.preventDefault();
-    var data = { q1:val('q1'), q2:vals('q2'), q3:($('#q3').value||'').trim(), q4:($('#q4').value||'').trim(),
+    var data = { name:($('#name').value||'').trim(),
+      q1:val('q1'), q2:vals('q2'), q3:($('#q3').value||'').trim(), q4:($('#q4').value||'').trim(),
       q5:val('q5'), q6:val('q6'), q7:($('#q7').value||'').trim() };
-    if(!data.q1||!data.q2.length||!data.q3||!data.q5||!data.q6){ $('#err').style.display='block'; window.scrollTo({top:0,behavior:'smooth'}); return; }
+    if(!data.name||!data.q1||!data.q2.length||!data.q3||!data.q5||!data.q6){
+      $('#err').style.display='block';
+      if(!data.name){ $('#name').focus(); $('#name').style.borderColor='#FF6B35'; }
+      window.scrollTo({top:0,behavior:'smooth'}); return; }
     $('#err').style.display='none';
     var btn=$('#sb'); btn.disabled=true; btn.textContent='送出中…';
     fetch(ENDPOINT, { method:'POST', mode:'no-cors', body: JSON.stringify(data) }).then(finish).catch(finish);
